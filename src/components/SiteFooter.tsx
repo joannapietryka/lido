@@ -1,3 +1,5 @@
+import logoDark from '../assets/lido-logo-dark.png'
+
 export function SiteFooter() {
   return (
     <footer className="px-6 pb-6 pt-12">
@@ -6,7 +8,7 @@ export function SiteFooter() {
           <div className="lg:w-1/3">
             <div className="flex items-center gap-3 mb-4">
               <img
-                src="/src/assets/lido-logo-dark.png"
+                src={logoDark}
                 alt="Lido"
                 className="h-8 object-contain"
               />

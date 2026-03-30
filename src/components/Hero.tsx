@@ -1,5 +1,7 @@
 import heroVideo from '../assets/video/download.mp4'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import buildingImg from '../assets/building.png'
+import salonImg from '../assets/salon.png'
 
 function ArrowButton() {
   return (
@@ -39,7 +41,7 @@ export function Hero() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-auto lg:h-[550px]">
         <div data-reveal className="col-span-1 lg:col-span-5 rounded-[2.5rem] relative overflow-hidden group h-[400px] lg:h-full">
           <img
-            src="/src/assets/building.png"
+            src={buildingImg}
             alt="Przemiarki building"
             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
           />
@@ -78,7 +80,7 @@ export function Hero() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 h-[300px] lg:h-[270px]">
             <div data-reveal className="rounded-[2.5rem] overflow-hidden group h-full">
               <img
-                src="/src/assets/salon.png"
+                src={salonImg}
                 alt="Interior Detail"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />
