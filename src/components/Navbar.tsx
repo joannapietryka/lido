@@ -5,7 +5,7 @@ export function Navbar() {
         <div className="flex items-center gap-12">
           <a href="#top" className="flex items-center gap-2 group" aria-label="Lido strona główna">
             <img
-              src="https://images.unsplash.com/photo-1580587771525-78b7dba5b91d?w=120&q=80"
+              src="/src/assets/lido-logo.png"
               alt="Lido logo"
               className="h-8 object-contain"
             />

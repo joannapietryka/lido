@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
 type TabId = '1bed' | '2bed'
 
@@ -128,6 +129,7 @@ function PlanImage({
 
 export function FloorPlans() {
   const [tab, setTab] = useState<TabId>('1bed')
+  const ref = useScrollReveal<HTMLElement>()
 
   const config = useMemo(() => {
     return {
@@ -171,9 +173,9 @@ export function FloorPlans() {
   }, [])
 
   return (
-    <section id="mieszkania" className="py-24 bg-white relative overflow-hidden scroll-mt-32">
+    <section ref={ref} id="mieszkania" className="py-24 bg-white relative overflow-hidden scroll-mt-32">
       <div className="max-w-[1440px] mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8 text-center md:text-left">
+        <div data-reveal className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8 text-center md:text-left">
           <div>
             <h2 className="text-[48px] font-medium tracking-tight mb-4">Oferta Mieszkań</h2>
             <p className="text-gray-500 font-inter text-lg">Oferujemy dwa rodzaje mieszkań na Ruczaju:<br/> kompaktowe studio oraz mieszkanie 2-pokojowe z osobną kuchnią.</p>
@@ -207,13 +209,15 @@ export function FloorPlans() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-[550px]">
             <PlanImage area="850 sqft" price="$2,400/mo" bedsText="1 Bedroom" bathsText="1 Bath" src={config['1bed'].heroSrc} />
             <div className="lg:col-span-5 flex flex-col gap-5 h-full min-h-0">
-              <FeatureCard
+              <div data-reveal className="h-full flex flex-col gap-5 min-h-0">
+                <FeatureCard
                 description={config['1bed'].feature}
                 ceilings={config['1bed'].ceilings}
                 energy={config['1bed'].energy}
                 concierge={config['1bed'].concierge}
-              />
-              <SideImages leftSrc={config['1bed'].leftImg} rightSrc={config['1bed'].rightImg} />
+                />
+                <SideImages leftSrc={config['1bed'].leftImg} rightSrc={config['1bed'].rightImg} />
+              </div>
             </div>
           </div>
         </div>
@@ -221,15 +225,17 @@ export function FloorPlans() {
         <div id="2bed" className={['tab-content', tab === '2bed' ? 'active' : ''].join(' ')}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-[550px]">
             <div className={['lg:col-span-5 flex flex-col gap-5 h-full min-h-0', config['2bed'].rightColOrder].join(' ')}>
-              <FeatureCard
+              <div data-reveal className="h-full flex flex-col gap-5 min-h-0">
+                <FeatureCard
                 description={config['2bed'].feature}
                 ceilings={config['2bed'].ceilings}
                 energy={config['2bed'].energy}
                 concierge={config['2bed'].concierge}
-              />
-              <SideImages leftSrc={config['2bed'].leftImg} rightSrc={config['2bed'].rightImg} />
+                />
+                <SideImages leftSrc={config['2bed'].leftImg} rightSrc={config['2bed'].rightImg} />
+              </div>
             </div>
-            <div className="order-1 lg:order-2 lg:col-span-7 relative rounded-[40px] overflow-hidden group h-full">
+            <div data-reveal className="order-1 lg:order-2 lg:col-span-7 relative rounded-[40px] overflow-hidden group h-full">
               <img
                 src={config['2bed'].heroSrc}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

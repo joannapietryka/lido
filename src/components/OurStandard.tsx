@@ -1,3 +1,5 @@
+import { useScrollReveal } from '../hooks/useScrollReveal'
+
 function Card({
   title,
   description,
@@ -23,10 +25,12 @@ function Card({
 }
 
 export function OurStandard() {
+  const ref = useScrollReveal<HTMLElement>({ targets: ['[data-card]'] })
+
   return (
-    <section id="standard" className="py-24 bg-white overflow-hidden scroll-mt-32">
+    <section ref={ref} id="standard" className="py-24 bg-white overflow-hidden scroll-mt-32">
       <div className="max-w-[1440px] mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8 text-center md:text-left">
+        <div data-reveal className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8 text-center md:text-left">
           <div>
             <h2 className="text-[48px] font-medium tracking-tight mb-4">Nasz Standard</h2>
             <p className="text-gray-500 font-inter text-lg">What sets us apart in every property we represent.</p>
@@ -43,7 +47,8 @@ export function OurStandard() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Card
+          <div data-card>
+            <Card
             title="Premium Materials"
             description="Italian marble, European oak flooring, and designer fixtures in every residence."
             icon={
@@ -59,8 +64,10 @@ export function OurStandard() {
                 <path d="M3 21h18M4 18h16M6 18v-8a4 4 0 014-4h4a4 4 0 014 4v8M9 10h.01M15 10h.01" />
               </svg>
             }
-          />
-          <Card
+            />
+          </div>
+          <div data-card>
+            <Card
             title="Smart Living"
             description="Integrated home automation controlling lighting, climate, and security from your device."
             icon={
@@ -76,8 +83,10 @@ export function OurStandard() {
                 <path d="M12 22v-8m0-12a6 6 0 0 0-6 6c0 2.5 1.5 4.5 3.5 5.5v2.5a2.5 2.5 0 0 0 5 0v-2.5c2-1 3.5-3 3.5-5.5a6 6 0 0 0-6-6z" />
               </svg>
             }
-          />
-          <Card
+            />
+          </div>
+          <div data-card>
+            <Card
             title="Optimal Layout"
             description="Thoughtfully designed floor plans maximizing natural light and functional space."
             icon={
@@ -93,8 +102,10 @@ export function OurStandard() {
                 <path d="M12 3v18M3 12h18M7 7l10 10M17 7L7 17" />
               </svg>
             }
-          />
-          <Card
+            />
+          </div>
+          <div data-card>
+            <Card
             title="Soundproof Design"
             description="Triple-glazed windows and acoustic insulation for absolute peace and privacy."
             icon={
@@ -110,8 +121,10 @@ export function OurStandard() {
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
               </svg>
             }
-          />
-          <Card
+            />
+          </div>
+          <div data-card>
+            <Card
             title="Energy Efficiency"
             description="A+ energy rating with solar-ready infrastructure and LED throughout."
             icon={
@@ -127,8 +140,10 @@ export function OurStandard() {
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
               </svg>
             }
-          />
-          <Card
+            />
+          </div>
+          <div data-card>
+            <Card
             title="Concierge Service"
             description="24/7 dedicated concierge team for reservations, deliveries, and assistance."
             icon={
@@ -146,7 +161,8 @@ export function OurStandard() {
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
               </svg>
             }
-          />
+            />
+          </div>
         </div>
       </div>
     </section>

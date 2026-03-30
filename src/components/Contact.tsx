@@ -1,8 +1,12 @@
+import { useScrollReveal } from '../hooks/useScrollReveal'
+
 export function Contact() {
+  const ref = useScrollReveal<HTMLElement>()
+
   return (
-    <section id="kontakt" className="py-24 bg-white scroll-mt-32">
+    <section ref={ref} id="kontakt" className="py-24 bg-white scroll-mt-32">
       <div className="max-w-[1440px] mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div data-reveal className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-[48px] font-medium text-brand-dark mb-4 tracking-tight">Skontaktuj się z nami</h2>
           <p className="text-gray-500 font-inter text-[17px] leading-relaxed">
             Masz pytania? Skontaktuj się z nami, a chętnie na nie odpowiemy.
@@ -10,7 +14,7 @@ export function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-1 space-y-6">
+          <div data-reveal className="lg:col-span-1 space-y-6">
             <div className="bg-[#F8F9FA] rounded-[32px] p-8">
               <div className="w-12 h-12 bg-brand-dark rounded-full flex items-center justify-center mb-4">
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -63,7 +67,7 @@ export function Contact() {
             </div>
           </div>
 
-          <div className="lg:col-span-2 bg-[#F8F9FA] rounded-[40px] p-10 lg:p-12">
+          <div data-reveal className="lg:col-span-2 bg-[#F8F9FA] rounded-[40px] p-10 lg:p-12">
             <form className="space-y-6 font-inter">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>

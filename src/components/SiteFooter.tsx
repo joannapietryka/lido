@@ -6,7 +6,7 @@ export function SiteFooter() {
           <div className="lg:w-1/3">
             <div className="flex items-center gap-3 mb-4">
               <img
-                src="https://images.unsplash.com/photo-1580587771525-78b7dba5b91d?w=120&q=80"
+                src="/src/assets/lido-logo-dark.png"
                 alt="Lido"
                 className="h-8 object-contain"
               />

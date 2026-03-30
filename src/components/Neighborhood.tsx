@@ -1,8 +1,12 @@
+import { useScrollReveal } from '../hooks/useScrollReveal'
+
 export function Neighborhood() {
+  const ref = useScrollReveal<HTMLElement>()
+
   return (
-    <section id="lokalizacja" className="py-24 bg-white overflow-hidden scroll-mt-32">
+    <section ref={ref} id="lokalizacja" className="py-24 bg-white overflow-hidden scroll-mt-32">
       <div className="max-w-[1440px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div className="order-2 lg:order-1 lg:pr-12">
+        <div data-reveal className="order-2 lg:order-1 lg:pr-12">
           <h2 className="text-[48px] font-medium leading-[1.05] mb-6 tracking-tight text-brand-dark">
             O lokalizacji
           </h2>
@@ -113,22 +117,26 @@ export function Neighborhood() {
           </a>
         </div>
 
-        <div className="order-1 lg:order-2 relative h-[500px] lg:h-[600px] w-full rounded-[40px] overflow-hidden">
+        <div data-reveal className="order-1 lg:order-2 relative h-[500px] lg:h-[600px] w-full rounded-[40px] overflow-hidden">
           <img
             src="/src/assets/zakrzowek.png"
             alt="zakrzowek View"
             className="w-full h-full object-cover"
+            data-parallax
           />
 
-          <div className="absolute top-[35%] left-[25%] -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute top-[15%] right-[-5%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+            <div className="bg-[#1A1A1A] text-white text-[13px] font-medium px-4 py-2 rounded-xl shadow-lg whitespace-nowrap hidden sm:block mb-2">
+              Przemiarki 15
+            </div>
             <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform">
               <div className="w-3 h-3 bg-brand-dark rounded-full" />
             </div>
           </div>
 
-          <div className="absolute top-[50%] right-[20%] -translate-x-1/2 -translate-y-1/2 flex items-center gap-3">
+          <div className="absolute top-[55%] left-[30%] -translate-x-1/2 -translate-y-1/2 flex items-center gap-3">
             <div className="bg-[#1A1A1A] text-white text-[13px] font-medium px-4 py-2 rounded-xl shadow-lg whitespace-nowrap hidden sm:block">
-              Realty Tower
+             Zakrzówek Kraków
             </div>
             <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform relative z-10">
               <div className="w-3 h-3 bg-brand-dark rounded-full" />
