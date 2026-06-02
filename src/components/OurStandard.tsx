@@ -1,4 +1,143 @@
+import { useLayoutEffect, useRef, useState } from 'react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { useTranslation } from 'react-i18next'
+import { ensureGsap, gsap } from '../utils/gsap'
+
+const INITIAL_VISIBLE_COUNT = 6
+
+type CardKey =
+  | 'fullyFurnished'
+  | 'fullyEquippedKitchen'
+  | 'elevatorAndMonitoring'
+  | 'smartLiving'
+  | 'undergroundParking'
+  | 'premiumMaterials'
+  | 'optimalLayout'
+  | 'soundproofDesign'
+  | 'spaciousStorage'
+  | 'balconyEach'
+  | 'conciergeService'
+  | 'energyEfficiency'
+
+const CARD_KEYS: CardKey[] = [
+  'fullyFurnished',
+  'fullyEquippedKitchen',
+  'elevatorAndMonitoring',
+  'smartLiving',
+  'undergroundParking',
+  'premiumMaterials',
+  'optimalLayout',
+  'soundproofDesign',
+  'spaciousStorage',
+  'balconyEach',
+  'conciergeService',
+  'energyEfficiency',
+]
+
+function CardIcon({ cardKey }: { cardKey: CardKey }) {
+  const className = 'w-6 h-6 text-brand-dark group-hover:text-white transition-colors duration-500'
+
+  switch (cardKey) {
+    case 'premiumMaterials':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" />
+          <path d="M12 12l8-4.5M12 12v9M12 12L4 7.5" />
+        </svg>
+      )
+    case 'smartLiving':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 10a1.5 1.5 0 0 0-1.5 1.5v1a1.5 1.5 0 0 0 3 0v-1A1.5 1.5 0 0 0 12 10z" />
+          <path d="M12 6.5a3.5 3.5 0 0 0-3.5 3.5V11" />
+          <path d="M12 6.5a3.5 3.5 0 0 1 3.5 3.5V11" />
+          <path d="M12 2a8 8 0 0 0-8 8v1" />
+          <path d="M12 2a8 8 0 0 1 8 8v1" />
+          <path d="M12 14v2" />
+          <path d="M10 20a2 2 0 0 0 4 0" />
+        </svg>
+      )
+    case 'optimalLayout':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="1" />
+          <path d="M3 12h9v9M12 3v9h9" />
+        </svg>
+      )
+    case 'soundproofDesign':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M11 5L6 9H3v6h3l5 4V5z" />
+          <path d="M15.54 8.46a5 5 0 010 7.07" />
+          <path d="M18.07 5.93a9 9 0 010 12.14" />
+        </svg>
+      )
+    case 'fullyEquippedKitchen':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="2" />
+          <path d="M5 11h14" />
+          <path d="M12 2v9" />
+          <path d="M8.5 15h.01M15.5 15h.01M8.5 18h.01M15.5 18h.01" />
+        </svg>
+      )
+    case 'spaciousStorage':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="4" y="2" width="16" height="20" rx="1" />
+          <path d="M12 2v20M8 7h.01M16 7h.01M8 12h.01M16 12h.01M8 17h.01M16 17h.01" />
+        </svg>
+      )
+    case 'elevatorAndMonitoring':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="4" y="4" width="10" height="16" rx="1" />
+          <path d="M9 9l-1.5 1.5L9 12" />
+          <path d="M9 15l-1.5-1.5L9 12" />
+          <path d="M17 8h3l1 2v4l-1 2h-3l-1-2V10z" />
+          <circle cx="18.5" cy="12" r="1.25" />
+        </svg>
+      )
+    case 'undergroundParking':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M5 10v4h14v-4" />
+          <path d="M7 14v4M17 14v4" />
+          <path d="M5 10l2-4h10l2 4" />
+          <circle cx="8" cy="17" r="1" />
+          <circle cx="16" cy="17" r="1" />
+        </svg>
+      )
+    case 'balconyEach':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 21h18M5 21V9l7-4 7 4v12" />
+          <path d="M9 21v-4h6v4" />
+          <path d="M16 5a2 2 0 104 0" />
+        </svg>
+      )
+    case 'fullyFurnished':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M4 12h16v5H4z" />
+          <path d="M6 12V9a2 2 0 012-2h8a2 2 0 012 2v3" />
+          <path d="M4 17v2M20 17v2" />
+        </svg>
+      )
+    case 'conciergeService':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+        </svg>
+      )
+    case 'energyEfficiency':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+        </svg>
+      )
+  }
+}
 
 function Card({
   title,
@@ -10,14 +149,14 @@ function Card({
   icon: React.ReactNode
 }) {
   return (
-    <div className="group bg-[#F8F9FA] rounded-[32px] p-8 hover:bg-brand-dark transition-colors duration-500">
-      <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 group-hover:bg-white/10 transition-colors duration-500">
+    <div className="group flex h-full min-h-[220px] flex-col bg-[#F8F9FA] rounded-[32px] p-8 hover:bg-brand-dark transition-colors duration-500">
+      <div className="mb-6 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white group-hover:bg-white/10 transition-colors duration-500">
         {icon}
       </div>
-      <h4 className="text-[20px] font-medium mb-3 text-brand-dark group-hover:text-white transition-colors duration-500">
+      <h4 className="mb-3 shrink-0 text-[20px] font-medium text-brand-dark group-hover:text-white transition-colors duration-500">
         {title}
       </h4>
-      <p className="text-gray-500 font-inter text-[14px] leading-relaxed group-hover:text-gray-400 transition-colors duration-500">
+      <p className="flex-1 font-inter text-[14px] leading-relaxed text-gray-500 group-hover:text-gray-400 transition-colors duration-500">
         {description}
       </p>
     </div>
@@ -26,146 +165,112 @@ function Card({
 
 export function OurStandard() {
   const ref = useScrollReveal<HTMLElement>({ targets: ['[data-card]'] })
+  const gridRef = useRef<HTMLDivElement>(null)
+  const [showAll, setShowAll] = useState(false)
+  const { t } = useTranslation()
+
+  const hasMore = CARD_KEYS.length > INITIAL_VISIBLE_COUNT
+  const visibleKeys = showAll ? CARD_KEYS : CARD_KEYS.slice(0, INITIAL_VISIBLE_COUNT)
+
+  useLayoutEffect(() => {
+    if (!showAll) return
+
+    const grid = gridRef.current
+    if (!grid) return
+
+    ensureGsap()
+
+    const extras = grid.querySelectorAll('[data-card-extra]')
+    if (!extras.length) return
+
+    gsap.fromTo(
+      extras,
+      { autoAlpha: 0, y: 48, scale: 0.88, filter: 'blur(6px)' },
+      {
+        autoAlpha: 1,
+        y: 0,
+        scale: 1,
+        filter: 'blur(0px)',
+        duration: 0.7,
+        ease: 'back.out(1.35)',
+        stagger: { amount: 0.45, from: 'start' },
+        clearProps: 'filter',
+      },
+    )
+  }, [showAll])
+
+  const handleToggle = () => {
+    if (showAll && gridRef.current) {
+      const extras = gridRef.current.querySelectorAll('[data-card-extra]')
+      if (extras.length) {
+        gsap.to(extras, {
+          autoAlpha: 0,
+          y: 24,
+          scale: 0.95,
+          duration: 0.35,
+          ease: 'power2.in',
+          stagger: 0.04,
+          onComplete: () => setShowAll(false),
+        })
+        return
+      }
+    }
+    setShowAll(true)
+  }
 
   return (
     <section ref={ref} id="standard" className="py-24 bg-white overflow-hidden scroll-mt-32">
       <div className="max-w-[1440px] mx-auto px-6">
         <div data-reveal className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8 text-center md:text-left">
           <div>
-            <h2 className="text-[48px] font-medium tracking-tight mb-4">Nasz Standard</h2>
-            <p className="text-gray-500 font-inter text-lg">What sets us apart in every property we represent.</p>
+            <h2 className="text-[48px] font-medium tracking-tight mb-4">{t('ourStandard.title')}</h2>
+            <p className="text-gray-500 font-inter text-lg">{t('ourStandard.subtitle')}</p>
           </div>
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 text-[15px] font-medium text-brand-dark hover:opacity-70 transition-opacity"
-          >
-            View All Features
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
+          {hasMore && (
+            <button
+              type="button"
+              onClick={handleToggle}
+              aria-expanded={showAll}
+              className="inline-flex items-center gap-2 text-[15px] font-medium text-brand-dark hover:opacity-70 transition-opacity"
+            >
+              {showAll ? t('ourStandard.viewLess') : t('ourStandard.viewAll')}
+              <svg
+                className={['w-4 h-4 transition-transform duration-500', showAll ? 'rotate-90' : ''].join(' ')}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div data-card>
-            <Card
-            title="Premium Materials"
-            description="Italian marble, European oak flooring, and designer fixtures in every residence."
-            icon={
-              <svg
-                className="w-6 h-6 text-brand-dark group-hover:text-white transition-colors duration-500"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M3 21h18M4 18h16M6 18v-8a4 4 0 014-4h4a4 4 0 014 4v8M9 10h.01M15 10h.01" />
-              </svg>
-            }
-            />
-          </div>
-          <div data-card>
-            <Card
-            title="Smart Living"
-            description="Integrated home automation controlling lighting, climate, and security from your device."
-            icon={
-              <svg
-                className="w-6 h-6 text-brand-dark group-hover:text-white transition-colors duration-500"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 22v-8m0-12a6 6 0 0 0-6 6c0 2.5 1.5 4.5 3.5 5.5v2.5a2.5 2.5 0 0 0 5 0v-2.5c2-1 3.5-3 3.5-5.5a6 6 0 0 0-6-6z" />
-              </svg>
-            }
-            />
-          </div>
-          <div data-card>
-            <Card
-            title="Optimal Layout"
-            description="Thoughtfully designed floor plans maximizing natural light and functional space."
-            icon={
-              <svg
-                className="w-6 h-6 text-brand-dark group-hover:text-white transition-colors duration-500"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 3v18M3 12h18M7 7l10 10M17 7L7 17" />
-              </svg>
-            }
-            />
-          </div>
-          <div data-card>
-            <Card
-            title="Soundproof Design"
-            description="Triple-glazed windows and acoustic insulation for absolute peace and privacy."
-            icon={
-              <svg
-                className="w-6 h-6 text-brand-dark group-hover:text-white transition-colors duration-500"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-              </svg>
-            }
-            />
-          </div>
-          <div data-card>
-            <Card
-            title="Energy Efficiency"
-            description="A+ energy rating with solar-ready infrastructure and LED throughout."
-            icon={
-              <svg
-                className="w-6 h-6 text-brand-dark group-hover:text-white transition-colors duration-500"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-              </svg>
-            }
-            />
-          </div>
-          <div data-card>
-            <Card
-            title="Concierge Service"
-            description="24/7 dedicated concierge team for reservations, deliveries, and assistance."
-            icon={
-              <svg
-                className="w-6 h-6 text-brand-dark group-hover:text-white transition-colors duration-500"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-            }
-            />
-          </div>
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3"
+          style={{ perspective: '1200px' }}
+        >
+          {visibleKeys.map((key, index) => (
+            <div
+              key={key}
+              data-card={index < INITIAL_VISIBLE_COUNT ? true : undefined}
+              data-card-extra={index >= INITIAL_VISIBLE_COUNT ? true : undefined}
+              className="h-full"
+              style={{ transformStyle: 'preserve-3d' }}
+            >
+              <Card
+                title={t(`ourStandard.cards.${key}.title`)}
+                description={t(`ourStandard.cards.${key}.description`)}
+                icon={<CardIcon cardKey={key} />}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
   )
 }
-

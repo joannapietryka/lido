@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import logoLight from '../assets/lido-logo.png'
+import { LanguageSwitch } from './LanguageSwitch'
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     if (!mobileOpen) return
@@ -25,7 +28,7 @@ export function Navbar() {
             <a
               href="#top"
               className="flex items-center gap-2 group"
-              aria-label="Lido strona główna"
+              aria-label={t('navbar.homeAria')}
               onClick={closeMobile}
             >
               <img src={logoLight} alt="Lido logo" className="h-8 object-contain" />
@@ -33,29 +36,30 @@ export function Navbar() {
 
             <div className="hidden lg:flex gap-8 text-[15px] font-medium">
               <a href="#mieszkania" className="text-gray-500 hover:text-brand-dark transition-colors">
-                Mieszkania
+                {t('navbar.apartments')}
               </a>
               <a href="#standard" className="text-gray-500 hover:text-brand-dark transition-colors">
-                Nasz standard
+                {t('navbar.standard')}
               </a>
               <a href="#lokalizacja" className="text-gray-500 hover:text-brand-dark transition-colors">
-                O lokalizacji
+                {t('navbar.location')}
               </a>
             </div>
           </div>
 
           <div className="flex items-center gap-4">
+            <LanguageSwitch />
             <a
               href="#kontakt"
               className="hidden lg:inline-flex bg-brand-dark text-white px-7 py-2.5 rounded-full text-[15px] font-medium hover:bg-gray-800 transition-transform active:scale-95"
             >
-              Kontakt
+              {t('navbar.contact')}
             </a>
 
             <button
               type="button"
               className="lg:hidden w-11 h-11 rounded-full bg-white/90 border border-white/60 shadow-sm flex items-center justify-center text-brand-dark hover:bg-white transition-transform active:scale-95"
-              aria-label={mobileOpen ? 'Zamknij menu' : 'Otwórz menu'}
+              aria-label={mobileOpen ? t('navbar.closeMenu') : t('navbar.openMenu')}
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
               onClick={() => setMobileOpen((v) => !v)}
@@ -87,21 +91,21 @@ export function Navbar() {
                 onClick={closeMobile}
                 className="px-4 py-3 rounded-2xl text-gray-700 hover:bg-white transition-colors"
               >
-                Mieszkania
+                {t('navbar.apartments')}
               </a>
               <a
                 href="#standard"
                 onClick={closeMobile}
                 className="px-4 py-3 rounded-2xl text-gray-700 hover:bg-white transition-colors"
               >
-                Nasz standard
+                {t('navbar.standard')}
               </a>
               <a
                 href="#lokalizacja"
                 onClick={closeMobile}
                 className="px-4 py-3 rounded-2xl text-gray-700 hover:bg-white transition-colors"
               >
-                O lokalizacji
+                {t('navbar.location')}
               </a>
             </div>
 
@@ -111,7 +115,7 @@ export function Navbar() {
                 onClick={closeMobile}
                 className="inline-flex w-full justify-center bg-brand-dark text-white px-7 py-3 rounded-full text-[15px] font-medium hover:bg-gray-800 transition-transform active:scale-95"
               >
-                Kontakt
+                {t('navbar.contact')}
               </a>
             </div>
           </div>
@@ -120,7 +124,7 @@ export function Navbar() {
         {mobileOpen && (
           <button
             type="button"
-            aria-label="Zamknij menu"
+            aria-label={t('navbar.closeMenu')}
             className="lg:hidden fixed inset-0 bg-black/20 pointer-events-auto z-[60]"
             onClick={closeMobile}
           />

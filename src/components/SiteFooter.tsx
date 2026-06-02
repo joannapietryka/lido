@@ -1,6 +1,8 @@
 import logoDark from '../assets/lido-logo-dark.png'
+import { useTranslation } from 'react-i18next'
 
 export function SiteFooter() {
+  const { t } = useTranslation()
   return (
     <footer className="px-6 pb-6 pt-12">
       <div className="max-w-[1440px] mx-auto bg-[#262626] text-white rounded-[40px] pt-16 pb-10 px-10 lg:px-16">
@@ -14,28 +16,28 @@ export function SiteFooter() {
               />
             </div>
             <p className="text-gray-400 font-inter text-[14px] leading-relaxed">
-              Home is where the heart is and where the memories are made
+              {t('footer.tagline')}
             </p>
           </div>
 
           <div className="flex flex-wrap gap-8 font-inter text-[15px] text-gray-400">
             <a href="#" className="hover:text-white transition-colors">
-             Mieszkania
+              {t('footer.links.apartments')}
             </a>
             <a href="#" className="hover:text-white transition-colors">
-             Nasz standard
+              {t('footer.links.standard')}
             </a>
             <a href="#" className="hover:text-white transition-colors">
-              O lokalizacji
+              {t('footer.links.location')}
             </a>
             <a href="#" className="hover:text-white transition-colors">
-              Kontakt
+              {t('footer.links.contact')}
             </a>
           </div>
         </div>
 
         <div className="pt-8 border-t border-white/10 text-[13px] font-inter text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p>© 2026 Lido. All rights reserved.</p>
+          <p>{t('footer.copyright')}</p>
         </div>
       </div>
     </footer>

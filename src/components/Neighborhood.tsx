@@ -1,20 +1,20 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import zakrzowekImg from '../assets/zakrzowek.png'
+import { useTranslation } from 'react-i18next'
 
 export function Neighborhood() {
   const ref = useScrollReveal<HTMLElement>()
+  const { t } = useTranslation()
 
   return (
     <section ref={ref} id="lokalizacja" className="py-24 bg-white overflow-hidden scroll-mt-32">
       <div className="max-w-[1440px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div data-reveal className="order-2 lg:order-1 lg:pr-12">
           <h2 className="text-[48px] font-medium leading-[1.05] mb-6 tracking-tight text-brand-dark">
-            O lokalizacji
+            {t('neighborhood.title')}
           </h2>
           <p className="text-gray-500 font-inter text-lg mb-12 leading-relaxed max-w-lg">
-            Situated in the heart of the city's most vibrant district, Realty places you steps away from
-            world-class dining, cultural landmarks, and serene green spaces. Experience the perfect balance of
-            urban excitement and tranquil living.
+            {t('neighborhood.subtitle')}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
@@ -33,9 +33,9 @@ export function Neighborhood() {
                 </svg>
               </div>
               <div>
-                <h4 className="text-[16px] font-medium mb-1 text-brand-dark">Transit Hub</h4>
+                <h4 className="text-[16px] font-medium mb-1 text-brand-dark">{t('neighborhood.items.transit.title')}</h4>
                 <p className="text-gray-500 font-inter text-[14px] leading-relaxed">
-                  2 min walk to Central Station connecting all major lines.
+                  {t('neighborhood.items.transit.description')}
                 </p>
               </div>
             </div>
@@ -55,9 +55,9 @@ export function Neighborhood() {
                 </svg>
               </div>
               <div>
-                <h4 className="text-[16px] font-medium mb-1 text-brand-dark">Cafes &amp; Dining</h4>
+                <h4 className="text-[16px] font-medium mb-1 text-brand-dark">{t('neighborhood.items.dining.title')}</h4>
                 <p className="text-gray-500 font-inter text-[14px] leading-relaxed">
-                  Over 50 premium restaurants and artisan cafes nearby.
+                  {t('neighborhood.items.dining.description')}
                 </p>
               </div>
             </div>
@@ -77,9 +77,9 @@ export function Neighborhood() {
                 </svg>
               </div>
               <div>
-                <h4 className="text-[16px] font-medium mb-1 text-brand-dark">Urban Parks</h4>
+                <h4 className="text-[16px] font-medium mb-1 text-brand-dark">{t('neighborhood.items.parks.title')}</h4>
                 <p className="text-gray-500 font-inter text-[14px] leading-relaxed">
-                  Direct access to Riverside Park for morning jogs.
+                  {t('neighborhood.items.parks.description')}
                 </p>
               </div>
             </div>
@@ -99,9 +99,9 @@ export function Neighborhood() {
                 </svg>
               </div>
               <div>
-                <h4 className="text-[16px] font-medium mb-1 text-brand-dark">Retail District</h4>
+                <h4 className="text-[16px] font-medium mb-1 text-brand-dark">{t('neighborhood.items.retail.title')}</h4>
                 <p className="text-gray-500 font-inter text-[14px] leading-relaxed">
-                  High-end boutiques and everyday essentials just around the corner.
+                  {t('neighborhood.items.retail.description')}
                 </p>
               </div>
             </div>
@@ -111,7 +111,7 @@ export function Neighborhood() {
             href="#"
             className="inline-flex items-center gap-2 text-[15px] font-medium text-brand-dark hover:opacity-70 transition-opacity"
           >
-            View Interactive Map
+            {t('neighborhood.viewMap')}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
@@ -121,14 +121,14 @@ export function Neighborhood() {
         <div data-reveal className="order-1 lg:order-2 relative h-[500px] lg:h-[600px] w-full rounded-[40px] overflow-hidden">
           <img
             src={zakrzowekImg}
-            alt="zakrzowek View"
-            className="w-full h-full object-cover"
+            alt="Zakrzówek"
+            className="w-full h-full object-cover will-change-transform scale-[1.06]"
             data-parallax
           />
 
           <div className="absolute top-[15%] right-[-5%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
             <div className="bg-[#1A1A1A] text-white text-[13px] font-medium px-4 py-2 rounded-xl shadow-lg whitespace-nowrap hidden sm:block mb-2">
-              Przemiarki 15
+              {t('neighborhood.pin1')}
             </div>
             <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform">
               <div className="w-3 h-3 bg-brand-dark rounded-full" />
@@ -137,7 +137,7 @@ export function Neighborhood() {
 
           <div className="absolute top-[55%] left-[30%] -translate-x-1/2 -translate-y-1/2 flex items-center gap-3">
             <div className="bg-[#1A1A1A] text-white text-[13px] font-medium px-4 py-2 rounded-xl shadow-lg whitespace-nowrap hidden sm:block">
-             Zakrzówek Kraków
+              {t('neighborhood.pin2')}
             </div>
             <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform relative z-10">
               <div className="w-3 h-3 bg-brand-dark rounded-full" />

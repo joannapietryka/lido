@@ -1,0 +1,157 @@
+{
+  "language": {
+    "en": "EN",
+    "pl": "PL"
+  },
+  "navbar": {
+    "homeAria": "Lido home",
+    "apartments": "Apartments",
+    "standard": "Our standard",
+    "location": "Location",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "titleLine1": "Your new address",
+    "titleEmphasis": "on the map of Kraków",
+    "subtitle": "Apartments designed for your rhythm — close to university, work, and the city.",
+    "badgeNew": "New apartments",
+    "areaTitle": "Ruczaj, Kraków",
+    "address": "Przemiarki 15",
+    "statsCount": "35+",
+    "statsLabel": "Apartments",
+    "statsDescription": "Functional interiors, a great location, and a quiet neighborhood."
+  },
+  "floorPlans": {
+    "title": "Apartment offer",
+    "subtitle": "We offer two apartment types in Ruczaj:\ncompact studio and a 2-room apartment with a separate kitchen.",
+    "tabStudio": "Studio",
+    "tabTwoRooms": "2 rooms",
+    "availableNow": "Available now",
+    "priceFrom": "from {{price}}",
+    "oneRoomApartment": "1-room apartment",
+    "twoRoomApartment": "2-room apartment",
+    "premiumFeatures": "Premium features",
+    "ceilings": "Ceilings",
+    "energy": "Energy",
+    "concierge": "Concierge",
+    "oneRoom": "1 room",
+    "twoRooms": "2 rooms",
+    "oneBath": "1 bathroom",
+    "featureStudio": "Ideal for singles who value being close to universities and public transport.",
+    "featureTwoRooms": "A perfect option for couples and roommates who value peace and comfort."
+  },
+  "ourStandard": {
+    "title": "Our standard",
+    "subtitle": "What sets us apart in every property we represent.",
+    "viewAll": "View all features",
+    "viewLess": "Show less",
+    "cards": {
+      "premiumMaterials": {
+        "title": "Solid materials",
+        "description": "Durable flooring, uniform tiles, and carefully selected finishes in every apartment."
+      },
+      "smartLiving": {
+        "title": "Fingerprint lock",
+        "description": "Keyless entry — fast, secure, and convenient."
+      },
+      "optimalLayout": {
+        "title": "Functional layout",
+        "description": "Well-thought-out floor plans that make use of natural light and space."
+      },
+      "soundproofDesign": {
+        "title": "Good sound insulation",
+        "description": "Double-glazed windows and standard insulation — everyday peace and quiet."
+      },
+      "fullyEquippedKitchen": {
+        "title": "Fully equipped kitchen",
+        "description": "Fridge, stove, oven, and dishwasher — ready for everyday use."
+      },
+      "spaciousStorage": {
+        "title": "Spacious wardrobes",
+        "description": "Plenty of built-in closets and storage space."
+      },
+      "elevatorAndMonitoring": {
+        "title": "Elevator and CCTV",
+        "description": "Elevator to every floor plus monitoring of the grounds and stairwells."
+      },
+      "undergroundParking": {
+        "title": "Underground garage",
+        "description": "A parking space in the garage under the building."
+      },
+      "balconyEach": {
+        "title": "Private balcony",
+        "description": "Every apartment has a balcony or loggia — for morning coffee and fresh air."
+      },
+      "fullyFurnished": {
+        "title": "Move-in ready",
+        "description": "Fully furnished apartments — move in and start living right away."
+      },
+      "conciergeService": {
+        "title": "Support when you need it",
+        "description": "On-call handyman for minor repairs and emergencies."
+      },
+      "energyEfficiency": {
+        "title": "Energy efficiency",
+        "description": "A energy rating - lower energy consumption."
+      }
+    }
+  },
+  "neighborhood": {
+    "title": "Location",
+    "subtitle": "Situated close to Kraków's key universities and business areas – including the Kampus 600-lecia UJ and Business Park Czerwone Maki, as well as Centrum Handlowe Atut and the Hala Maki food court – Lido Apartments place you just a short walk from a tram stop, putting the center of Kraków only 20 minutes away.",
+    "items": {
+      "transit": {
+        "title": "Public transport",
+        "description": "3 min walk to the tram stop"
+      },
+      "dining": {
+        "title": "Cafes & restaurants",
+        "description": "Pizza Hut, GoodLood, or maybe sushi?"
+      },
+      "parks": {
+        "title": "Urban green spaces",
+        "description": "Quick access to walking areas and recreation."
+      },
+      "retail": {
+        "title": "Shops and services",
+        "description": "Grocery stores, pharmacies, and all everyday essentials just around the corner."
+      }
+    },
+    "viewMap": "View interactive map",
+    "pin1": "Przemiarki 15",
+    "pin2": "Zakrzówek, Kraków"
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Have questions? Get in touch — we’ll be happy to help.",
+    "write": "Email",
+    "call": "Call",
+    "office": "Our office",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email address",
+    "phone": "Phone number",
+    "message": "Message",
+    "send": "Send",
+    "placeholders": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john@example.com",
+      "phone": "+1 (555) 000-0000",
+      "message": "I'm interested in the 2 bedroom floor plans..."
+    }
+  },
+  "footer": {
+    "tagline": "Home is where the heart is and where the memories are made",
+    "links": {
+      "apartments": "Apartments",
+      "standard": "Our standard",
+      "location": "Location",
+      "contact": "Contact"
+    },
+    "copyright": "© 2026 Lido. All rights reserved."
+  }
+}
+

@@ -1,0 +1,157 @@
+{
+  "language": {
+    "en": "EN",
+    "pl": "PL"
+  },
+  "navbar": {
+    "homeAria": "Lido strona główna",
+    "apartments": "Mieszkania",
+    "standard": "Nasz standard",
+    "location": "O lokalizacji",
+    "contact": "Kontakt",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu"
+  },
+  "hero": {
+    "titleLine1": "Twój nowy adres",
+    "titleEmphasis": "na mapie Krakowa",
+    "subtitle": "Mieszkania stworzone z myślą o Twoim rytmie – blisko uczelni, pracy i miasta",
+    "badgeNew": "Nowe mieszkania",
+    "areaTitle": "Ruczaj Kraków",
+    "address": "Przemiarki 15",
+    "statsCount": "35+",
+    "statsLabel": "Mieszkań",
+    "statsDescription": "Funkcjonalne wnętrza, dobra lokalizacja i spokojna okolica"
+  },
+  "floorPlans": {
+    "title": "Oferta Mieszkań",
+    "subtitle": "Oferujemy dwa rodzaje mieszkań na Ruczaju:\nkompaktowe studio oraz mieszkanie 2-pokojowe z osobną kuchnią.",
+    "tabStudio": "Studio",
+    "tabTwoRooms": "2 Pokoje",
+    "availableNow": "Dostępne teraz",
+    "priceFrom": "od {{price}}",
+    "oneRoomApartment": "Mieszkanie 1-pokojowe",
+    "twoRoomApartment": "Mieszkanie 2-pokojowe",
+    "premiumFeatures": "Dodatkowe atuty",
+    "ceilings": "Sufity",
+    "energy": "Energia",
+    "concierge": "Monitoring",
+    "oneRoom": "1 Pokój",
+    "twoRooms": "2 Pokoje",
+    "oneBath": "1 Łazienka",
+    "featureStudio": "Idealne dla singli, którzy cenią sobie bliskość uczelni oraz komunikacji.",
+    "featureTwoRooms": "Dwa pokoje to doskonałe rozwiązanie dla par i współlokatorów, którzy cenią sobie spokój i komfort."
+  },
+  "ourStandard": {
+    "title": "Nasz Standard",
+    "subtitle": "Co nas wyróżnia w każdej inwestycji.",
+    "viewAll": "Zobacz wszystkie cechy",
+    "viewLess": "Pokaż mniej",
+    "cards": {
+      "fullyFurnished": {
+        "title": "Umeblowane od ręki",
+        "description": "Mieszkanie jest w pełni umeblowane – wprowadź się i od razu korzystaj."
+      },
+      "fullyEquippedKitchen": {
+        "title": "W pełni wyposażona kuchnia",
+        "description": "Lodówka, kuchenka, piekarnik i zmywarka – gotowe do codziennego użytku."
+      },
+      "elevatorAndMonitoring": {
+        "title": "Winda i monitoring",
+        "description": "Winda na każdą kondygnację oraz monitoring terenu i klatek schodowych."
+      },
+      "smartLiving": {
+        "title": "Zamek na odcisk palca",
+        "description": "Wejście bez klucza – szybko, bezpiecznie i wygodnie."
+      },
+      "undergroundParking": {
+        "title": "Garaż podziemny",
+        "description": "Miejsce parkingowe w hali garażowej pod budynkiem."
+      },
+      "premiumMaterials": {
+        "title": "Solidne materiały",
+        "description": "Trwałe podłogi, jednolite glazury i starannie dobrane wyposażenie w każdym mieszkaniu."
+      },
+      "optimalLayout": {
+        "title": "Funkcjonalny układ",
+        "description": "Przemyślany plan mieszkań, który wykorzystuje naturalne światło i przestrzeń."
+      },
+      "soundproofDesign": {
+        "title": "Dobra izolacja akustyczna",
+        "description": "Okna zespolone i standardowa izolacja – spokój na co dzień."
+      },
+      "spaciousStorage": {
+        "title": "Pojemne szafy",
+        "description": "Dużo wbudowanych szaf i miejsca na przechowywanie."
+      },
+      "balconyEach": {
+        "title": "Własny balkon",
+        "description": "Każde mieszkanie ma balkon lub loggię – na poranną kawę i chwilę na powietrzu."
+      },
+      "conciergeService": {
+        "title": "Pomocna obsługa",
+        "description": "Dyżur techniczny (tzw. złota rączka) w razie drobnych napraw i awarii."
+      },
+      "energyEfficiency": {
+        "title": "Efektywność energetyczna",
+        "description": "Klasa energetyczna A - mniejsze zużycie energii."
+      }
+    }
+  },
+  "neighborhood": {
+    "title": "O lokalizacji",
+    "subtitle": "Położone blisko kluczowych krakowskich ośrodków akademickich i biznesowych – w tym Kampusu 600-lecia UJ i Business Park Czerwone Maki, a także Centrum Handlowego Atut oraz strefy food court w Hali Maki – apartamenty Lido znajdują się zaledwie kilka kroków od przystanku tramwajowego, skąd w ciągu 20 minut można dotrzeć do centrum Krakowa",
+    "items": {
+      "transit": {
+        "title": "Komunikacja",
+        "description": "3 min pieszo do przystanku tramwajowego"
+      },
+      "dining": {
+        "title": "Kawiarnie i restauracje",
+        "description": "PizzaHut, GoodLood, a może sushi?"
+      },
+      "parks": {
+        "title": "Zieleń miejska",
+        "description": "Szybki dostęp do terenów spacerowych i rekreacji."
+      },
+      "retail": {
+        "title": "Sklepy i punkty usługowe",
+        "description": "Sklepy spożywcze, apteki i wszystkie niezbędne usługi tuż za rogiem."
+      }
+    },
+    "viewMap": "Zobacz mapę",
+    "pin1": "Przemiarki 15",
+    "pin2": "Zakrzówek Kraków"
+  },
+  "contact": {
+    "title": "Skontaktuj się z nami",
+    "subtitle": "Masz pytania? Skontaktuj się z nami, a chętnie na nie odpowiemy.",
+    "write": "Napisz",
+    "call": "Zadzwoń",
+    "office": "Nasze biuro",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "email": "Adres Email",
+    "phone": "Numer Telefonu",
+    "message": "Wiadomość",
+    "send": "Wyślij",
+    "placeholders": {
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "email": "jan@example.com",
+      "phone": "+48 000 000 000",
+      "message": "Interesują mnie mieszkania 2-pokojowe..."
+    }
+  },
+  "footer": {
+    "tagline": "Dom to miejsce, gdzie jest serce i gdzie powstają wspomnienia",
+    "links": {
+      "apartments": "Mieszkania",
+      "standard": "Nasz standard",
+      "location": "O lokalizacji",
+      "contact": "Kontakt"
+    },
+    "copyright": "© 2026 Lido. Wszelkie prawa zastrzeżone."
+  }
+}
+

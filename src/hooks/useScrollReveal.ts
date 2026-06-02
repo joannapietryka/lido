@@ -20,13 +20,14 @@ export function useScrollReveal<T extends HTMLElement>(options: UseScrollRevealO
         el.querySelectorAll('[data-parallax]'),
         { y: 0 },
         {
-          y: -18,
+          y: -40,
           ease: 'none',
           scrollTrigger: {
             trigger: el,
             start: 'top bottom',
             end: 'bottom top',
             scrub: true,
+            invalidateOnRefresh: true,
           },
         },
       )

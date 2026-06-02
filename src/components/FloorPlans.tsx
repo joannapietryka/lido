@@ -1,5 +1,12 @@
 import { useMemo, useState } from 'react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { useTranslation } from 'react-i18next'
+import pokoj1aImg from '../assets/pokoj-1a.png'
+import pokoj1bImg from '../assets/pokoj-1b.png'
+import pokoj1cImg from '../assets/pokoj-1c.jpeg'
+import pokoj2aImg from '../assets/pokoj-2a.jpeg'
+import pokoj2bImg from '../assets/pokoj-2b.png'
+import pokoj2cImg from '../assets/pokoj-2c.png'
 
 type TabId = '1bed' | '2bed'
 
@@ -25,26 +32,27 @@ function FeatureCard({
   energy: string
   concierge: string
 }) {
+  const { t } = useTranslation()
   return (
     <div className="bg-brand-dark rounded-[32px] p-8 flex flex-col justify-between flex-[45] min-h-0 overflow-hidden">
       <div>
-        <h4 className="text-white text-[18px] font-medium mb-3">Premium Features</h4>
+        <h4 className="text-white text-[18px] font-medium mb-3">{t('floorPlans.premiumFeatures')}</h4>
         <p className="text-gray-400 text-[14px] font-inter leading-relaxed">{description}</p>
       </div>
       <div className="flex items-center gap-6 mt-6">
         <div className="text-center">
           <span className="block text-white text-[24px] font-medium">{ceilings}</span>
-          <span className="text-gray-500 text-[11px] font-inter uppercase tracking-wider">Ceilings</span>
+          <span className="text-gray-500 text-[11px] font-inter uppercase tracking-wider">{t('floorPlans.ceilings')}</span>
         </div>
         <div className="w-px h-8 bg-gray-700" />
         <div className="text-center">
           <span className="block text-white text-[24px] font-medium">{energy}</span>
-          <span className="text-gray-500 text-[11px] font-inter uppercase tracking-wider">Energy</span>
+          <span className="text-gray-500 text-[11px] font-inter uppercase tracking-wider">{t('floorPlans.energy')}</span>
         </div>
         <div className="w-px h-8 bg-gray-700" />
         <div className="text-center">
           <span className="block text-white text-[24px] font-medium">{concierge}</span>
-          <span className="text-gray-500 text-[11px] font-inter uppercase tracking-wider">Concierge</span>
+          <span className="text-gray-500 text-[11px] font-inter uppercase tracking-wider">{t('floorPlans.concierge')}</span>
         </div>
       </div>
     </div>
@@ -85,15 +93,16 @@ function PlanImage({
   bathsText: string
   src: string
 }) {
+  const { t } = useTranslation()
   return (
     <div className="lg:col-span-7 relative rounded-[40px] overflow-hidden group h-full">
       <img src={src} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-      <StarPill label="Available Now" />
+      <StarPill label={t('floorPlans.availableNow')} />
       <div className="absolute bottom-8 left-8 right-8">
-        <h3 className="text-[32px] lg:text-[40px] font-medium text-white mb-2 tracking-tight">The Metropolitan</h3>
+        <h3 className="text-[32px] lg:text-[40px] font-medium text-white mb-2 tracking-tight">{t('floorPlans.oneRoomApartment')}</h3>
         <p className="text-white/80 text-[13px] font-inter uppercase tracking-widest mb-4">
-          Downtown District • {area}
+          Kraków Ruczaj • {area}
         </p>
         <div className="flex items-center gap-6 text-white/90 text-sm font-inter">
           <span className="flex items-center gap-2">
@@ -120,7 +129,7 @@ function PlanImage({
             {bathsText}
           </span>
           <span className="w-1 h-1 bg-white/50 rounded-full" />
-          <span className="text-white font-semibold text-[16px]">{price}</span>
+          <span className="text-white font-semibold text-[16px]">{t('floorPlans.priceFrom', { price })}</span>
         </div>
       </div>
     </div>
@@ -130,43 +139,30 @@ function PlanImage({
 export function FloorPlans() {
   const [tab, setTab] = useState<TabId>('1bed')
   const ref = useScrollReveal<HTMLElement>()
+  const { t } = useTranslation()
 
   const config = useMemo(() => {
     return {
       '1bed': {
-        area: '850 sqft',
-        price: '$2,400/mo',
-        bedsText: '1 Pokój',
-        bathsText: '1 Łazienka',
-        heroSrc:
-          'https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-        feature:
-          'Idealne dla singli, którzy cenią sobie bliskość uczelni oraz komunikacji.',
+        area: '20 m²',
+        price: '1 800 zł',
+        heroSrc: pokoj1aImg,
         ceilings: "10'",
         energy: 'A+',
         concierge: '24/7',
-        leftImg:
-          'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        rightImg:
-          'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        leftImg: pokoj1bImg,
+        rightImg: pokoj1cImg,
         rightColOrder: '',
       },
       '2bed': {
-        area: '1,200 sqft',
-        price: '$3,200/mo',
-        bedsText: '2 Pokoje',
-        bathsText: '1 Łazienka',
-        heroSrc:
-          'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-        feature:
-          'dwa pokoje to doskonałe rozwiązanie dla par i współlokatorów, którzy cenią sobie spokój i komfort.',
+        area: '40 m²',
+        price: '2 500 zł',
+        heroSrc: pokoj2aImg,
         ceilings: "12'",
         energy: 'A+',
         concierge: '24/7',
-        leftImg:
-          'https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        rightImg:
-          'https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        leftImg: pokoj2bImg,
+        rightImg: pokoj2cImg,
         rightColOrder: 'order-2 lg:order-1',
       },
     } satisfies Record<TabId, unknown>
@@ -177,8 +173,8 @@ export function FloorPlans() {
       <div className="max-w-[1440px] mx-auto px-6">
         <div data-reveal className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8 text-center md:text-left">
           <div>
-            <h2 className="text-[48px] font-medium tracking-tight mb-4">Oferta Mieszkań</h2>
-            <p className="text-gray-500 font-inter text-lg">Oferujemy dwa rodzaje mieszkań na Ruczaju:<br/> kompaktowe studio oraz mieszkanie 2-pokojowe z osobną kuchnią.</p>
+            <h2 className="text-[48px] font-medium tracking-tight mb-4">{t('floorPlans.title')}</h2>
+            <p className="text-gray-500 font-inter text-lg whitespace-pre-line">{t('floorPlans.subtitle')}</p>
           </div>
 
           <div className="bg-[#F8F9FA] p-1.5 rounded-full flex gap-1 border border-gray-100">
@@ -190,7 +186,7 @@ export function FloorPlans() {
                 tab === '1bed' ? 'bg-brand-dark text-white shadow-md' : 'text-gray-500 hover:text-brand-dark',
               ].join(' ')}
             >
-              Studio
+              {t('floorPlans.tabStudio')}
             </button>
             <button
               type="button"
@@ -200,18 +196,24 @@ export function FloorPlans() {
                 tab === '2bed' ? 'bg-brand-dark text-white shadow-md' : 'text-gray-500 hover:text-brand-dark',
               ].join(' ')}
             >
-              2 Pokoje
+              {t('floorPlans.tabTwoRooms')}
             </button>
           </div>
         </div>
 
         <div id="1bed" className={['tab-content', tab === '1bed' ? 'active' : ''].join(' ')}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-[550px]">
-            <PlanImage area="850 sqft" price="$2,400/mo" bedsText="1 Bedroom" bathsText="1 Bath" src={config['1bed'].heroSrc} />
+            <PlanImage
+              area={config['1bed'].area}
+              price={config['1bed'].price}
+              bedsText={t('floorPlans.oneRoom')}
+              bathsText={t('floorPlans.oneBath')}
+              src={config['1bed'].heroSrc}
+            />
             <div className="lg:col-span-5 flex flex-col gap-5 h-full min-h-0">
               <div data-reveal className="h-full flex flex-col gap-5 min-h-0">
                 <FeatureCard
-                description={config['1bed'].feature}
+                description={t('floorPlans.featureStudio')}
                 ceilings={config['1bed'].ceilings}
                 energy={config['1bed'].energy}
                 concierge={config['1bed'].concierge}
@@ -227,7 +229,7 @@ export function FloorPlans() {
             <div className={['lg:col-span-5 flex flex-col gap-5 h-full min-h-0', config['2bed'].rightColOrder].join(' ')}>
               <div data-reveal className="h-full flex flex-col gap-5 min-h-0">
                 <FeatureCard
-                description={config['2bed'].feature}
+                description={t('floorPlans.featureTwoRooms')}
                 ceilings={config['2bed'].ceilings}
                 energy={config['2bed'].energy}
                 concierge={config['2bed'].concierge}
@@ -242,13 +244,13 @@ export function FloorPlans() {
                 alt=""
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              <StarPill label="Available Now" />
+              <StarPill label={t('floorPlans.availableNow')} />
               <div className="absolute bottom-8 left-8 right-8">
                 <h3 className="text-[32px] lg:text-[40px] font-medium text-white mb-2 tracking-tight">
-                  The Metropolitan
+                  {t('floorPlans.twoRoomApartment')}
                 </h3>
                 <p className="text-white/80 text-[13px] font-inter uppercase tracking-widest mb-4">
-                  Downtown District • {config['2bed'].area}
+                  Kraków Ruczaj • {config['2bed'].area}
                 </p>
                 <div className="flex items-center gap-6 text-white/90 text-sm font-inter">
                   <span className="flex items-center gap-2">
@@ -260,7 +262,7 @@ export function FloorPlans() {
                         d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                       />
                     </svg>
-                    {config['2bed'].bedsText}
+                    {t('floorPlans.twoRooms')}
                   </span>
                   <span className="w-1 h-1 bg-white/50 rounded-full" />
                   <span className="flex items-center gap-2">
@@ -272,10 +274,10 @@ export function FloorPlans() {
                         d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
                       />
                     </svg>
-                    {config['2bed'].bathsText}
+                    {t('floorPlans.oneBath')}
                   </span>
                   <span className="w-1 h-1 bg-white/50 rounded-full" />
-                  <span className="text-white font-semibold text-[16px]">{config['2bed'].price}</span>
+                  <span className="text-white font-semibold text-[16px]">{t('floorPlans.priceFrom', { price: config['2bed'].price })}</span>
                 </div>
               </div>
             </div>
