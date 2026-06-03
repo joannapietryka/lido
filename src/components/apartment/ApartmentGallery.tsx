@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import type { ApartmentData, GalleryPhoto } from '../../data/apartments'
@@ -33,10 +33,17 @@ function GalleryTile({
 
 export function ApartmentGallery({ apartment }: { apartment: ApartmentData }) {
   const { t } = useTranslation()
-  const ref = useScrollReveal<HTMLDivElement>()
+  const ref = useScrollReveal<HTMLDivElement>({
+    trigger: 'immediate',
+    resetKey: apartment.slug,
+  })
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   const photos = apartment.photos
+
+  useEffect(() => {
+    setLightboxIndex(null)
+  }, [apartment.slug])
   const preview = photos.slice(0, GALLERY_PREVIEW_COUNT)
   const extraCount = Math.max(0, photos.length - GALLERY_PREVIEW_COUNT)
 

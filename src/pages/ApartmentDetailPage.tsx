@@ -18,15 +18,22 @@ export function ApartmentDetailPage() {
   const apartment = APARTMENTS[slug]
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-    requestAnimationFrame(() => refreshScrollTriggers())
+    const frame = requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        refreshScrollTriggers()
+        window.scrollTo(0, 0)
+      })
+    })
+    return () => cancelAnimationFrame(frame)
   }, [slug])
 
   return (
     <div className="w-full min-h-screen bg-white">
       <Navbar />
-      <ApartmentGallery key={slug} apartment={apartment} />
-      <ApartmentDetailMain key={slug} />
+      <div key={slug}>
+        <ApartmentGallery apartment={apartment} />
+        <ApartmentDetailMain />
+      </div>
       <ApartmentDetailCta />
       <SiteFooter />
     </div>

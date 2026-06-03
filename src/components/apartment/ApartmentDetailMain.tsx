@@ -7,8 +7,8 @@ import { ApartmentAmenityIcon, AMENITY_KEYS } from './ApartmentAmenityIcon'
 export function ApartmentDetailMain() {
   const { slug } = useParams<{ slug: ApartmentSlug }>()
   const { t } = useTranslation()
-  const ref = useScrollReveal<HTMLElement>()
   const activeSlug = slug ?? 'studio'
+  const ref = useScrollReveal<HTMLElement>({ resetKey: activeSlug })
 
   const stats = [
     { label: t('apartmentDetail.stats.price'), value: t(`apartmentDetail.units.${activeSlug}.price`) },
