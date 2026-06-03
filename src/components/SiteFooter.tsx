@@ -1,12 +1,16 @@
+import { Link } from 'react-router-dom'
 import logoDark from '../assets/lido-logo-dark.png'
 import { useTranslation } from 'react-i18next'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
 export function SiteFooter() {
   const { t } = useTranslation()
+  const ref = useScrollReveal<HTMLElement>()
+
   return (
-    <footer className="px-6 pb-6 pt-12">
+    <footer ref={ref} className="px-6 pb-6 pt-12">
       <div className="max-w-[1440px] mx-auto bg-[#262626] text-white rounded-[40px] pt-16 pb-10 px-10 lg:px-16">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 mb-16">
+        <div data-reveal className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 mb-16">
           <div className="lg:w-1/3">
             <div className="flex items-center gap-3 mb-4">
               <img
@@ -21,22 +25,22 @@ export function SiteFooter() {
           </div>
 
           <div className="flex flex-wrap gap-8 font-inter text-[15px] text-gray-400">
-            <a href="#" className="hover:text-white transition-colors">
+            <Link to="/#mieszkania" className="hover:text-white transition-colors">
               {t('footer.links.apartments')}
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
+            </Link>
+            <Link to="/#standard" className="hover:text-white transition-colors">
               {t('footer.links.standard')}
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
+            </Link>
+            <Link to="/#lokalizacja" className="hover:text-white transition-colors">
               {t('footer.links.location')}
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
+            </Link>
+            <Link to="/#kontakt" className="hover:text-white transition-colors">
               {t('footer.links.contact')}
-            </a>
+            </Link>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 text-[13px] font-inter text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div data-reveal className="pt-8 border-t border-white/10 text-[13px] font-inter text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p>{t('footer.copyright')}</p>
         </div>
       </div>

@@ -1,4 +1,21 @@
 {
+  "meta": {
+    "siteName": "Lido",
+    "home": {
+      "title": "Lido — apartments in Ruczaj | Przemiarki 15, Kraków",
+      "description": "Apartments designed for your rhythm in Ruczaj. Furnished studio and 2-room units — Przemiarki 15, Kraków."
+    },
+    "apartment": {
+      "studio": {
+        "title": "1-room apartment | Lido Ruczaj, Kraków",
+        "description": "Functional 20 m² studio in Ruczaj — furnished, equipped, close to universities and transport. Lido, Przemiarki 15."
+      },
+      "2-pokoje": {
+        "title": "2-room apartment | Lido Ruczaj, Kraków",
+        "description": "40 m² two-room apartment in Ruczaj with separate kitchen — two rooms, balcony, fully equipped. Lido, Przemiarki 15."
+      }
+    }
+  },
   "language": {
     "en": "EN",
     "pl": "PL"
@@ -33,14 +50,16 @@
     "oneRoomApartment": "1-room apartment",
     "twoRoomApartment": "2-room apartment",
     "premiumFeatures": "Premium features",
-    "ceilings": "Ceilings",
+    "equipment": "Equipment",
+    "equipmentValue": "A-Z",
     "energy": "Energy",
     "concierge": "Concierge",
     "oneRoom": "1 room",
     "twoRooms": "2 rooms",
     "oneBath": "1 bathroom",
     "featureStudio": "Ideal for singles who value being close to universities and public transport.",
-    "featureTwoRooms": "A perfect option for couples and roommates who value peace and comfort."
+    "featureTwoRooms": "A perfect option for couples and roommates who value peace and comfort.",
+    "viewDetails": "View details"
   },
   "ourStandard": {
     "title": "Our standard",
@@ -143,8 +162,73 @@
       "message": "I'm interested in the 2 bedroom floor plans..."
     }
   },
+  "apartmentDetail": {
+    "morePhotos": "+{{count}} photos",
+    "closeGallery": "Close gallery",
+    "prevPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
+    "photoCounter": "{{current}} / {{total}}",
+    "galleryLightboxLabel": "Apartment photo gallery",
+    "address": "Przemiarki 15, Kraków Ruczaj",
+    "descriptionTitle": "Property description",
+    "amenitiesTitle": "Premium amenities",
+    "stats": {
+      "price": "Price",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "area": "Area"
+    },
+    "tabs": {
+      "studio": "Studio",
+      "2-pokoje": "2 bedrooms"
+    },
+    "gallery": {
+      "main": "Main apartment photo",
+      "living": "Living area",
+      "kitchen": "Kitchen",
+      "bedroom": "Bedroom",
+      "interior": "Interior",
+      "building": "Lido building",
+      "buildingExterior": "Lido building exterior view",
+      "extra": "Apartment photo"
+    },
+    "amenities": {
+      "security": "24/7 CCTV",
+      "fingerprint": "Fingerprint lock",
+      "elevator": "Elevator",
+      "parking": "Underground garage",
+      "kitchen": "Fully equipped kitchen",
+      "balcony": "Private balcony",
+      "energy": "Energy class A",
+      "handyman": "On-call handyman",
+      "storage": "Spacious wardrobes"
+    },
+    "units": {
+      "studio": {
+        "title": "1-room apartment in Ruczaj",
+        "price": "from PLN 1,800/mo",
+        "bedrooms": "1 room",
+        "bathrooms": "1 bath",
+        "area": "20 m²",
+        "description": "A functional studio with a thoughtful layout. Fully furnished and equipped - move in right away and enjoy life in Ruczaj.\n\nA modern kitchen with fridge, stove, oven, and dishwasher. A private space to work and relax in a quiet area, close to universities and public transport."
+      },
+      "2-pokoje": {
+        "title": "2-room apartment in Ruczaj",
+        "price": "from PLN 2,500/mo",
+        "bedrooms": "2 rooms",
+        "bathrooms": "1 bath",
+        "area": "40 m²",
+        "description": "A spacious two-room apartment with a separate kitchen — ideal for couples or roommates. Bright interiors, a balcony, and full equipment from A to Z.\n\nTwo separate rooms offer comfort for work and rest. Kitchen with full appliances, plenty of storage, and quick access to central Kraków by tram."
+      }
+    },
+    "cta": {
+      "title": "Ready to find\nyour new home?",
+      "subtitle": "Get in touch to schedule a viewing or learn more about available apartments at Lido in Ruczaj.",
+      "button": "Contact us"
+    }
+  },
   "footer": {
-    "tagline": "Home is where the heart is and where the memories are made",
+    "tagline": "A place where you can be yourself",
     "links": {
       "apartments": "Apartments",
       "standard": "Our standard",

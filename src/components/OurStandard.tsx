@@ -11,12 +11,12 @@ type CardKey =
   | 'elevatorAndMonitoring'
   | 'smartLiving'
   | 'undergroundParking'
+  | 'conciergeService'
   | 'premiumMaterials'
   | 'optimalLayout'
   | 'soundproofDesign'
   | 'spaciousStorage'
   | 'balconyEach'
-  | 'conciergeService'
   | 'energyEfficiency'
 
 const CARD_KEYS: CardKey[] = [
@@ -25,12 +25,12 @@ const CARD_KEYS: CardKey[] = [
   'elevatorAndMonitoring',
   'smartLiving',
   'undergroundParking',
+  'conciergeService',
   'premiumMaterials',
   'optimalLayout',
   'soundproofDesign',
   'spaciousStorage',
   'balconyEach',
-  'conciergeService',
   'energyEfficiency',
 ]
 

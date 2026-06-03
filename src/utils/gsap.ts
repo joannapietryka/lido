@@ -9,5 +9,10 @@ export function ensureGsap() {
   registered = true
 }
 
+export function refreshScrollTriggers() {
+  ensureGsap()
+  ScrollTrigger.refresh()
+}
+
 export { gsap, ScrollTrigger }
 

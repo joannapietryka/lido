@@ -11,8 +11,10 @@ export default {
         brand: {
           dark: '#111315',
           darker: '#262626',
+          charcoal: '#1A1A1A',
           gray: '#FAFAFA',
           light: '#FFFFFF',
+          lighter: '#F4F4F4',
           accent: '#E5E7EB',
         },
       },

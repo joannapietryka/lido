@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { useTranslation } from 'react-i18next'
 import pokoj1aImg from '../assets/pokoj-1a.png'
@@ -23,12 +24,10 @@ function StarPill({ label }: { label: string }) {
 
 function FeatureCard({
   description,
-  ceilings,
   energy,
   concierge,
 }: {
   description: string
-  ceilings: string
   energy: string
   concierge: string
 }) {
@@ -41,8 +40,8 @@ function FeatureCard({
       </div>
       <div className="flex items-center gap-6 mt-6">
         <div className="text-center">
-          <span className="block text-white text-[24px] font-medium">{ceilings}</span>
-          <span className="text-gray-500 text-[11px] font-inter uppercase tracking-wider">{t('floorPlans.ceilings')}</span>
+          <span className="block text-white text-[24px] font-medium">{t('floorPlans.equipmentValue')}</span>
+          <span className="text-gray-500 text-[11px] font-inter uppercase tracking-wider">{t('floorPlans.equipment')}</span>
         </div>
         <div className="w-px h-8 bg-gray-700" />
         <div className="text-center">
@@ -86,16 +85,21 @@ function PlanImage({
   bedsText,
   bathsText,
   src,
+  detailHref,
 }: {
   area: string
   price: string
   bedsText: string
   bathsText: string
   src: string
+  detailHref: string
 }) {
   const { t } = useTranslation()
   return (
-    <div className="lg:col-span-7 relative rounded-[40px] overflow-hidden group h-full">
+    <Link
+      to={detailHref}
+      className="lg:col-span-7 relative rounded-[40px] overflow-hidden group h-full block"
+    >
       <img src={src} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
       <StarPill label={t('floorPlans.availableNow')} />
@@ -131,8 +135,14 @@ function PlanImage({
           <span className="w-1 h-1 bg-white/50 rounded-full" />
           <span className="text-white font-semibold text-[16px]">{t('floorPlans.priceFrom', { price })}</span>
         </div>
+        <span className="mt-4 inline-flex items-center gap-2 text-white/90 text-sm font-medium group-hover:text-white transition-colors">
+          {t('floorPlans.viewDetails')}
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </span>
       </div>
-    </div>
+    </Link>
   )
 }
 
@@ -147,7 +157,6 @@ export function FloorPlans() {
         area: '20 m²',
         price: '1 800 zł',
         heroSrc: pokoj1aImg,
-        ceilings: "10'",
         energy: 'A+',
         concierge: '24/7',
         leftImg: pokoj1bImg,
@@ -158,7 +167,6 @@ export function FloorPlans() {
         area: '40 m²',
         price: '2 500 zł',
         heroSrc: pokoj2aImg,
-        ceilings: "12'",
         energy: 'A+',
         concierge: '24/7',
         leftImg: pokoj2bImg,
@@ -209,12 +217,12 @@ export function FloorPlans() {
               bedsText={t('floorPlans.oneRoom')}
               bathsText={t('floorPlans.oneBath')}
               src={config['1bed'].heroSrc}
+              detailHref="/mieszkania/studio"
             />
             <div className="lg:col-span-5 flex flex-col gap-5 h-full min-h-0">
               <div data-reveal className="h-full flex flex-col gap-5 min-h-0">
                 <FeatureCard
                 description={t('floorPlans.featureStudio')}
-                ceilings={config['1bed'].ceilings}
                 energy={config['1bed'].energy}
                 concierge={config['1bed'].concierge}
                 />
@@ -230,14 +238,17 @@ export function FloorPlans() {
               <div data-reveal className="h-full flex flex-col gap-5 min-h-0">
                 <FeatureCard
                 description={t('floorPlans.featureTwoRooms')}
-                ceilings={config['2bed'].ceilings}
                 energy={config['2bed'].energy}
                 concierge={config['2bed'].concierge}
                 />
                 <SideImages leftSrc={config['2bed'].leftImg} rightSrc={config['2bed'].rightImg} />
               </div>
             </div>
-            <div data-reveal className="order-1 lg:order-2 lg:col-span-7 relative rounded-[40px] overflow-hidden group h-full">
+            <Link
+              to="/mieszkania/2-pokoje"
+              data-reveal
+              className="order-1 lg:order-2 lg:col-span-7 relative rounded-[40px] overflow-hidden group h-full block"
+            >
               <img
                 src={config['2bed'].heroSrc}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -279,9 +290,27 @@ export function FloorPlans() {
                   <span className="w-1 h-1 bg-white/50 rounded-full" />
                   <span className="text-white font-semibold text-[16px]">{t('floorPlans.priceFrom', { price: config['2bed'].price })}</span>
                 </div>
+                <span className="mt-4 inline-flex items-center gap-2 text-white/90 text-sm font-medium group-hover:text-white transition-colors">
+                  {t('floorPlans.viewDetails')}
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </span>
               </div>
-            </div>
+            </Link>
           </div>
+        </div>
+
+        <div data-reveal className="mt-12">
+          <Link
+            to={tab === '1bed' ? '/mieszkania/studio' : '/mieszkania/2-pokoje'}
+            className="inline-flex items-center gap-2 text-[15px] font-medium text-brand-dark hover:opacity-70 transition-opacity"
+          >
+            {t('floorPlans.viewDetails')}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>

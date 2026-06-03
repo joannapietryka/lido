@@ -1,4 +1,21 @@
 {
+  "meta": {
+    "siteName": "Lido",
+    "home": {
+      "title": "Lido — mieszkania na Ruczaju | Przemiarki 15, Kraków",
+      "description": "Mieszkania stworzone z myślą o Twoim rytmie na Ruczaju. Studio i 2-pokoje w pełni umeblowane — Przemiarki 15, Kraków."
+    },
+    "apartment": {
+      "studio": {
+        "title": "Mieszkanie 1-pokojowe | Lido Ruczaj, Kraków",
+        "description": "Funkcjonalne studio 20 m² na Ruczaju — umeblowane, wyposażone, blisko uczelni i komunikacji. Lido, ul. Przemiarki 15."
+      },
+      "2-pokoje": {
+        "title": "Mieszkanie 2-pokojowe | Lido Ruczaj, Kraków",
+        "description": "Mieszkanie 40 m² z osobną kuchnią na Ruczaju — dwa pokoje, balkon, pełne wyposażenie. Lido, ul. Przemiarki 15."
+      }
+    }
+  },
   "language": {
     "en": "EN",
     "pl": "PL"
@@ -33,14 +50,16 @@
     "oneRoomApartment": "Mieszkanie 1-pokojowe",
     "twoRoomApartment": "Mieszkanie 2-pokojowe",
     "premiumFeatures": "Dodatkowe atuty",
-    "ceilings": "Sufity",
+    "equipment": "Wyposażenie",
+    "equipmentValue": "A-Z",
     "energy": "Energia",
     "concierge": "Monitoring",
     "oneRoom": "1 Pokój",
     "twoRooms": "2 Pokoje",
     "oneBath": "1 Łazienka",
     "featureStudio": "Idealne dla singli, którzy cenią sobie bliskość uczelni oraz komunikacji.",
-    "featureTwoRooms": "Dwa pokoje to doskonałe rozwiązanie dla par i współlokatorów, którzy cenią sobie spokój i komfort."
+    "featureTwoRooms": "Dwa pokoje to doskonałe rozwiązanie dla par i współlokatorów, którzy cenią sobie spokój i komfort.",
+    "viewDetails": "Zobacz szczegóły"
   },
   "ourStandard": {
     "title": "Nasz Standard",
@@ -72,6 +91,10 @@
         "title": "Solidne materiały",
         "description": "Trwałe podłogi, jednolite glazury i starannie dobrane wyposażenie w każdym mieszkaniu."
       },
+      "conciergeService": {
+        "title": "Pomocna obsługa",
+        "description": "Dyżur techniczny (tzw. złota rączka) w razie drobnych napraw i awarii."
+      },
       "optimalLayout": {
         "title": "Funkcjonalny układ",
         "description": "Przemyślany plan mieszkań, który wykorzystuje naturalne światło i przestrzeń."
@@ -87,10 +110,6 @@
       "balconyEach": {
         "title": "Własny balkon",
         "description": "Każde mieszkanie ma balkon lub loggię – na poranną kawę i chwilę na powietrzu."
-      },
-      "conciergeService": {
-        "title": "Pomocna obsługa",
-        "description": "Dyżur techniczny (tzw. złota rączka) w razie drobnych napraw i awarii."
       },
       "energyEfficiency": {
         "title": "Efektywność energetyczna",
@@ -143,8 +162,73 @@
       "message": "Interesują mnie mieszkania 2-pokojowe..."
     }
   },
+  "apartmentDetail": {
+    "morePhotos": "+{{count}} zdjęć",
+    "closeGallery": "Zamknij galerię",
+    "prevPhoto": "Poprzednie zdjęcie",
+    "nextPhoto": "Następne zdjęcie",
+    "photoCounter": "{{current}} / {{total}}",
+    "galleryLightboxLabel": "Galeria zdjęć mieszkania",
+    "address": "Przemiarki 15, Kraków Ruczaj",
+    "descriptionTitle": "Opis mieszkania",
+    "amenitiesTitle": "Udogodnienia premium",
+    "stats": {
+      "price": "Cena",
+      "bedrooms": "Pokoje",
+      "bathrooms": "Łazienki",
+      "area": "Metraż"
+    },
+    "tabs": {
+      "studio": "Studio",
+      "2-pokoje": "2 pokoje"
+    },
+    "gallery": {
+      "main": "Główne zdjęcie mieszkania",
+      "living": "Salon",
+      "kitchen": "Kuchnia",
+      "bedroom": "Sypialnia",
+      "interior": "Wnętrze",
+      "building": "Budynek Lido",
+      "buildingExterior": "Widok na budynek Lido",
+      "extra": "Zdjęcie mieszkania"
+    },
+    "amenities": {
+      "security": "Monitoring 24/7",
+      "fingerprint": "Zamek na odcisk palca",
+      "elevator": "Winda",
+      "parking": "Garaż podziemny",
+      "kitchen": "Wyposażona kuchnia",
+      "balcony": "Własny balkon",
+      "energy": "Klasa energetyczna A",
+      "handyman": "Dyżur techniczny",
+      "storage": "Pojemne szafy"
+    },
+    "units": {
+      "studio": {
+        "title": "Mieszkanie 1-pokojowe na Ruczaju",
+        "price": "od 1 800 zł/msc",
+        "bedrooms": "1 pokój",
+        "bathrooms": "1 łazienka",
+        "area": "20 m²",
+        "description": "Funkcjonalne studio z przemyślanym układem. Mieszkanie jest w pełni umeblowane i wyposażone - wprowadź się od razu i korzystaj z życia na Ruczaju.\n\nNowoczesna kuchnia z lodówką, kuchenką, piekarnikiem i zmywarką. Prywatne miejsce do pracy i wypoczynku w spokojnej okolicy, blisko uczelni i komunikacji miejskiej."
+      },
+      "2-pokoje": {
+        "title": "Mieszkanie 2-pokojowe na Ruczaju",
+        "price": "od 2 500 zł/msc",
+        "bedrooms": "2 pokoje",
+        "bathrooms": "1 łazienka",
+        "area": "40 m²",
+        "description": "Przestronne mieszkanie dwupokojowe z osobną kuchnią — idealne dla par lub współlokatorów. Jasne wnętrza, balkon i pełne wyposażenie od A do Z.\n\nDwa niezależne pokoje dają komfort pracy i odpoczynku. Kuchnia z pełnym AGD, dużo miejsca do przechowywania i szybki dostęp do centrum Krakowa tramwajem."
+      }
+    },
+    "cta": {
+      "title": "Gotowy do przeprowadzki?",
+      "subtitle": "Skontaktuj się z nami, aby obejrzeć mieszkania i dowiedz się więcej o dostępności mieszkań na Ruczaju.",
+      "button": "Skontaktuj się"
+    }
+  },
   "footer": {
-    "tagline": "Dom to miejsce, gdzie jest serce i gdzie powstają wspomnienia",
+    "tagline": "Miejsce, gdzie można być sobą",
     "links": {
       "apartments": "Mieszkania",
       "standard": "Nasz standard",

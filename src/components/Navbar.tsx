@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import logoLight from '../assets/lido-logo.png'
 import { LanguageSwitch } from './LanguageSwitch'
+
+const navLinkClass = 'text-gray-500 hover:text-brand-dark transition-colors'
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -25,36 +28,36 @@ export function Navbar() {
       <div className="w-full max-w-7xl pointer-events-none">
         <nav className="pointer-events-auto bg-white/80 backdrop-blur-md border border-white/40 shadow-sm rounded-full px-6 py-3 w-full flex justify-between items-center transition-all duration-300 hover:bg-white/95 relative z-[80]">
           <div className="flex items-center gap-12">
-            <a
-              href="#top"
+            <Link
+              to="/"
               className="flex items-center gap-2 group"
               aria-label={t('navbar.homeAria')}
               onClick={closeMobile}
             >
               <img src={logoLight} alt="Lido logo" className="h-8 object-contain" />
-            </a>
+            </Link>
 
             <div className="hidden lg:flex gap-8 text-[15px] font-medium">
-              <a href="#mieszkania" className="text-gray-500 hover:text-brand-dark transition-colors">
+              <Link to="/#mieszkania" className={navLinkClass}>
                 {t('navbar.apartments')}
-              </a>
-              <a href="#standard" className="text-gray-500 hover:text-brand-dark transition-colors">
+              </Link>
+              <Link to="/#standard" className={navLinkClass}>
                 {t('navbar.standard')}
-              </a>
-              <a href="#lokalizacja" className="text-gray-500 hover:text-brand-dark transition-colors">
+              </Link>
+              <Link to="/#lokalizacja" className={navLinkClass}>
                 {t('navbar.location')}
-              </a>
+              </Link>
             </div>
           </div>
 
           <div className="flex items-center gap-4">
             <LanguageSwitch />
-            <a
-              href="#kontakt"
+            <Link
+              to="/#kontakt"
               className="hidden lg:inline-flex bg-brand-dark text-white px-7 py-2.5 rounded-full text-[15px] font-medium hover:bg-gray-800 transition-transform active:scale-95"
             >
               {t('navbar.contact')}
-            </a>
+            </Link>
 
             <button
               type="button"
@@ -86,37 +89,25 @@ export function Navbar() {
         >
           <div className="p-4">
             <div className="flex flex-col gap-2 text-[20px] font-medium">
-              <a
-                href="#mieszkania"
-                onClick={closeMobile}
-                className="px-4 py-3 rounded-2xl text-gray-700 hover:bg-white transition-colors"
-              >
+              <Link to="/#mieszkania" onClick={closeMobile} className="px-4 py-3 rounded-2xl text-gray-700 hover:bg-white transition-colors">
                 {t('navbar.apartments')}
-              </a>
-              <a
-                href="#standard"
-                onClick={closeMobile}
-                className="px-4 py-3 rounded-2xl text-gray-700 hover:bg-white transition-colors"
-              >
+              </Link>
+              <Link to="/#standard" onClick={closeMobile} className="px-4 py-3 rounded-2xl text-gray-700 hover:bg-white transition-colors">
                 {t('navbar.standard')}
-              </a>
-              <a
-                href="#lokalizacja"
-                onClick={closeMobile}
-                className="px-4 py-3 rounded-2xl text-gray-700 hover:bg-white transition-colors"
-              >
+              </Link>
+              <Link to="/#lokalizacja" onClick={closeMobile} className="px-4 py-3 rounded-2xl text-gray-700 hover:bg-white transition-colors">
                 {t('navbar.location')}
-              </a>
+              </Link>
             </div>
 
             <div className="mt-4">
-              <a
-                href="#kontakt"
+              <Link
+                to="/#kontakt"
                 onClick={closeMobile}
                 className="inline-flex w-full justify-center bg-brand-dark text-white px-7 py-3 rounded-full text-[15px] font-medium hover:bg-gray-800 transition-transform active:scale-95"
               >
                 {t('navbar.contact')}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -133,4 +124,3 @@ export function Navbar() {
     </div>
   )
 }
-

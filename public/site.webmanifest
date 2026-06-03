@@ -1,6 +1,7 @@
 {
-  "name": "Lido",
+  "name": "Lido — mieszkania na Ruczaju",
   "short_name": "Lido",
+  "description": "Mieszkania na Ruczaju w Krakowie — studio i 2-pokoje przy ul. Przemiarki 15.",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +16,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#111315",
   "background_color": "#ffffff",
   "display": "standalone",
   "start_url": "/"

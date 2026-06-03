@@ -6,6 +6,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hidden until GSAP scroll reveal runs (same as Hero sections) */
+[data-reveal] {
+  visibility: hidden;
+}
+
 /* Match the original design's scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

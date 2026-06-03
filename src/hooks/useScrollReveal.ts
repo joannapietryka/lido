@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef } from 'react'
-import { ensureGsap, gsap } from '../utils/gsap'
+import { ensureGsap, gsap, refreshScrollTriggers } from '../utils/gsap'
 
 type UseScrollRevealOptions = {
   /** optional extra selectors to animate (staggered) */
@@ -70,6 +70,8 @@ export function useScrollReveal<T extends HTMLElement>(options: UseScrollRevealO
         )
       }
     }, el)
+
+    requestAnimationFrame(() => refreshScrollTriggers())
 
     return () => ctx.revert()
   }, [options.targets])
