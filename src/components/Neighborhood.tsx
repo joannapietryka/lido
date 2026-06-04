@@ -1,6 +1,16 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import zakrzowekImg from '../assets/zakrzowek.png'
 import { useTranslation } from 'react-i18next'
+import { Leaf, TramFront } from 'lucide-react'
+
+const neighborhoodIconClassName =
+  'w-5 h-5 text-brand-dark group-hover:text-white transition-colors duration-300'
+
+const lucideIconProps = {
+  className: neighborhoodIconClassName,
+  strokeWidth: 1.5,
+  'aria-hidden': true,
+} as const
 
 export function Neighborhood() {
   const ref = useScrollReveal<HTMLElement>()
@@ -20,17 +30,7 @@ export function Neighborhood() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
             <div className="flex gap-4 items-start group">
               <div className="w-12 h-12 bg-[#F3F4F6] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-brand-dark transition-colors duration-300">
-                <svg
-                  className="w-5 h-5 text-brand-dark group-hover:text-white transition-colors duration-300"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M8 3h8M4 19h16M4 15h16M12 15v4M7 3v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V3z" />
-                </svg>
+                <TramFront {...lucideIconProps} />
               </div>
               <div>
                 <h4 className="text-[16px] font-medium mb-1 text-brand-dark">{t('neighborhood.items.transit.title')}</h4>
@@ -64,17 +64,7 @@ export function Neighborhood() {
 
             <div className="flex gap-4 items-start group">
               <div className="w-12 h-12 bg-[#F3F4F6] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-brand-dark transition-colors duration-300">
-                <svg
-                  className="w-5 h-5 text-brand-dark group-hover:text-white transition-colors duration-300"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M12 22v-8m0-12a6 6 0 0 0-6 6c0 2.5 1.5 4.5 3.5 5.5v2.5a2.5 2.5 0 0 0 5 0v-2.5c2-1 3.5-3 3.5-5.5a6 6 0 0 0-6-6z" />
-                </svg>
+                <Leaf {...lucideIconProps} />
               </div>
               <div>
                 <h4 className="text-[16px] font-medium mb-1 text-brand-dark">{t('neighborhood.items.parks.title')}</h4>

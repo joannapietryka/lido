@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { useTranslation } from 'react-i18next'
 import { ensureGsap, gsap } from '../utils/gsap'
+import { Cctv, FingerprintPattern, CarFront, VolumeOff, Sofa, Refrigerator } from 'lucide-react'
 
 const INITIAL_VISIBLE_COUNT = 6
 
@@ -34,83 +35,61 @@ const CARD_KEYS: CardKey[] = [
   'energyEfficiency',
 ]
 
-function CardIcon({ cardKey }: { cardKey: CardKey }) {
-  const className = 'w-6 h-6 text-brand-dark group-hover:text-white transition-colors duration-500'
+const iconClassName =
+  'w-6 h-6 text-brand-dark group-hover:text-white transition-colors duration-500'
 
+const lucideIconProps = {
+  className: iconClassName,
+  strokeWidth: 1.5,
+  'aria-hidden': true,
+} as const
+
+function CardIcon({ cardKey }: { cardKey: CardKey }) {
   switch (cardKey) {
     case 'premiumMaterials':
       return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg className={iconClassName} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" />
           <path d="M12 12l8-4.5M12 12v9M12 12L4 7.5" />
         </svg>
       )
     case 'smartLiving':
       return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 10a1.5 1.5 0 0 0-1.5 1.5v1a1.5 1.5 0 0 0 3 0v-1A1.5 1.5 0 0 0 12 10z" />
-          <path d="M12 6.5a3.5 3.5 0 0 0-3.5 3.5V11" />
-          <path d="M12 6.5a3.5 3.5 0 0 1 3.5 3.5V11" />
-          <path d="M12 2a8 8 0 0 0-8 8v1" />
-          <path d="M12 2a8 8 0 0 1 8 8v1" />
-          <path d="M12 14v2" />
-          <path d="M10 20a2 2 0 0 0 4 0" />
-        </svg>
+        <FingerprintPattern {...lucideIconProps} />
       )
     case 'optimalLayout':
       return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg className={iconClassName} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="3" width="18" height="18" rx="1" />
           <path d="M3 12h9v9M12 3v9h9" />
         </svg>
       )
     case 'soundproofDesign':
       return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M11 5L6 9H3v6h3l5 4V5z" />
-          <path d="M15.54 8.46a5 5 0 010 7.07" />
-          <path d="M18.07 5.93a9 9 0 010 12.14" />
-        </svg>
+        <VolumeOff {...lucideIconProps} />
       )
     case 'fullyEquippedKitchen':
       return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="5" y="2" width="14" height="20" rx="2" />
-          <path d="M5 11h14" />
-          <path d="M12 2v9" />
-          <path d="M8.5 15h.01M15.5 15h.01M8.5 18h.01M15.5 18h.01" />
-        </svg>
+        <Refrigerator {...lucideIconProps} />
       )
     case 'spaciousStorage':
       return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg className={iconClassName} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <rect x="4" y="2" width="16" height="20" rx="1" />
           <path d="M12 2v20M8 7h.01M16 7h.01M8 12h.01M16 12h.01M8 17h.01M16 17h.01" />
         </svg>
       )
     case 'elevatorAndMonitoring':
       return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="4" y="4" width="10" height="16" rx="1" />
-          <path d="M9 9l-1.5 1.5L9 12" />
-          <path d="M9 15l-1.5-1.5L9 12" />
-          <path d="M17 8h3l1 2v4l-1 2h-3l-1-2V10z" />
-          <circle cx="18.5" cy="12" r="1.25" />
-        </svg>
+        <Cctv {...lucideIconProps} />
       )
     case 'undergroundParking':
       return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M5 10v4h14v-4" />
-          <path d="M7 14v4M17 14v4" />
-          <path d="M5 10l2-4h10l2 4" />
-          <circle cx="8" cy="17" r="1" />
-          <circle cx="16" cy="17" r="1" />
-        </svg>
+        <CarFront {...lucideIconProps} />
       )
     case 'balconyEach':
       return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg className={iconClassName} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M3 21h18M5 21V9l7-4 7 4v12" />
           <path d="M9 21v-4h6v4" />
           <path d="M16 5a2 2 0 104 0" />
@@ -118,21 +97,17 @@ function CardIcon({ cardKey }: { cardKey: CardKey }) {
       )
     case 'fullyFurnished':
       return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M4 12h16v5H4z" />
-          <path d="M6 12V9a2 2 0 012-2h8a2 2 0 012 2v3" />
-          <path d="M4 17v2M20 17v2" />
-        </svg>
+        <Sofa {...lucideIconProps} />
       )
     case 'conciergeService':
       return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg className={iconClassName} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
         </svg>
       )
     case 'energyEfficiency':
       return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg className={iconClassName} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
         </svg>
       )

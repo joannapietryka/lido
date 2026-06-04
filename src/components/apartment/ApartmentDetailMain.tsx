@@ -2,7 +2,11 @@ import { Link, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import { APARTMENT_SLUGS, type ApartmentSlug } from '../../data/apartments'
+import { MapPin } from 'lucide-react'
+import { lucideIconProps } from '../../utils/iconProps'
 import { ApartmentAmenityIcon, AMENITY_KEYS } from './ApartmentAmenityIcon'
+
+const addressIconProps = lucideIconProps({ size: 'md', className: 'shrink-0' })
 
 export function ApartmentDetailMain() {
   const { slug } = useParams<{ slug: ApartmentSlug }>()
@@ -39,14 +43,7 @@ export function ApartmentDetailMain() {
             {t(`apartmentDetail.units.${activeSlug}.title`)}
           </h1>
           <p className="text-gray-500 font-inter text-lg flex items-center gap-2">
-            <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              />
-            </svg>
+            <MapPin {...addressIconProps} />
             {t('apartmentDetail.address')}
           </p>
         </div>
