@@ -14,6 +14,10 @@
         "title": "Mieszkanie 2-pokojowe | Lido Ruczaj, Kraków",
         "description": "Mieszkanie 40 m² z osobną kuchnią na Ruczaju — dwa pokoje, balkon, pełne wyposażenie. Lido, ul. Przemiarki 15."
       }
+    },
+    "ruczaj": {
+      "title": "Życie na Ruczaju | Lido Kraków",
+      "description": "Poznaj atuty Ruczaju — natura, komunikacja, uczelnie i zakupy w pobliżu Lido przy ul. Przemiarki 15."
     }
   },
   "language": {
@@ -142,6 +146,31 @@
     "pin1": "Przemiarki 15",
     "pin2": "Zakrzówek Kraków"
   },
+  "ruczajPage": {
+    "title": "Poznaj atuty dzielnicy",
+    "intro": "Ruczaj to jedna z najdynamiczniej rozwijających się i najbardziej poszukiwanych dzielnic Krakowa, łącząca spokój zieleni z wygodną infrastrukturą miejską. Oto dlaczego Ruczaj to idealne miejsce do życia.",
+    "mapAlt": "Mapa dzielnicy Ruczaj z punktami zainteresowania",
+    "ctaApartments": "Zobacz mieszkania",
+    "ctaContact": "Skontaktuj się",
+    "sections": {
+      "nature": {
+        "title": "Zieleń i rekreacja na wyciągnięcie ręki",
+        "description": "Na Ruczaju znajdują się Zakrzówek — jeden z najpiękniejszych terenów rekreacyjnych w Krakowie. Dawny kamieniołom zamienił się w malowniczy zbiornik wodny o turkusowej barwie, otoczony skałami Twardowskiego. To idealne miejsce na kąpiel, opalanie i relaks, popularne wśród nurków i wspinaczy. Poza Zakrzówkiem mieszkańcy mają łatwy dostęp do Bielańsko-Tynieckiego Parku Krajobrazowego z licznymi trasami spacerowymi i rowerowymi."
+      },
+      "connectivity": {
+        "title": "Sprawna komunikacja",
+        "description": "Z Ruczaju poruszanie się po mieście jest bezproblemowe. Dzielnicę obsługują linie tramwajowe 11, 17, 18, 52 i 62, zapewniające szybkie połączenie z centrum. Dla kierowców ważne są też drogi takie jak autostrada A4 i „Zakopianka” (droga krajowa nr 7)."
+      },
+      "education": {
+        "title": "Edukacja i centra pracy",
+        "description": "Ruczaj to ważny ośrodek akademicki i zawodowy. Znajduje się tu Kampus UJ (III Kampus Uniwersytetu Jagiellońskiego) oraz Kampus AWF — idealna lokalizacja dla studentów i pracowników naukowych. Lokalny Business Park jest częścią Krakowskiego Parku Technologicznego w SSE, gdzie działają m.in. Motorola i Onet."
+      },
+      "convenience": {
+        "title": "Codzienna wygoda na wyciągnięcie ręki",
+        "description": "Okolice Czerwonych Maków, Hali Maki i Lido oferują rozwiniętą infrastrukturę handlowo-usługową. W centrum Atut Ruczaj działają m.in. Leroy Merlin, Biedronka, Lidl, Action, Sinsay i Empik. W pobliżu są też szkoły, przedszkola, restauracje i kluby fitness."
+      }
+    }
+  },
   "contact": {
     "title": "Skontaktuj się z nami",
     "subtitle": "Masz pytania? Skontaktuj się z nami, a chętnie na nie odpowiemy.",
@@ -223,7 +252,7 @@
     },
     "cta": {
       "title": "Gotowy do przeprowadzki?",
-      "subtitle": "Skontaktuj się z nami, aby obejrzeć mieszkania i dowiedz się więcej o dostępności mieszkań na Ruczaju.",
+      "subtitle": "Skontaktuj się z nami, aby obejrzeć mieszkania i dowiedzieć się więcej o dostępności mieszkań na Ruczaju.",
       "button": "Skontaktuj się"
     }
   },

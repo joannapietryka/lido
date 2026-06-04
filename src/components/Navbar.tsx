@@ -38,7 +38,7 @@ export function Navbar() {
             </Link>
 
             <div className="hidden lg:flex gap-8 text-[15px] font-medium">
-              <Link to="/#mieszkania" className={navLinkClass}>
+              <Link to="/mieszkania" className={navLinkClass}>
                 {t('navbar.apartments')}
               </Link>
               <Link to="/#standard" className={navLinkClass}>
@@ -89,7 +89,7 @@ export function Navbar() {
         >
           <div className="p-4">
             <div className="flex flex-col gap-2 text-[20px] font-medium">
-              <Link to="/#mieszkania" onClick={closeMobile} className="px-4 py-3 rounded-2xl text-gray-700 hover:bg-white transition-colors">
+              <Link to="/mieszkania" onClick={closeMobile} className="px-4 py-3 rounded-2xl text-gray-700 hover:bg-white transition-colors">
                 {t('navbar.apartments')}
               </Link>
               <Link to="/#standard" onClick={closeMobile} className="px-4 py-3 rounded-2xl text-gray-700 hover:bg-white transition-colors">

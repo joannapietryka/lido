@@ -25,13 +25,13 @@ export function SiteFooter() {
           </div>
 
           <div className="flex flex-wrap gap-8 font-inter text-[15px] text-gray-400">
-            <Link to="/#mieszkania" className="hover:text-white transition-colors">
+            <Link to="/mieszkania" className="hover:text-white transition-colors">
               {t('footer.links.apartments')}
             </Link>
             <Link to="/#standard" className="hover:text-white transition-colors">
               {t('footer.links.standard')}
             </Link>
-            <Link to="/#lokalizacja" className="hover:text-white transition-colors">
+            <Link to="/ruczaj" className="hover:text-white transition-colors">
               {t('footer.links.location')}
             </Link>
             <Link to="/#kontakt" className="hover:text-white transition-colors">

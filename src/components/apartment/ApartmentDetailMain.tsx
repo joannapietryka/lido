@@ -1,12 +1,8 @@
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
-import { APARTMENT_SLUGS, type ApartmentSlug } from '../../data/apartments'
-import { MapPin } from 'lucide-react'
-import { lucideIconProps } from '../../utils/iconProps'
+import type { ApartmentSlug } from '../../data/apartments'
 import { ApartmentAmenityIcon, AMENITY_KEYS } from './ApartmentAmenityIcon'
-
-const addressIconProps = lucideIconProps({ size: 'md', className: 'shrink-0' })
 
 export function ApartmentDetailMain() {
   const { slug } = useParams<{ slug: ApartmentSlug }>()
@@ -22,60 +18,48 @@ export function ApartmentDetailMain() {
   ]
 
   return (
-    <main ref={ref} className="px-6 lg:px-12 max-w-[1440px] mx-auto w-full pb-24">
+    <main ref={ref} className="order-3 px-6 lg:px-12 max-w-[1440px] mx-auto w-full pb-24">
       <div className="max-w-4xl">
-        <div data-reveal className="mb-8">
-          <div className="inline-flex bg-brand-lighter rounded-full p-1 mb-6">
-            {APARTMENT_SLUGS.map((id) => (
-              <Link
-                key={id}
-                to={`/mieszkania/${id}`}
-                className={[
-                  'px-6 py-2 rounded-full text-[13px] font-medium transition-all',
-                  activeSlug === id ? 'bg-brand-dark text-white' : 'text-gray-600 hover:text-brand-dark',
-                ].join(' ')}
-              >
-                {t(`apartmentDetail.tabs.${id}`)}
-              </Link>
-            ))}
-          </div>
-          <h1 className="text-[40px] lg:text-[48px] font-medium leading-none mb-4">
-            {t(`apartmentDetail.units.${activeSlug}.title`)}
-          </h1>
-          <p className="text-gray-500 font-inter text-lg flex items-center gap-2">
-            <MapPin {...addressIconProps} />
-            {t('apartmentDetail.address')}
-          </p>
-        </div>
-
-        <div data-reveal className="grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-y border-gray-100 mb-10">
+        <div
+          data-reveal
+          className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6 md:gap-4 py-6 md:py-8 border-y border-gray-100 mb-8 md:mb-10"
+        >
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className={['text-center', i < stats.length - 1 ? 'md:border-r border-gray-100' : ''].join(' ')}
+              className={[
+                'text-left md:text-center',
+                i < stats.length - 1 ? 'md:border-r md:border-gray-100' : '',
+              ].join(' ')}
             >
-              <p className="text-gray-400 text-xs font-inter uppercase tracking-widest mb-1">{stat.label}</p>
-              <p className="text-xl md:text-2xl font-medium">{stat.value}</p>
+              <p className="text-gray-400 text-[10px] md:text-xs font-inter uppercase tracking-widest mb-1">
+                {stat.label}
+              </p>
+              <p className="text-lg sm:text-xl md:text-2xl font-medium text-brand-dark">{stat.value}</p>
             </div>
           ))}
         </div>
 
-        <div data-reveal className="mb-12">
-          <h3 className="text-2xl font-medium mb-6">{t('apartmentDetail.descriptionTitle')}</h3>
-          <p className="text-gray-600 font-inter text-lg leading-relaxed whitespace-pre-line">
+        <div data-reveal className="mb-10 md:mb-12">
+          <h2 className="text-xl md:text-2xl font-medium mb-4 md:mb-6 text-brand-dark">
+            {t('apartmentDetail.descriptionTitle')}
+          </h2>
+          <p className="text-gray-600 font-inter text-base md:text-lg leading-relaxed whitespace-pre-line">
             {t(`apartmentDetail.units.${activeSlug}.description`)}
           </p>
         </div>
 
         <div>
-          <h3 data-reveal className="text-2xl font-medium mb-8">{t('apartmentDetail.amenitiesTitle')}</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-4">
+          <h2 data-reveal className="text-xl md:text-2xl font-medium mb-6 md:mb-8 text-brand-dark">
+            {t('apartmentDetail.amenitiesTitle')}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 md:gap-y-8 gap-x-4">
             {AMENITY_KEYS.map((key) => (
               <div key={key} data-reveal className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-brand-lighter rounded-2xl flex items-center justify-center text-brand-dark shrink-0">
                   <ApartmentAmenityIcon type={key} />
                 </div>
-                <span className="font-inter font-medium">{t(`apartmentDetail.amenities.${key}`)}</span>
+                <span className="font-inter font-medium text-[15px] md:text-base">{t(`apartmentDetail.amenities.${key}`)}</span>
               </div>
             ))}
           </div>

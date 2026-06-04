@@ -1,0 +1,191 @@
+.ruczaj-perk-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+  width: 100%;
+}
+
+.ruczaj-perk-row--reverse {
+  flex-direction: row-reverse;
+}
+
+.ruczaj-perk-icon {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.5rem;
+  height: 5.5rem;
+  margin-bottom: -1.25rem;
+  margin-right: -1.5rem;
+  background: #ffffff;
+  border: 1px solid rgba(17, 19, 21, 0.06);
+  box-shadow:
+    0 4px 6px rgba(17, 19, 21, 0.04),
+    0 14px 28px rgba(17, 19, 21, 0.12),
+    0 28px 48px rgba(17, 19, 21, 0.08);
+}
+
+.ruczaj-perk-row--reverse .ruczaj-perk-icon {
+  margin-right: 0;
+  margin-left: -1.5rem;
+}
+
+.ruczaj-perk-bubble {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  padding: 2rem 2.25rem 2.5rem;
+  background-color: #f3f4f6;
+  transition:
+    background-color 0.45s ease,
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.ruczaj-perk-row:hover .ruczaj-perk-bubble {
+  background-color: #111315;
+  box-shadow: 0 20px 48px rgba(17, 19, 21, 0.12);
+  transform: translateY(-2px);
+}
+
+.ruczaj-perk-row:hover .ruczaj-perk-icon {
+  transform: scale(1.04);
+  box-shadow:
+    0 6px 10px rgba(17, 19, 21, 0.06),
+    0 18px 36px rgba(17, 19, 21, 0.16),
+    0 32px 56px rgba(17, 19, 21, 0.1);
+}
+
+.ruczaj-perk-icon {
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+/* Organic blob radii per card */
+.ruczaj-perk-icon--0 {
+  border-radius: 38% 62% 58% 42% / 48% 44% 56% 52%;
+}
+
+.ruczaj-perk-icon--1 {
+  border-radius: 62% 38% 42% 58% / 52% 48% 52% 48%;
+}
+
+.ruczaj-perk-icon--2 {
+  border-radius: 48% 52% 62% 38% / 44% 56% 48% 52%;
+}
+
+.ruczaj-perk-icon--3 {
+  border-radius: 52% 48% 38% 62% / 56% 44% 48% 52%;
+}
+
+.ruczaj-perk-bubble--0 {
+  border-radius: 2.75rem 2.75rem 2.75rem 0.85rem;
+}
+
+.ruczaj-perk-bubble--1 {
+  border-radius: 2.75rem 2.75rem 0.85rem 2.75rem;
+}
+
+.ruczaj-perk-bubble--2 {
+  border-radius: 0.85rem 2.75rem 2.75rem 2.75rem;
+}
+
+.ruczaj-perk-bubble--3 {
+  border-radius: 2.75rem 0.85rem 2.75rem 2.75rem;
+}
+
+/* Tail nubs connecting icon to bubble */
+.ruczaj-perk-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: 0.65rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: inherit;
+  transition: background-color 0.45s ease;
+  z-index: 0;
+}
+
+.ruczaj-perk-bubble--0::before {
+  left: 1.35rem;
+  border-radius: 0 0 0 2rem;
+  transform: rotate(-8deg);
+}
+
+.ruczaj-perk-bubble--1::before {
+  right: 1.35rem;
+  left: auto;
+  border-radius: 0 0 2rem 0;
+  transform: rotate(8deg);
+}
+
+.ruczaj-perk-bubble--2::before {
+  left: 1.35rem;
+  border-radius: 0 0 0 2rem;
+  transform: rotate(-6deg);
+}
+
+.ruczaj-perk-bubble--3::before {
+  right: 1.35rem;
+  left: auto;
+  border-radius: 0 0 2rem 0;
+  transform: rotate(6deg);
+}
+
+.ruczaj-perk-bubble__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.ruczaj-perk-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #111315;
+  margin-bottom: 0.75rem;
+  transition: color 0.45s ease;
+}
+
+.ruczaj-perk-desc {
+  font-family: Inter, sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #6b7280;
+  transition: color 0.45s ease;
+}
+
+.ruczaj-perk-row:hover .ruczaj-perk-title {
+  color: #fff;
+}
+
+.ruczaj-perk-row:hover .ruczaj-perk-desc {
+  color: #9ca3af;
+}
+
+@media (max-width: 639px) {
+  .ruczaj-perk-row,
+  .ruczaj-perk-row--reverse {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ruczaj-perk-icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: 0 0 -1rem 1.25rem;
+    align-self: flex-start;
+  }
+
+  .ruczaj-perk-row--reverse .ruczaj-perk-icon {
+    margin: 0 1.25rem -1rem auto;
+    align-self: flex-end;
+  }
+
+  .ruczaj-perk-bubble {
+    padding: 1.75rem 1.5rem 2rem;
+  }
+}

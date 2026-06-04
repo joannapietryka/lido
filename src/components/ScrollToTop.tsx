@@ -7,9 +7,10 @@ function scrollWindowToTop() {
   document.body.scrollTop = 0
 }
 
-/** Resets scroll position when navigating between routes (not hash-only changes on home). */
+/** Resets scroll position when navigating between routes (not when targeting a hash on home). */
 export function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
+  const hasHashTarget = pathname === '/' && hash.length > 0
 
   useLayoutEffect(() => {
     if ('scrollRestoration' in history) {
@@ -18,15 +19,16 @@ export function ScrollToTop() {
   }, [])
 
   useLayoutEffect(() => {
+    if (hasHashTarget) return
     scrollWindowToTop()
-  }, [pathname])
+  }, [pathname, hash, hasHashTarget])
 
-  // After layout/GSAP refresh — browser may restore scroll from the previous page.
   useEffect(() => {
+    if (hasHashTarget) return
     scrollWindowToTop()
     const frame = requestAnimationFrame(scrollWindowToTop)
     return () => cancelAnimationFrame(frame)
-  }, [pathname])
+  }, [pathname, hash, hasHashTarget])
 
   return null
 }

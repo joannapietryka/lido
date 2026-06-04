@@ -28,7 +28,10 @@ export function usePageMeta() {
     let titleKey = 'meta.home.title'
     let descriptionKey = 'meta.home.description'
 
-    if (slug && isApartmentSlug(slug)) {
+    if (pathname === '/ruczaj') {
+      titleKey = 'meta.ruczaj.title'
+      descriptionKey = 'meta.ruczaj.description'
+    } else if (slug && isApartmentSlug(slug)) {
       titleKey = `meta.apartment.${slug}.title`
       descriptionKey = `meta.apartment.${slug}.description`
     }

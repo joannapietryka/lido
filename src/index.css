@@ -7,7 +7,7 @@ html {
 }
 
 /* Hidden until GSAP scroll reveal runs (same as Hero sections) */
-[data-reveal] {
+[data-reveal]:not(.is-revealed) {
   visibility: hidden;
 }
 

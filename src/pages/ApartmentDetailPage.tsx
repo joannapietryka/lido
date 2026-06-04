@@ -4,6 +4,7 @@ import { refreshScrollTriggers } from '../utils/gsap'
 import { Navbar } from '../components/Navbar'
 import { SiteFooter } from '../components/SiteFooter'
 import { ApartmentGallery } from '../components/apartment/ApartmentGallery'
+import { ApartmentDetailIntro } from '../components/apartment/ApartmentDetailIntro'
 import { ApartmentDetailMain } from '../components/apartment/ApartmentDetailMain'
 import { ApartmentDetailCta } from '../components/apartment/ApartmentDetailCta'
 import { APARTMENTS, isApartmentSlug } from '../data/apartments'
@@ -30,7 +31,8 @@ export function ApartmentDetailPage() {
   return (
     <div className="w-full min-h-screen bg-white">
       <Navbar />
-      <div key={slug}>
+      <div key={slug} className="flex flex-col max-w-[1440px] mx-auto w-full">
+        <ApartmentDetailIntro activeSlug={slug} />
         <ApartmentGallery apartment={apartment} />
         <ApartmentDetailMain />
       </div>

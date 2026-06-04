@@ -19,10 +19,17 @@ const REVEAL_TO = {
   stagger: 0.08,
 } as const
 
+function markRevealed(nodes: NodeListOf<Element> | Element[]) {
+  for (const node of nodes) {
+    node.classList.add('is-revealed')
+  }
+}
+
 function clearRevealNodes(nodes: NodeListOf<Element> | Element[]) {
   for (const node of nodes) {
     gsap.killTweensOf(node)
     gsap.set(node, { clearProps: 'all' })
+    node.classList.remove('is-revealed')
   }
 }
 
@@ -60,10 +67,14 @@ export function useScrollReveal<T extends HTMLElement>(options: UseScrollRevealO
         gsap.set(revealNodes, REVEAL_FROM)
 
         if (trigger === 'immediate') {
-          gsap.to(revealNodes, { ...REVEAL_TO })
+          gsap.to(revealNodes, {
+            ...REVEAL_TO,
+            onComplete: () => markRevealed(revealNodes),
+          })
         } else {
           gsap.fromTo(revealNodes, REVEAL_FROM, {
             ...REVEAL_TO,
+            onComplete: () => markRevealed(revealNodes),
             scrollTrigger: {
               trigger: el,
               start: 'top 80%',
@@ -81,10 +92,14 @@ export function useScrollReveal<T extends HTMLElement>(options: UseScrollRevealO
         gsap.set(nodes, REVEAL_FROM)
 
         if (trigger === 'immediate') {
-          gsap.to(nodes, { ...REVEAL_TO })
+          gsap.to(nodes, {
+            ...REVEAL_TO,
+            onComplete: () => markRevealed(nodes),
+          })
         } else {
           gsap.fromTo(nodes, REVEAL_FROM, {
             ...REVEAL_TO,
+            onComplete: () => markRevealed(nodes),
             scrollTrigger: {
               trigger: el,
               start: 'top 80%',

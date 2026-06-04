@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { refreshScrollTriggers } from '../utils/gsap'
+import { scrollToHashWhenReady } from '../utils/scrollToHash'
 import { FloorPlans } from '../components/FloorPlans'
 import { Hero } from '../components/Hero'
 import { Navbar } from '../components/Navbar'
@@ -18,9 +19,7 @@ export function HomePage() {
 
   useEffect(() => {
     if (!hash) return
-    const id = hash.replace('#', '')
-    const el = document.getElementById(id)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    scrollToHashWhenReady(hash)
   }, [hash])
 
   return (

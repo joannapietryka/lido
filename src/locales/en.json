@@ -14,6 +14,10 @@
         "title": "2-room apartment | Lido Ruczaj, Kraków",
         "description": "40 m² two-room apartment in Ruczaj with separate kitchen — two rooms, balcony, fully equipped. Lido, Przemiarki 15."
       }
+    },
+    "ruczaj": {
+      "title": "Life in Ruczaj | Lido Kraków",
+      "description": "Discover why Ruczaj is an ideal place to live — nature, transport, universities, and shopping near Lido at Przemiarki 15."
     }
   },
   "language": {
@@ -138,9 +142,34 @@
         "description": "Grocery stores, pharmacies, and all everyday essentials just around the corner."
       }
     },
-    "viewMap": "View interactive map",
+    "viewMap": "View map",
     "pin1": "Przemiarki 15",
     "pin2": "Zakrzówek, Kraków"
+  },
+  "ruczajPage": {
+    "title": "Discover the Perks of the district",
+    "intro": "Ruczaj is one of Kraków's most dynamically developing and sought-after districts, masterfully combining the tranquility of green spaces with the convenience of excellent city infrastructure. Here's why Ruczaj is an ideal place to call home.",
+    "mapAlt": "Map of Ruczaj district with points of interest",
+    "ctaApartments": "View apartments",
+    "ctaContact": "Contact us",
+    "sections": {
+      "nature": {
+        "title": "Nature & Recreation at Your Doorstep",
+        "description": "Ruczaj is home to Zakrzówek Pools, one of the most beautiful recreational areas in Kraków. This former limestone quarry has been transformed into a stunning water reservoir with turquoise waters, surrounded by rock walls (Skałki Twardowskiego). It's a perfect spot for swimming, sunbathing, and relaxation, and a popular destination for divers and climbers. Beyond Zakrzówek, residents enjoy easy access to the Bielańsko-Tyniecki Park Krajobrazowy, offering extensive trails for walking and cycling."
+      },
+      "connectivity": {
+        "title": "Seamless Connectivity",
+        "description": "Getting around the city is effortless from Ruczaj. The district is served by multiple tram lines (11, 17, 18, 52, 62), providing a fast and convenient connection to the city center. Major road arteries, including the A4 highway and the \"Zakopianka\" road (national road No. 7), further ensure smooth travel for drivers."
+      },
+      "education": {
+        "title": "Education & Work Hubs",
+        "description": "Ruczaj is a major educational and professional center. It hosts the Kampus UJ (the Third Campus of the Jagiellonian University) and the Kampus UP (the University of Physical Education), making it an ideal location for students and academic staff. Additionally, the local Business Park is part of the Kraków Technology Park within the Special Economic Zone, home to major companies like Motorola and Onet."
+      },
+      "convenience": {
+        "title": "Everyday Convenience at Your Fingertips",
+        "description": "The area around Czerwone Maki, Hala Maki, and Lido features well-developed retail and service infrastructure – a hub for everyday shopping. The Atut Ruczaj shopping center includes large-format stores like Leroy Merlin, Biedronka, Lidl, Action, Sinsay, and Empik. A wide range of schools, kindergartens, restaurants, and fitness clubs are also within easy reach."
+      }
+    }
   },
   "contact": {
     "title": "Contact us",

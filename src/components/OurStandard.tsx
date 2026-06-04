@@ -145,7 +145,8 @@ export function OurStandard() {
   const { t } = useTranslation()
 
   const hasMore = CARD_KEYS.length > INITIAL_VISIBLE_COUNT
-  const visibleKeys = showAll ? CARD_KEYS : CARD_KEYS.slice(0, INITIAL_VISIBLE_COUNT)
+  const initialKeys = CARD_KEYS.slice(0, INITIAL_VISIBLE_COUNT)
+  const extraKeys = CARD_KEYS.slice(INITIAL_VISIBLE_COUNT)
 
   useLayoutEffect(() => {
     if (!showAll) return
@@ -160,83 +161,31 @@ export function OurStandard() {
 
     gsap.fromTo(
       extras,
-      { autoAlpha: 0, y: 48, scale: 0.88, filter: 'blur(6px)' },
+      { autoAlpha: 0, y: 32 },
       {
         autoAlpha: 1,
         y: 0,
-        scale: 1,
-        filter: 'blur(0px)',
-        duration: 0.7,
-        ease: 'back.out(1.35)',
-        stagger: { amount: 0.45, from: 'start' },
-        clearProps: 'filter',
+        duration: 0.5,
+        ease: 'power3.out',
+        stagger: 0.08,
       },
     )
   }, [showAll])
 
-  const handleToggle = () => {
-    if (showAll && gridRef.current) {
-      const extras = gridRef.current.querySelectorAll('[data-card-extra]')
-      if (extras.length) {
-        gsap.to(extras, {
-          autoAlpha: 0,
-          y: 24,
-          scale: 0.95,
-          duration: 0.35,
-          ease: 'power2.in',
-          stagger: 0.04,
-          onComplete: () => setShowAll(false),
-        })
-        return
-      }
-    }
-    setShowAll(true)
-  }
-
   return (
     <section ref={ref} id="standard" className="py-24 bg-white overflow-hidden scroll-mt-32">
       <div className="max-w-[1440px] mx-auto px-6">
-        <div data-reveal className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8 text-center md:text-left">
-          <div>
-            <h2 className="text-[48px] font-medium tracking-tight mb-4">{t('ourStandard.title')}</h2>
-            <p className="text-gray-500 font-inter text-lg">{t('ourStandard.subtitle')}</p>
-          </div>
-          {hasMore && (
-            <button
-              type="button"
-              onClick={handleToggle}
-              aria-expanded={showAll}
-              className="inline-flex items-center gap-2 text-[15px] font-medium text-brand-dark hover:opacity-70 transition-opacity"
-            >
-              {showAll ? t('ourStandard.viewLess') : t('ourStandard.viewAll')}
-              <svg
-                className={['w-4 h-4 transition-transform duration-500', showAll ? 'rotate-90' : ''].join(' ')}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </button>
-          )}
+        <div data-reveal className="mb-16 text-center md:text-left">
+          <h2 className="text-[48px] font-medium tracking-tight mb-4">{t('ourStandard.title')}</h2>
+          <p className="text-gray-500 font-inter text-lg">{t('ourStandard.subtitle')}</p>
         </div>
 
         <div
           ref={gridRef}
           className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3"
-          style={{ perspective: '1200px' }}
         >
-          {visibleKeys.map((key, index) => (
-            <div
-              key={key}
-              data-card={index < INITIAL_VISIBLE_COUNT ? true : undefined}
-              data-card-extra={index >= INITIAL_VISIBLE_COUNT ? true : undefined}
-              className="h-full"
-              style={{ transformStyle: 'preserve-3d' }}
-            >
+          {initialKeys.map((key) => (
+            <div key={key} data-card className="h-full">
               <Card
                 title={t(`ourStandard.cards.${key}.title`)}
                 description={t(`ourStandard.cards.${key}.description`)}
@@ -244,7 +193,42 @@ export function OurStandard() {
               />
             </div>
           ))}
+          {showAll &&
+            extraKeys.map((key) => (
+              <div key={key} data-card-extra className="h-full">
+                <Card
+                  title={t(`ourStandard.cards.${key}.title`)}
+                  description={t(`ourStandard.cards.${key}.description`)}
+                  icon={<CardIcon cardKey={key} />}
+                />
+              </div>
+            ))}
         </div>
+
+        {hasMore && (
+          <div data-reveal className="mt-12 text-left">
+            <button
+              type="button"
+              onClick={() => setShowAll((open) => !open)}
+              aria-expanded={showAll}
+              className="inline-flex items-center gap-2 text-[15px] font-medium text-brand-dark hover:opacity-70 transition-opacity"
+            >
+              {showAll ? t('ourStandard.viewLess') : t('ourStandard.viewAll')}
+              <svg
+                className={['w-4 h-4 transition-transform duration-300', showAll ? 'rotate-90' : ''].join(' ')}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )

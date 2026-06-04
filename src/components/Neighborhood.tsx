@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import zakrzowekImg from '../assets/zakrzowek.png'
 import { useTranslation } from 'react-i18next'
@@ -97,15 +98,15 @@ export function Neighborhood() {
             </div>
           </div>
 
-          <a
-            href="#"
+          <Link
+            to="/ruczaj"
             className="inline-flex items-center gap-2 text-[15px] font-medium text-brand-dark hover:opacity-70 transition-opacity"
           >
             {t('neighborhood.viewMap')}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </a>
+          </Link>
         </div>
 
         <div data-reveal className="order-1 lg:order-2 relative h-[500px] lg:h-[600px] w-full rounded-[40px] overflow-hidden">
