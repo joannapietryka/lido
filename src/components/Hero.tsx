@@ -28,8 +28,8 @@ export function Hero() {
 
   return (
     <div ref={ref}>
-      <div className="flex flex-col lg:flex-row justify-between items-end gap-12 mb-16">
-        <h1 data-reveal className="text-[64px] lg:text-[88px] leading-[0.95] font-light tracking-[-0.02em] lg:w-2/3">
+      <div className="flex flex-col lg:flex-row justify-between items-end gap-12 mb-8 lg:mb-16">
+        <h1 data-reveal className="text-[44px] lg:text-[88px] leading-[0.95] font-light tracking-[-0.02em] lg:w-2/3">
           {t('hero.titleLine1')} <br />
           <span className="font-medium">{t('hero.titleEmphasis')}</span>
         </h1>
@@ -79,8 +79,8 @@ export function Hero() {
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 h-[300px] lg:h-[270px]">
-            <div data-reveal className="rounded-[2.5rem] overflow-hidden group h-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 h-auto sm:h-[300px] lg:h-[270px]">
+            <div data-reveal className="rounded-[2.5rem] overflow-hidden group h-[240px] sm:h-full">
               <img
                 src={salonImg}
                 alt="Interior Detail"
@@ -88,7 +88,7 @@ export function Hero() {
               />
             </div>
 
-            <div data-reveal className="bg-[#EBEBEB] rounded-[2.5rem] p-8 flex flex-col justify-center relative h-full">
+            <div data-reveal className="bg-[#EBEBEB] rounded-[2.5rem] p-8 flex flex-col justify-center relative h-auto sm:h-full">
               <h3 className="text-[56px] font-medium text-brand-dark leading-none mb-2 tracking-tight">{t('hero.statsCount')}</h3>
               <p className="text-[12px] font-bold tracking-widest text-gray-500 uppercase mb-4">{t('hero.statsLabel')}</p>
               <p className="text-[14px] font-inter text-gray-600 leading-relaxed max-w-[200px]">

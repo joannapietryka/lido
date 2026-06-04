@@ -31,10 +31,16 @@ export function ApartmentDetailPage() {
   return (
     <div className="w-full min-h-screen bg-white">
       <Navbar />
-      <div key={slug} className="flex flex-col max-w-[1440px] mx-auto w-full">
-        <ApartmentDetailIntro activeSlug={slug} />
-        <ApartmentGallery apartment={apartment} />
-        <ApartmentDetailMain />
+      <div key={slug} className="flex flex-col max-w-[1440px] mx-auto w-full overflow-hidden">
+        <div className="order-1 shrink-0 lg:order-2">
+          <ApartmentDetailIntro activeSlug={slug} />
+        </div>
+        <div className="order-2 lg:order-1">
+          <ApartmentGallery apartment={apartment} />
+        </div>
+        <div className="order-3">
+          <ApartmentDetailMain />
+        </div>
       </div>
       <ApartmentDetailCta />
       <SiteFooter />

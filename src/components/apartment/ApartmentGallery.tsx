@@ -33,10 +33,7 @@ function GalleryTile({
 
 export function ApartmentGallery({ apartment }: { apartment: ApartmentData }) {
   const { t } = useTranslation()
-  const ref = useScrollReveal<HTMLDivElement>({
-    trigger: 'immediate',
-    resetKey: apartment.slug,
-  })
+  const ref = useScrollReveal<HTMLDivElement>({ resetKey: apartment.slug })
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   const photos = apartment.photos
@@ -62,9 +59,9 @@ export function ApartmentGallery({ apartment }: { apartment: ApartmentData }) {
 
   return (
     <>
-      <div ref={ref} className="order-2 md:order-1 px-6 lg:px-12 max-w-[1440px] mx-auto w-full mb-8 md:mb-12 md:pt-32">
-        {/* Mobile: hero image + thumbnail strip */}
-        <div className="flex flex-col gap-3 md:hidden">
+      <div ref={ref} className="px-6 lg:px-12 max-w-[1440px] mx-auto w-full mb-8 lg:mb-12 lg:pt-32">
+        {/* Mobile / tablet: hero image + thumbnail strip */}
+        <div className="flex flex-col gap-3 lg:hidden">
           <div data-reveal className="w-full aspect-[4/3] min-h-[220px] max-h-[50vh]">
             <GalleryTile
               photo={main}
@@ -95,7 +92,7 @@ export function ApartmentGallery({ apartment }: { apartment: ApartmentData }) {
         </div>
 
         {/* Desktop: mosaic grid */}
-        <div className="hidden md:grid md:grid-cols-4 md:grid-rows-2 gap-4 h-[550px]">
+        <div className="hidden lg:grid lg:grid-cols-4 lg:grid-rows-2 gap-4 h-[550px]">
           <div data-reveal className="col-span-2 row-span-2 h-full">
             <GalleryTile
               photo={main}

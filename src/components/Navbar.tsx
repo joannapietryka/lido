@@ -26,15 +26,15 @@ export function Navbar() {
   return (
     <div className="fixed top-6 left-0 right-0 z-[70] px-6 flex justify-center pointer-events-none">
       <div className="w-full max-w-7xl pointer-events-none">
-        <nav className="pointer-events-auto bg-white/80 backdrop-blur-md border border-white/40 shadow-sm rounded-full px-6 py-3 w-full flex justify-between items-center transition-all duration-300 hover:bg-white/95 relative z-[80]">
-          <div className="flex items-center gap-12">
+        <nav className="pointer-events-auto bg-white border border-gray-100 shadow-sm lg:bg-white/80 lg:backdrop-blur-md lg:border-white/40 rounded-full px-4 sm:px-6 py-3 w-full flex justify-between items-center gap-3 transition-all duration-300 lg:hover:bg-white/95 relative z-[80]">
+          <div className="flex items-center gap-12 min-w-0">
             <Link
               to="/"
-              className="flex items-center gap-2 group"
+              className="flex items-center shrink-0 group"
               aria-label={t('navbar.homeAria')}
               onClick={closeMobile}
             >
-              <img src={logoLight} alt="Lido logo" className="h-8 object-contain" />
+              <img src={logoLight} alt="Lido logo" className="h-7 sm:h-8 w-auto object-contain" />
             </Link>
 
             <div className="hidden lg:flex gap-8 text-[15px] font-medium">

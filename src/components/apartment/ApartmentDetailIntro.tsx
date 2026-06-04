@@ -14,7 +14,7 @@ export function ApartmentDetailIntro({ activeSlug }: ApartmentDetailIntroProps) 
   const { t } = useTranslation()
 
   return (
-    <header className="order-1 md:order-2 px-6 lg:px-12 max-w-[1440px] mx-auto w-full pt-28 pb-4 md:pt-0 md:pb-8">
+    <header className="relative z-10 bg-white px-6 lg:px-12 max-w-[1440px] mx-auto w-full pt-28 pb-6 lg:pt-0 lg:pb-8">
       <div className="inline-flex bg-brand-lighter rounded-full p-1 mb-4 md:mb-6">
         {APARTMENT_SLUGS.map((id) => (
           <Link
@@ -29,7 +29,7 @@ export function ApartmentDetailIntro({ activeSlug }: ApartmentDetailIntroProps) 
           </Link>
         ))}
       </div>
-      <h1 className="text-[28px] sm:text-[36px] md:text-[48px] font-medium leading-[1.1] tracking-tight text-brand-dark mb-3 md:mb-4">
+      <h1 className="text-[26px] sm:text-[32px] lg:text-[48px] font-medium leading-[1.15] tracking-tight text-brand-dark mb-3 lg:mb-4">
         {t(`apartmentDetail.units.${activeSlug}.title`)}
       </h1>
       <p className="text-gray-500 font-inter text-base md:text-lg flex items-center gap-2">

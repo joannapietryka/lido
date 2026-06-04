@@ -18,7 +18,7 @@ export function ApartmentDetailMain() {
   ]
 
   return (
-    <main ref={ref} className="order-3 px-6 lg:px-12 max-w-[1440px] mx-auto w-full pb-24">
+    <main ref={ref} className="relative z-10 bg-white px-6 lg:px-12 max-w-[1440px] mx-auto w-full pb-24">
       <div className="max-w-4xl">
         <div
           data-reveal
