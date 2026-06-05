@@ -9,7 +9,7 @@ export function Contact() {
     <section ref={ref} id="kontakt" className="py-24 bg-white scroll-mt-32">
       <div className="max-w-[1440px] mx-auto px-6">
         <div data-reveal className="text-center max-w-[18rem] lg:max-w-2xl mx-auto mb-16">
-          <h2 className="text-[48px] font-medium text-brand-dark mb-4 tracking-tight">{t('contact.title')}</h2>
+          <h2 className="text-[48px] font-medium text-brand-dark mb-4 tracking-tight leading-[1.2]">{t('contact.title')}</h2>
           <p className="text-gray-500 font-inter text-[17px] leading-relaxed whitespace-pre-line">
             {t('contact.subtitle')}
           </p>
