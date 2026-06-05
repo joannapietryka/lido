@@ -35,7 +35,7 @@
   },
   "hero": {
     "titleLine1": "Your new address",
-    "titleEmphasis": "on the map of Kraków",
+    "titleEmphasis": "on the map of\u00A0Kraków",
     "subtitle": "Apartments designed for your rhythm — close to university, work, and the city.",
     "badgeNew": "New apartments",
     "areaTitle": "Ruczaj, Kraków",
@@ -61,13 +61,13 @@
     "oneRoom": "1 room",
     "twoRooms": "2 rooms",
     "oneBath": "1 bathroom",
-    "featureStudio": "Ideal for singles who value being close to universities and public transport.",
-    "featureTwoRooms": "A perfect option for couples and roommates who value peace and comfort.",
+    "featureStudio": "Ideal for singles who value being close to\u00A0universities and public transport.",
+    "featureTwoRooms": "A perfect option for couples and\u00A0roommates who value peace and comfort.",
     "viewDetails": "View details"
   },
   "ourStandard": {
     "title": "Our standard",
-    "subtitle": "What sets us apart in every property we represent.",
+    "subtitle": "What sets apart our apartments",
     "viewAll": "View all features",
     "viewLess": "Show less",
     "cards": {
@@ -123,7 +123,7 @@
   },
   "neighborhood": {
     "title": "Location",
-    "subtitle": "Situated close to Kraków's key universities and business areas – including the Kampus 600-lecia UJ and Business Park Czerwone Maki, as well as Centrum Handlowe Atut and the Hala Maki food court – Lido Apartments place you just a short walk from a tram stop, putting the center of Kraków only 20 minutes away.",
+    "subtitle": "Situated close to Kraków's key universities and business areas – including the Kampus 600-lecia UJ and Business Park Czerwone Maki, as well as Centrum Handlowe Atut and the Hala Maki food court – Lido Apartments place you just a short walk from a tram stop, putting the center of\u00A0Kraków only 20 minutes away.",
     "items": {
       "transit": {
         "title": "Public transport",
@@ -239,7 +239,7 @@
         "bedrooms": "1 room",
         "bathrooms": "1 bath",
         "area": "20 m²",
-        "description": "A functional studio with a thoughtful layout. Fully furnished and equipped - move in right away and enjoy life in Ruczaj.\n\nA modern kitchen with fridge, stove, oven, and dishwasher. A private space to work and relax in a quiet area, close to universities and public transport."
+        "description": "A functional studio with a thoughtful layout. Fully furnished and equipped - move in right away and enjoy life in Ruczaj.\n\nA modern kitchen with fridge, stove, oven, and dishwasher. A private space to work and relax in a quiet area, close to\u00A0universities and public transport."
       },
       "2-pokoje": {
         "title": "2-room apartment in Ruczaj",

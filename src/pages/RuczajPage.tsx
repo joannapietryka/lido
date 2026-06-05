@@ -24,7 +24,7 @@ export function RuczajPage() {
   }, [i18n.language])
 
   return (
-    <div className="w-full min-h-screen bg-white overflow-hidden">
+    <div className="w-full min-h-screen bg-white">
       <Navbar />
 
       <main className="px-6 lg:px-12 max-w-[1440px] mx-auto w-full pb-24 pt-32">

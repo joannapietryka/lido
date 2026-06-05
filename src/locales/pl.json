@@ -36,7 +36,7 @@
   "hero": {
     "titleLine1": "Twój nowy adres",
     "titleEmphasis": "na mapie Krakowa",
-    "subtitle": "Mieszkania stworzone z myślą o Twoim rytmie – blisko uczelni, pracy i miasta",
+    "subtitle": "Mieszkania stworzone z myślą o Twoim rytmie – blisko uczelni, pracy i\u00A0miasta",
     "badgeNew": "Nowe mieszkania",
     "areaTitle": "Ruczaj Kraków",
     "address": "Przemiarki 15",
@@ -46,7 +46,7 @@
   },
   "floorPlans": {
     "title": "Oferta Mieszkań",
-    "subtitle": "Oferujemy dwa rodzaje mieszkań na Ruczaju:\nkompaktowe studio oraz mieszkanie 2-pokojowe z osobną kuchnią.",
+    "subtitle": "Oferujemy dwa rodzaje mieszkań na\u00A0Ruczaju:\nkompaktowe studio oraz mieszkanie 2\u2011pokojowe z osobną kuchnią.",
     "tabStudio": "Studio",
     "tabTwoRooms": "2 Pokoje",
     "availableNow": "Dostępne teraz",
@@ -67,7 +67,7 @@
   },
   "ourStandard": {
     "title": "Nasz Standard",
-    "subtitle": "Co nas wyróżnia w każdej inwestycji.",
+    "subtitle": "Co wyróżnia nasze mieszkania",
     "viewAll": "Zobacz wszystkie cechy",
     "viewLess": "Pokaż mniej",
     "cards": {
@@ -77,7 +77,7 @@
       },
       "fullyEquippedKitchen": {
         "title": "W pełni wyposażona kuchnia",
-        "description": "Lodówka, kuchenka, piekarnik i zmywarka – gotowe do codziennego użytku."
+        "description": "Lodówka, kuchenka, piekarnik i\u00A0zmywarka – gotowe do codziennego użytku."
       },
       "elevatorAndMonitoring": {
         "title": "Winda i monitoring",
@@ -123,7 +123,7 @@
   },
   "neighborhood": {
     "title": "O lokalizacji",
-    "subtitle": "Położone blisko kluczowych krakowskich ośrodków akademickich i biznesowych – w tym Kampusu 600-lecia UJ i Business Park Czerwone Maki, a także Centrum Handlowego Atut oraz strefy food court w Hali Maki – apartamenty Lido znajdują się zaledwie kilka kroków od przystanku tramwajowego, skąd w ciągu 20 minut można dotrzeć do centrum Krakowa",
+    "subtitle": "Położone blisko kluczowych krakowskich ośrodków akademickich i biznesowych – w tym Kampusu 600-lecia UJ i Business Park Czerwone Maki, a także Centrum Handlowego Atut oraz strefy food court w Hali Maki – apartamenty Lido znajdują się zaledwie kilka kroków od przystanku tramwajowego, skąd w ciągu 20 minut można dotrzeć do centrum Krakowa.",
     "items": {
       "transit": {
         "title": "Komunikacja",
@@ -172,8 +172,8 @@
     }
   },
   "contact": {
-    "title": "Skontaktuj się z nami",
-    "subtitle": "Masz pytania? Skontaktuj się z nami, a chętnie na nie odpowiemy.",
+    "title": "Skontaktuj się z\u00A0nami",
+    "subtitle": "Masz pytania? Skontaktuj się z nami, a\u00A0chętnie na nie odpowiemy.",
     "write": "Napisz",
     "call": "Zadzwoń",
     "office": "Nasze biuro",
@@ -186,7 +186,7 @@
     "placeholders": {
       "firstName": "Jan",
       "lastName": "Kowalski",
-      "email": "jan@example.com",
+      "email": "jan@gmail.com",
       "phone": "+48 000 000 000",
       "message": "Interesują mnie mieszkania 2-pokojowe..."
     }
@@ -234,7 +234,7 @@
     },
     "units": {
       "studio": {
-        "title": "Mieszkanie 1-pokojowe na Ruczaju",
+        "title": "Mieszkanie 1-pokojowe na\u00A0Ruczaju",
         "price": "od 1 800 zł/msc",
         "bedrooms": "1 pokój",
         "bathrooms": "1 łazienka",
@@ -242,7 +242,7 @@
         "description": "Funkcjonalne studio z przemyślanym układem. Mieszkanie jest w pełni umeblowane i wyposażone - wprowadź się od razu i korzystaj z życia na Ruczaju.\n\nNowoczesna kuchnia z lodówką, kuchenką, piekarnikiem i zmywarką. Prywatne miejsce do pracy i wypoczynku w spokojnej okolicy, blisko uczelni i komunikacji miejskiej."
       },
       "2-pokoje": {
-        "title": "Mieszkanie 2-pokojowe na Ruczaju",
+        "title": "Mieszkanie 2-pokojowe na\u00A0Ruczaju",
         "price": "od 2 500 zł/msc",
         "bedrooms": "2 pokoje",
         "bathrooms": "1 łazienka",
@@ -252,7 +252,7 @@
     },
     "cta": {
       "title": "Gotowy do przeprowadzki?",
-      "subtitle": "Skontaktuj się z nami, aby obejrzeć mieszkania i dowiedzieć się więcej o dostępności mieszkań na Ruczaju.",
+      "subtitle": "Skontaktuj się z nami, aby obejrzeć mieszkania i dowiedzieć się więcej o\u00A0dostępności mieszkań na Ruczaju.",
       "button": "Skontaktuj się"
     }
   },

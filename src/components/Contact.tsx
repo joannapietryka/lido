@@ -8,17 +8,17 @@ export function Contact() {
   return (
     <section ref={ref} id="kontakt" className="py-24 bg-white scroll-mt-32">
       <div className="max-w-[1440px] mx-auto px-6">
-        <div data-reveal className="text-center max-w-2xl mx-auto mb-16">
+        <div data-reveal className="text-center max-w-[18rem] lg:max-w-2xl mx-auto mb-16">
           <h2 className="text-[48px] font-medium text-brand-dark mb-4 tracking-tight">{t('contact.title')}</h2>
-          <p className="text-gray-500 font-inter text-[17px] leading-relaxed">
+          <p className="text-gray-500 font-inter text-[17px] leading-relaxed whitespace-pre-line">
             {t('contact.subtitle')}
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div data-reveal className="lg:col-span-1 space-y-6">
-            <div className="bg-[#F8F9FA] rounded-[32px] p-8">
-              <div className="w-12 h-12 bg-brand-dark rounded-full flex items-center justify-center mb-4">
+            <div className="bg-[#F8F9FA] rounded-[32px] p-8 text-center lg:text-left">
+              <div className="w-12 h-12 bg-brand-dark rounded-full flex items-center justify-center mb-4 mx-auto lg:mx-0">
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
@@ -32,8 +32,8 @@ export function Contact() {
               <p className="text-gray-500 font-inter text-[14px]">hello@lido.com</p>
             </div>
 
-            <div className="bg-[#F8F9FA] rounded-[32px] p-8">
-              <div className="w-12 h-12 bg-brand-dark rounded-full flex items-center justify-center mb-4">
+            <div className="bg-[#F8F9FA] rounded-[32px] p-8 text-center lg:text-left">
+              <div className="w-12 h-12 bg-brand-dark rounded-full flex items-center justify-center mb-4 mx-auto lg:mx-0">
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
@@ -47,8 +47,8 @@ export function Contact() {
               <p className="text-gray-500 font-inter text-[14px]">+1 (555) 123-4567</p>
             </div>
 
-            <div className="bg-[#F8F9FA] rounded-[32px] p-8">
-              <div className="w-12 h-12 bg-brand-dark rounded-full flex items-center justify-center mb-4">
+            <div className="bg-[#F8F9FA] rounded-[32px] p-8 text-center lg:text-left">
+              <div className="w-12 h-12 bg-brand-dark rounded-full flex items-center justify-center mb-4 mx-auto lg:mx-0">
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"

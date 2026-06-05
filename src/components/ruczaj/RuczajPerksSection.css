@@ -3,6 +3,7 @@
   align-items: flex-end;
   gap: 0;
   width: 100%;
+  overflow: visible;
 }
 
 .ruczaj-perk-row--reverse {

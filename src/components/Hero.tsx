@@ -1,26 +1,9 @@
+import { Link } from 'react-router-dom'
 import heroVideo from '../assets/video/download.mp4'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import buildingImg from '../assets/building.png'
 import salonImg from '../assets/salon.png'
 import { useTranslation } from 'react-i18next'
-
-function ArrowButton() {
-  return (
-    <button className="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center hover:scale-105 transition-transform text-brand-dark shadow-md">
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M5 12h14M12 5l7 7-7 7" />
-      </svg>
-    </button>
-  )
-}
 
 export function Hero() {
   const ref = useScrollReveal<HTMLDivElement>()
@@ -63,7 +46,6 @@ export function Hero() {
                 {t('hero.address')}
               </p>
             </div>
-            <ArrowButton />
           </div>
         </div>
 
@@ -94,7 +76,11 @@ export function Hero() {
               <p className="text-[14px] font-inter text-gray-600 leading-relaxed max-w-[200px]">
                 {t('hero.statsDescription')}
               </p>
-              <button className="absolute bottom-8 right-8 w-12 h-12 bg-white rounded-full flex items-center justify-center hover:scale-105 transition-transform text-brand-dark shadow-sm">
+              <Link
+                to="/mieszkania/studio"
+                aria-label={t('floorPlans.viewDetails')}
+                className="absolute bottom-8 right-8 w-12 h-12 bg-white rounded-full flex items-center justify-center hover:scale-105 transition-transform text-brand-dark shadow-sm"
+              >
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -103,10 +89,11 @@ export function Hero() {
                   strokeWidth={2}
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  aria-hidden
                 >
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -109,28 +109,28 @@ export function Neighborhood() {
           </Link>
         </div>
 
-        <div data-reveal className="order-1 lg:order-2 relative h-[500px] lg:h-[600px] w-full rounded-[40px] overflow-hidden">
+        <div data-reveal className="order-1 lg:order-2 relative h-[320px] sm:h-[420px] lg:h-[600px] w-full rounded-[40px] overflow-hidden">
           <img
             src={zakrzowekImg}
             alt="Zakrzówek"
-            className="w-full h-full object-cover will-change-transform scale-[1.06]"
+            className="w-full h-full object-cover will-change-transform lg:scale-[1.06]"
             data-parallax
           />
 
-          <div className="absolute top-[15%] right-[-5%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-            <div className="bg-[#1A1A1A] text-white text-[13px] font-medium px-4 py-2 rounded-xl shadow-lg whitespace-nowrap hidden sm:block mb-2">
+          <div className="absolute top-[20%] right-[10%] sm:top-[18%] sm:right-[12%] lg:top-[15%] lg:right-[-5%] lg:-translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center">
+            <div className="bg-[#1A1A1A] text-white text-[11px] sm:text-[13px] font-medium px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl shadow-lg whitespace-nowrap mb-2">
               {t('neighborhood.pin1')}
             </div>
-            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform">
+            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg">
               <div className="w-3 h-3 bg-brand-dark rounded-full" />
             </div>
           </div>
 
-          <div className="absolute top-[55%] left-[30%] -translate-x-1/2 -translate-y-1/2 flex items-center gap-3">
-            <div className="bg-[#1A1A1A] text-white text-[13px] font-medium px-4 py-2 rounded-xl shadow-lg whitespace-nowrap hidden sm:block">
+          <div className="absolute top-[58%] left-[28%] sm:top-[55%] sm:left-[30%] -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
+            <div className="bg-[#1A1A1A] text-white text-[11px] sm:text-[13px] font-medium px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl shadow-lg whitespace-nowrap order-1 sm:order-none">
               {t('neighborhood.pin2')}
             </div>
-            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform relative z-10">
+            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg order-2 sm:order-none shrink-0">
               <div className="w-3 h-3 bg-brand-dark rounded-full" />
             </div>
           </div>

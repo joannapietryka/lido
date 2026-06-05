@@ -83,28 +83,40 @@ export function Navbar() {
         <div
           id="mobile-menu"
           className={[
-            'pointer-events-auto lg:hidden mt-3 rounded-[28px] border border-white/40 bg-white/90 backdrop-blur-md shadow-sm overflow-hidden transition-all duration-300 relative z-[75]',
+            'pointer-events-auto lg:hidden mt-4 rounded-[32px] border border-gray-100 bg-white shadow-md overflow-hidden transition-all duration-300 relative z-[75]',
             mobileOpen ? 'opacity-100 translate-y-0' : 'pointer-events-none opacity-0 -translate-y-2 h-0',
           ].join(' ')}
         >
-          <div className="p-4">
-            <div className="flex flex-col gap-2 text-[20px] font-medium">
-              <Link to="/mieszkania" onClick={closeMobile} className="px-4 py-3 rounded-2xl text-gray-700 hover:bg-white transition-colors">
+          <div className="p-6 sm:p-8">
+            <div className="flex flex-col gap-1 text-[24px] sm:text-[26px] font-medium">
+              <Link
+                to="/mieszkania"
+                onClick={closeMobile}
+                className="px-5 py-4 sm:py-5 rounded-2xl text-gray-800 hover:bg-gray-50 transition-colors"
+              >
                 {t('navbar.apartments')}
               </Link>
-              <Link to="/#standard" onClick={closeMobile} className="px-4 py-3 rounded-2xl text-gray-700 hover:bg-white transition-colors">
+              <Link
+                to="/#standard"
+                onClick={closeMobile}
+                className="px-5 py-4 sm:py-5 rounded-2xl text-gray-800 hover:bg-gray-50 transition-colors"
+              >
                 {t('navbar.standard')}
               </Link>
-              <Link to="/#lokalizacja" onClick={closeMobile} className="px-4 py-3 rounded-2xl text-gray-700 hover:bg-white transition-colors">
+              <Link
+                to="/#lokalizacja"
+                onClick={closeMobile}
+                className="px-5 py-4 sm:py-5 rounded-2xl text-gray-800 hover:bg-gray-50 transition-colors"
+              >
                 {t('navbar.location')}
               </Link>
             </div>
 
-            <div className="mt-4">
+            <div className="mt-6 sm:mt-8">
               <Link
                 to="/#kontakt"
                 onClick={closeMobile}
-                className="inline-flex w-full justify-center bg-brand-dark text-white px-7 py-3 rounded-full text-[15px] font-medium hover:bg-gray-800 transition-transform active:scale-95"
+                className="inline-flex w-full justify-center bg-brand-dark text-white px-8 py-4 sm:py-[18px] rounded-full text-[17px] sm:text-[18px] font-medium hover:bg-gray-800 transition-transform active:scale-95"
               >
                 {t('navbar.contact')}
               </Link>

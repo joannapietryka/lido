@@ -26,7 +26,7 @@ export function RuczajPerksSection() {
   const ref = useScrollReveal<HTMLElement>()
 
   return (
-    <section ref={ref} className="flex flex-col gap-14 lg:gap-20 max-w-4xl mx-auto w-full overflow-hidden">
+    <section ref={ref} className="flex flex-col gap-14 lg:gap-20 max-w-4xl mx-auto w-full px-6 sm:px-10 lg:px-14 overflow-visible">
       {SECTION_KEYS.map((key, index) => {
         const Icon = SECTION_ICONS[key]
         const reversed = index % 2 === 1
