@@ -107,7 +107,7 @@ function FaqItem({ faqKey, isOpen, onToggle }: { faqKey: FaqKey; isOpen: boolean
 export function Faq() {
   const ref = useScrollReveal<HTMLElement>()
   const { t } = useTranslation()
-  const [openKey, setOpenKey] = useState<FaqKey | null>(FAQ_KEYS[0])
+  const [openKey, setOpenKey] = useState<FaqKey | null>(null)
 
   useLayoutEffect(() => {
     const el = ref.current

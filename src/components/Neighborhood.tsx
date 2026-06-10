@@ -109,12 +109,11 @@ export function Neighborhood() {
           </Link>
         </div>
 
-        <div data-reveal className="order-1 lg:order-2 relative h-[320px] sm:h-[420px] lg:h-[600px] w-full rounded-[40px] overflow-hidden">
+        <div data-reveal className="order-1 lg:order-2 relative w-full rounded-[40px] overflow-hidden lg:h-[600px]">
           <img
             src={zakrzowekImg}
             alt="Zakrzówek"
-            className="w-full h-full object-cover will-change-transform lg:scale-[1.06]"
-            data-parallax
+            className="block w-full h-auto lg:h-full lg:object-cover lg:object-center will-change-transform lg:scale-[1.06]"
           />
 
           <div className="absolute top-[20%] right-[10%] sm:top-[18%] sm:right-[12%] lg:top-[15%] lg:right-[-5%] lg:-translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center">

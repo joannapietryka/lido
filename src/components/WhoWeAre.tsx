@@ -50,13 +50,12 @@ export function WhoWeAre() {
 
         <div
           data-reveal
-          className="order-1 lg:order-2 relative h-[320px] sm:h-[400px] lg:h-[520px] w-full rounded-[40px] overflow-hidden"
+          className="order-1 lg:order-2 relative w-full rounded-[40px] overflow-hidden bg-white lg:h-[520px]"
         >
           <img
             src={keysImg}
             alt={t('whoWeAre.imageAlt')}
-            className="w-full h-full object-cover will-change-transform lg:scale-[1.04]"
-            data-parallax
+            className="block w-full h-auto lg:h-full lg:object-cover lg:object-center will-change-transform lg:scale-[1.04]"
           />
         </div>
       </div>

@@ -31,6 +31,12 @@ export function SiteFooter() {
             <Link to="/#standard" className="hover:text-white transition-colors">
               {t('footer.links.standard')}
             </Link>
+            <Link to="/#o-nas" className="hover:text-white transition-colors">
+              {t('footer.links.whoWeAre')}
+            </Link>
+            <Link to="/#faq" className="hover:text-white transition-colors">
+              {t('footer.links.faq')}
+            </Link>
             <Link to="/ruczaj" className="hover:text-white transition-colors">
               {t('footer.links.location')}
             </Link>
