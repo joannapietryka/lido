@@ -43,16 +43,13 @@ export function RuczajPage() {
           </p>
         </div>
 
-        <div
-          ref={mapRef}
-          className="relative mb-16 lg:mb-20 rounded-[40px] overflow-hidden shadow-sm border border-gray-100 leading-[0]"
-        >
-          <div data-reveal className="relative w-full aspect-[2048/960]">
+        <div ref={mapRef} className="relative mb-16 lg:mb-20">
+          <div className="rounded-[40px] overflow-hidden shadow-sm leading-[0]">
             <img
+              data-reveal
               src={mapSrc}
               alt={t('ruczajPage.mapAlt')}
-              className="absolute inset-0 h-full w-full object-cover object-top will-change-transform"
-              data-parallax
+              className="block w-full h-auto max-w-none"
             />
           </div>
         </div>
