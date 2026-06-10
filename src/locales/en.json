@@ -28,6 +28,8 @@
     "homeAria": "Lido home",
     "apartments": "Apartments",
     "standard": "Our standard",
+    "whoWeAre": "Who we are",
+    "faq": "FAQ",
     "location": "Location",
     "contact": "Contact",
     "openMenu": "Open menu",
@@ -46,7 +48,7 @@
   },
   "floorPlans": {
     "title": "Apartment offer",
-    "subtitle": "We offer two apartment types in Ruczaj:\ncompact studio and a 2-room apartment with a separate kitchen.",
+    "subtitle": "We offer two apartment types in Ruczaj:\na 2-room apartment with a separate kitchen and a compact studio.",
     "tabStudio": "Studio",
     "tabTwoRooms": "2 rooms",
     "availableNow": "Available now",
@@ -76,7 +78,7 @@
         "description": "Durable flooring, uniform tiles, and carefully selected finishes in every apartment."
       },
       "smartLiving": {
-        "title": "Fingerprint lock",
+        "title": "Badge or code lock",
         "description": "Keyless entry — fast, secure, and convenient."
       },
       "optimalLayout": {
@@ -118,6 +120,62 @@
       "energyEfficiency": {
         "title": "Energy efficiency",
         "description": "A energy rating - lower energy consumption."
+      },
+      "bikeStorage": {
+        "title": "Free bike storage",
+        "description": "Secure bike storage in the underground garage — at no extra cost."
+      },
+      "internetIncluded": {
+        "title": "Internet and cable TV included",
+        "description": "High-speed internet and cable TV included in your monthly rent."
+      }
+    }
+  },
+  "whoWeAre": {
+    "title": "Who we are",
+    "description": "Lido is a family foundation that specializes in renting out properties. We work with no middlemen, so our offer includes only private apartments that we manage directly.\nYou pay only the agreed-upon rent and the fees associated with the apartment – no hidden costs.",
+    "imageAlt": "Apartment keys",
+    "perks": {
+      "commission": "Save on commission",
+      "agentFees": "Skip agent fees",
+      "directBooking": "Book straight with the owner"
+    }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "ctaText": "Can't find your answer? Contact us",
+    "ctaButton": "Contact us",
+    "photos": {
+      "cups": "Cups in the apartment",
+      "plant": "Plants on the balcony",
+      "balcony": "Balcony",
+      "bike": "Bike storage",
+      "cat": "Pet"
+    },
+    "items": {
+      "leasePeriod": {
+        "question": "How long is the lease agreement?",
+        "answer": "The lease is signed for 12 months with the option to extend for another term."
+      },
+      "shortTerm": {
+        "question": "Is short-term rental available?",
+        "answer": "No, we offer long-term rental only. The minimum rental period is 6 months."
+      },
+      "districtHeating": {
+        "question": "Is district heating used?",
+        "answer": "Yes, we use district heating. Heating costs are included in the rent."
+      },
+      "pets": {
+        "question": "Can I live with a pet?",
+        "answer": "We consider requests to live with a pet on a case-by-case basis."
+      },
+      "bikeStorage": {
+        "question": "Is bike storage paid?",
+        "answer": "No, the bike room is available at no extra charge for all residents."
+      },
+      "internet": {
+        "question": "Is internet available in the apartment?",
+        "answer": "Yes, the apartment includes internet access."
       }
     }
   },
@@ -177,6 +235,9 @@
     "write": "Email",
     "call": "Call",
     "office": "Our office",
+    "address": "Przemiarki 15/407, Kraków",
+    "mapTitle": "Lido office map — Przemiarki 15, Kraków",
+    "openInMaps": "Open in Google Maps",
     "firstName": "First name",
     "lastName": "Last name",
     "email": "Email address",
@@ -187,7 +248,7 @@
       "firstName": "John",
       "lastName": "Doe",
       "email": "john@example.com",
-      "phone": "+1 (555) 000-0000",
+      "phone": "+48 100 200 300",
       "message": "I'm interested in the 2 bedroom floor plans..."
     }
   },
@@ -201,6 +262,25 @@
     "address": "Przemiarki 15, Kraków Ruczaj",
     "descriptionTitle": "Property description",
     "amenitiesTitle": "Premium amenities",
+    "availability": {
+      "title": "Available apartments",
+      "hint": "Click the icon in the “Floor plan” column to view the apartment layout.",
+      "yes": "Yes",
+      "no": "No",
+      "floorValue": "Floor {{floor}}",
+      "viewFloorPlan": "View floor plan for apartment {{number}}",
+      "floorPlanTitle": "Floor plan – apartment {{number}}",
+      "floorPlanAlt": "Floor plan for apartment {{number}}",
+      "floorPlanLabel": "Floor plan preview for apartment {{number}}",
+      "columns": {
+        "number": "Apartment no.",
+        "price": "Price",
+        "area": "Area",
+        "floor": "Floor",
+        "airConditioning": "Air conditioning",
+        "floorPlan": "Floor plan"
+      }
+    },
     "stats": {
       "price": "Price",
       "bedrooms": "Bedrooms",
@@ -223,14 +303,17 @@
     },
     "amenities": {
       "security": "24/7 CCTV",
-      "fingerprint": "Fingerprint lock",
+      "fingerprint": "Badge or code lock",
       "elevator": "Elevator",
       "parking": "Underground garage",
       "kitchen": "Fully equipped kitchen",
       "balcony": "Private balcony",
       "energy": "Energy class A",
       "handyman": "On-call handyman",
-      "storage": "Spacious wardrobes"
+      "storage": "Spacious wardrobes",
+      "bikeStorage": "Bike storage",
+      "internetIncluded": "Internet and cable TV included",
+      "fullyFurnished": "Fully furnished"
     },
     "units": {
       "studio": {

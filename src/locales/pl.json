@@ -28,6 +28,8 @@
     "homeAria": "Lido strona główna",
     "apartments": "Mieszkania",
     "standard": "Nasz standard",
+    "whoWeAre": "Kim jesteśmy",
+    "faq": "FAQ",
     "location": "O lokalizacji",
     "contact": "Kontakt",
     "openMenu": "Otwórz menu",
@@ -46,7 +48,7 @@
   },
   "floorPlans": {
     "title": "Oferta Mieszkań",
-    "subtitle": "Oferujemy dwa rodzaje mieszkań na\u00A0Ruczaju:\nkompaktowe studio oraz mieszkanie 2\u2011pokojowe z osobną kuchnią.",
+    "subtitle": "Oferujemy dwa rodzaje mieszkań na\u00A0Ruczaju: \nmieszkanie 2\u2011pokojowe z osobną kuchnią oraz kompaktowe studio.",
     "tabStudio": "Studio",
     "tabTwoRooms": "2 Pokoje",
     "availableNow": "Dostępne teraz",
@@ -84,7 +86,7 @@
         "description": "Winda na każdą kondygnację oraz monitoring terenu i klatek schodowych."
       },
       "smartLiving": {
-        "title": "Zamek na odcisk palca",
+        "title": "Zamek na kod lub brelok",
         "description": "Wejście bez klucza – szybko, bezpiecznie i wygodnie."
       },
       "undergroundParking": {
@@ -118,12 +120,68 @@
       "energyEfficiency": {
         "title": "Efektywność energetyczna",
         "description": "Klasa energetyczna A - mniejsze zużycie energii."
+      },
+      "bikeStorage": {
+        "title": "Rowerownia",
+        "description": "Bezpieczne miejsce na rowery w garażu podziemnym — bez dodatkowych opłat."
+      },
+      "internetIncluded": {
+        "title": "Internet i kablówka w cenie",
+        "description": "Szybki internet i telewizja kablowa wliczone w miesięczny czynsz."
+      }
+    }
+  },
+  "whoWeAre": {
+    "title": "Kim jesteśmy",
+    "description": "Lido to rodzinna fundacja specjalizująca się w wynajmie nieruchomości. Działamy bez pośredników, dlatego w naszej ofercie znajdziesz tylko prywatne mieszkania, którymi zarządzamy bezpośrednio.\nPłacisz wyłącznie uzgodniony czynsz i opłaty związane z mieszkaniem – bez ukrytych kosztów.",
+    "imageAlt": "Klucze do mieszkania",
+    "perks": {
+      "commission": "Bez prowizji",
+      "agentFees": "Bez opłat dla pośredników",
+      "directBooking": "Bezpośrednio u właściciela"
+    }
+  },
+  "faq": {
+    "title": "Najczęściej zadawane pytania",
+    "ctaText": "Nie znalazłeś odpowiedzi? Skontaktuj się z nami",
+    "ctaButton": "Kontakt",
+    "photos": {
+      "cups": "Kubki w mieszkaniu",
+      "plant": "Rośliny na balkonie",
+      "balcony": "Balkon",
+      "bike": "Rowerownia",
+      "cat": "Zwierzę domowe"
+    },
+    "items": {
+      "leasePeriod": {
+        "question": "Na jaki okres zawierana jest umowa?",
+        "answer": "Umowa najmu zawierana jest na okres 12 miesięcy z możliwością jej przedłużenia na kolejny okres."
+      },
+      "shortTerm": {
+        "question": "Czy istnieje możliwość najmu krótkoterminowego?",
+        "answer": "Nie, oferujemy wyłącznie wynajem długoterminowy. Minimalny okres najmu wynosi 6 miesięcy."
+      },
+      "districtHeating": {
+        "question": "Czy ogrzewanie jest miejskie?",
+        "answer": "Tak, korzystamy z ogrzewania miejskiego. Koszty ogrzewania są wliczone w cenę najmu."
+      },
+      "pets": {
+        "question": "Czy można zamieszkać ze zwierzęciem?",
+        "answer": "Możliwość zamieszkania ze zwierzęciem rozpatrujemy indywidualnie."
+      },
+      "bikeStorage": {
+        "question": "Czy korzystanie z rowerowni jest płatne?",
+        "answer": "Nie, rowerownia jest dostępna bez dodatkowych opłat dla wszystkich mieszkańców."
+      },
+      "internet": {
+        "question": "Czy w mieszkaniu dostępny jest internet?",
+        "answer": "Tak, mieszkanie jest wyposażone w dostęp do internetu."
       }
     }
   },
   "neighborhood": {
     "title": "O lokalizacji",
-    "subtitle": "Położone blisko kluczowych krakowskich ośrodków akademickich i biznesowych – w tym Kampusu 600-lecia UJ i Business Park Czerwone Maki, a także Centrum Handlowego Atut oraz strefy food court w Hali Maki – apartamenty Lido znajdują się zaledwie kilka kroków od przystanku tramwajowego, skąd w ciągu 20 minut można dotrzeć do centrum Krakowa.",
+    "subtitle": "Położone blisko kluczowych krakowskich ośrodków akademickich i biznesowych – w tym Kampusu 600-lecia UJ i Business Park Czerwone Maki, a także Centrum Handlowego Atut oraz strefy food court w Hali Maki. \nApartamenty Lido znajdują się zaledwie kilka kroków od przystanku tramwajowego, skąd w ciągu 20 minut można dotrzeć do centrum Krakowa.",
     "items": {
       "transit": {
         "title": "Komunikacja",
@@ -177,6 +235,9 @@
     "write": "Napisz",
     "call": "Zadzwoń",
     "office": "Nasze biuro",
+    "address": "Przemiarki 15/407, Kraków",
+    "mapTitle": "Mapa biura Lido — Przemiarki 15, Kraków",
+    "openInMaps": "Otwórz w Google Maps",
     "firstName": "Imię",
     "lastName": "Nazwisko",
     "email": "Adres Email",
@@ -187,7 +248,7 @@
       "firstName": "Jan",
       "lastName": "Kowalski",
       "email": "jan@gmail.com",
-      "phone": "+48 000 000 000",
+      "phone": "+48 100 200 300",
       "message": "Interesują mnie mieszkania 2-pokojowe..."
     }
   },
@@ -201,6 +262,25 @@
     "address": "Przemiarki 15, Kraków Ruczaj",
     "descriptionTitle": "Opis mieszkania",
     "amenitiesTitle": "Udogodnienia premium",
+    "availability": {
+      "title": "Dostępne mieszkania",
+      "hint": "Kliknij ikonę w kolumnie „Rzut”, aby zobaczyć plan mieszkania.",
+      "yes": "Tak",
+      "no": "Nie",
+      "floorValue": "Piętro {{floor}}",
+      "viewFloorPlan": "Zobacz rzut mieszkania {{number}}",
+      "floorPlanTitle": "Rzut mieszkania {{number}}",
+      "floorPlanAlt": "Rzut mieszkania numer {{number}}",
+      "floorPlanLabel": "Podgląd rzutu mieszkania {{number}}",
+      "columns": {
+        "number": "Numer",
+        "price": "Cena",
+        "area": "Metraż",
+        "floor": "Kondygnacja",
+        "airConditioning": "Klimatyzacja",
+        "floorPlan": "Rzut"
+      }
+    },
     "stats": {
       "price": "Cena",
       "bedrooms": "Pokoje",
@@ -223,14 +303,17 @@
     },
     "amenities": {
       "security": "Monitoring 24/7",
-      "fingerprint": "Zamek na odcisk palca",
+      "fingerprint": "Zamek na kod lub brelok",
       "elevator": "Winda",
       "parking": "Garaż podziemny",
+      "bikeStorage": "Rowerownia w garażu podziemnym",
+      "internetIncluded": "Internet i kablówka w cenie",
       "kitchen": "Wyposażona kuchnia",
       "balcony": "Własny balkon",
       "energy": "Klasa energetyczna A",
       "handyman": "Dyżur techniczny",
-      "storage": "Pojemne szafy"
+      "storage": "Pojemne szafy",
+      "fullyFurnished": "Umeblowane od ręki"
     },
     "units": {
       "studio": {
@@ -253,7 +336,7 @@
     "cta": {
       "title": "Gotowy do przeprowadzki?",
       "subtitle": "Skontaktuj się z nami, aby obejrzeć mieszkania i dowiedzieć się więcej o\u00A0dostępności mieszkań na Ruczaju.",
-      "button": "Skontaktuj się"
+      "button": "Kontakt"
     }
   },
   "footer": {

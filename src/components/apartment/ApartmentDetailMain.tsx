@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import type { ApartmentSlug } from '../../data/apartments'
 import { ApartmentAmenityIcon, AMENITY_KEYS } from './ApartmentAmenityIcon'
+import { ApartmentAvailabilityTable } from './ApartmentAvailabilityTable'
 
 export function ApartmentDetailMain() {
   const { slug } = useParams<{ slug: ApartmentSlug }>()
@@ -64,6 +65,8 @@ export function ApartmentDetailMain() {
             ))}
           </div>
         </div>
+
+        <ApartmentAvailabilityTable slug={activeSlug} />
       </div>
     </main>
   )

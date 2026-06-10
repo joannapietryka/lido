@@ -12,7 +12,7 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/mieszkania" element={<Navigate to="/mieszkania/studio" replace />} />
+        <Route path="/mieszkania" element={<Navigate to="/mieszkania/2-pokoje" replace />} />
         <Route path="/mieszkania/:slug" element={<ApartmentDetailPage />} />
         <Route path="/ruczaj" element={<RuczajPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />

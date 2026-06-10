@@ -7,6 +7,8 @@ import { Hero } from '../components/Hero'
 import { Navbar } from '../components/Navbar'
 import { Neighborhood } from '../components/Neighborhood'
 import { OurStandard } from '../components/OurStandard'
+import { WhoWeAre } from '../components/WhoWeAre'
+import { Faq } from '../components/Faq'
 import { Contact } from '../components/Contact'
 import { SiteFooter } from '../components/SiteFooter'
 
@@ -30,6 +32,8 @@ export function HomePage() {
       </main>
       <FloorPlans />
       <OurStandard />
+      <WhoWeAre />
+      <Faq />
       <Neighborhood />
       <Contact />
       <SiteFooter />

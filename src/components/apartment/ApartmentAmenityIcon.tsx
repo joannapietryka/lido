@@ -1,11 +1,14 @@
 import {
   Archive,
+  Bike,
   CarFront,
   FingerprintPattern,
   Refrigerator,
   ShieldCheck,
+  Wifi,
   Wrench,
   Zap,
+  Sofa
 } from 'lucide-react'
 import { lucideIconProps, svgIconClassName } from '../../utils/iconProps'
 
@@ -19,6 +22,9 @@ type AmenityKey =
   | 'energy'
   | 'handyman'
   | 'storage'
+  | 'bikeStorage'
+  | 'internetIncluded'
+  | 'fullyFurnished'
 
 const amenityLucideProps = lucideIconProps({ size: 'lg', className: 'text-brand-dark' })
 const amenitySvgClass = svgIconClassName({ size: 'lg', className: 'text-brand-dark' })
@@ -27,6 +33,8 @@ export function ApartmentAmenityIcon({ type }: { type: AmenityKey }) {
   switch (type) {
     case 'security':
       return <ShieldCheck {...amenityLucideProps} />
+    case 'fullyFurnished':
+        return <Sofa {...amenityLucideProps} />
     case 'fingerprint':
       return <FingerprintPattern {...amenityLucideProps} />
     case 'elevator':
@@ -47,6 +55,10 @@ export function ApartmentAmenityIcon({ type }: { type: AmenityKey }) {
       )
     case 'parking':
       return <CarFront {...amenityLucideProps} />
+    case 'bikeStorage':
+      return <Bike {...amenityLucideProps} />
+    case 'internetIncluded':
+      return <Wifi {...amenityLucideProps} />
     case 'kitchen':
       return <Refrigerator {...amenityLucideProps} />
     case 'balcony':
@@ -74,13 +86,16 @@ export function ApartmentAmenityIcon({ type }: { type: AmenityKey }) {
 }
 
 export const AMENITY_KEYS: AmenityKey[] = [
+  'fullyFurnished',
+  'kitchen',
+  'internetIncluded',
+  'parking',
+  'bikeStorage',
+  'elevator',
+  'balcony',
   'security',
   'fingerprint',
-  'elevator',
-  'parking',
-  'kitchen',
-  'balcony',
-  'energy',
   'handyman',
   'storage',
+  'energy',
 ]

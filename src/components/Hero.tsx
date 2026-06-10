@@ -79,7 +79,7 @@ export function Hero() {
               <Link
                 to="/mieszkania/studio"
                 aria-label={t('floorPlans.viewDetails')}
-                className="absolute bottom-8 right-8 w-12 h-12 bg-white rounded-full flex items-center justify-center hover:scale-105 transition-transform text-brand-dark shadow-sm"
+                className="absolute bottom-8 right-8 w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-dark shadow-sm transition-all hover:scale-105 hover:bg-brand-dark hover:text-white"
               >
                 <svg
                   className="w-5 h-5"

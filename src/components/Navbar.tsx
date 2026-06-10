@@ -44,7 +44,13 @@ export function Navbar() {
               <Link to="/#standard" className={navLinkClass}>
                 {t('navbar.standard')}
               </Link>
-              <Link to="/#lokalizacja" className={navLinkClass}>
+              <Link to="/#o-nas" className={navLinkClass}>
+                {t('navbar.whoWeAre')}
+              </Link>
+              <Link to="/#faq" className={navLinkClass}>
+                {t('navbar.faq')}
+              </Link>
+              <Link to="/ruczaj" className={navLinkClass}>
                 {t('navbar.location')}
               </Link>
             </div>
@@ -104,7 +110,21 @@ export function Navbar() {
                 {t('navbar.standard')}
               </Link>
               <Link
-                to="/#lokalizacja"
+                to="/#o-nas"
+                onClick={closeMobile}
+                className="px-5 py-4 sm:py-5 rounded-2xl text-gray-800 hover:bg-gray-50 transition-colors"
+              >
+                {t('navbar.whoWeAre')}
+              </Link>
+              <Link
+                to="/#faq"
+                onClick={closeMobile}
+                className="px-5 py-4 sm:py-5 rounded-2xl text-gray-800 hover:bg-gray-50 transition-colors"
+              >
+                {t('navbar.faq')}
+              </Link>
+              <Link
+                to="/ruczaj"
                 onClick={closeMobile}
                 className="px-5 py-4 sm:py-5 rounded-2xl text-gray-800 hover:bg-gray-50 transition-colors"
               >

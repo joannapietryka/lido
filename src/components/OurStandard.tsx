@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { useTranslation } from 'react-i18next'
 import { ensureGsap, gsap } from '../utils/gsap'
-import { Cctv, FingerprintPattern, CarFront, VolumeOff, Sofa, Refrigerator } from 'lucide-react'
+import { Cctv, FingerprintPattern, CarFront, VolumeOff, Sofa, Refrigerator, Bike, Wifi } from 'lucide-react'
 
 const INITIAL_VISIBLE_COUNT = 6
 
@@ -19,19 +19,23 @@ type CardKey =
   | 'spaciousStorage'
   | 'balconyEach'
   | 'energyEfficiency'
+  | 'bikeStorage'
+  | 'internetIncluded'
 
 const CARD_KEYS: CardKey[] = [
   'fullyFurnished',
   'fullyEquippedKitchen',
+  'internetIncluded',
+  'undergroundParking',
+  'bikeStorage',
   'elevatorAndMonitoring',
   'smartLiving',
-  'undergroundParking',
+  'balconyEach',
   'conciergeService',
+  'spaciousStorage',
   'premiumMaterials',
   'optimalLayout',
   'soundproofDesign',
-  'spaciousStorage',
-  'balconyEach',
   'energyEfficiency',
 ]
 
@@ -111,6 +115,10 @@ function CardIcon({ cardKey }: { cardKey: CardKey }) {
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
         </svg>
       )
+    case 'bikeStorage':
+      return <Bike {...lucideIconProps} />
+    case 'internetIncluded':
+      return <Wifi {...lucideIconProps} />
   }
 }
 

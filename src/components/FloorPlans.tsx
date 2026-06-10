@@ -261,7 +261,7 @@ function TabPanel({ config, heroOnRightDesktop = false }: { config: TabConfig; h
 }
 
 export function FloorPlans() {
-  const [tab, setTab] = useState<TabId>('1bed')
+  const [tab, setTab] = useState<TabId>('2bed')
   const ref = useScrollReveal<HTMLElement>()
   const { t } = useTranslation()
 
@@ -313,16 +313,6 @@ export function FloorPlans() {
           <div className="bg-[#F8F9FA] p-1 rounded-full flex gap-1 border border-gray-100 shrink-0 w-full sm:w-auto">
             <button
               type="button"
-              onClick={() => setTab('1bed')}
-              className={[
-                'flex-1 sm:flex-none px-5 py-2.5 lg:px-8 lg:py-3 rounded-full text-[13px] lg:text-[15px] font-medium transition-all duration-500',
-                tab === '1bed' ? 'bg-brand-dark text-white shadow-md' : 'text-gray-500 hover:text-brand-dark',
-              ].join(' ')}
-            >
-              {t('floorPlans.tabStudio')}
-            </button>
-            <button
-              type="button"
               onClick={() => setTab('2bed')}
               className={[
                 'flex-1 sm:flex-none px-5 py-2.5 lg:px-8 lg:py-3 rounded-full text-[13px] lg:text-[15px] font-medium transition-all duration-500',
@@ -331,15 +321,25 @@ export function FloorPlans() {
             >
               {t('floorPlans.tabTwoRooms')}
             </button>
+            <button
+              type="button"
+              onClick={() => setTab('1bed')}
+              className={[
+                'flex-1 sm:flex-none px-5 py-2.5 lg:px-8 lg:py-3 rounded-full text-[13px] lg:text-[15px] font-medium transition-all duration-500',
+                tab === '1bed' ? 'bg-brand-dark text-white shadow-md' : 'text-gray-500 hover:text-brand-dark',
+              ].join(' ')}
+            >
+              {t('floorPlans.tabStudio')}
+            </button>
           </div>
         </div>
 
-        <div id="1bed" className={['tab-content', tab === '1bed' ? 'active' : ''].join(' ')}>
-          <TabPanel config={tabs['1bed']} />
+        <div id="2bed" className={['tab-content', tab === '2bed' ? 'active' : ''].join(' ')}>
+          <TabPanel config={tabs['2bed']} />
         </div>
 
-        <div id="2bed" className={['tab-content', tab === '2bed' ? 'active' : ''].join(' ')}>
-          <TabPanel config={tabs['2bed']} heroOnRightDesktop />
+        <div id="1bed" className={['tab-content', tab === '1bed' ? 'active' : ''].join(' ')}>
+          <TabPanel config={tabs['1bed']} heroOnRightDesktop />
         </div>
 
         <div data-reveal className="mt-8 lg:mt-12">

@@ -59,7 +59,7 @@ export function ApartmentGallery({ apartment }: { apartment: ApartmentData }) {
 
   return (
     <>
-      <div ref={ref} className="px-6 lg:px-12 max-w-[1440px] mx-auto w-full mb-8 lg:mb-12 lg:pt-32">
+      <div ref={ref} className="px-6 lg:px-12 max-w-[1440px] mx-auto w-full mb-8 lg:mb-12 lg:pt-8">
         {/* Mobile / tablet: hero image + thumbnail strip */}
         <div className="flex flex-col gap-3 lg:hidden">
           <div data-reveal className="w-full aspect-[4/3] min-h-[220px] max-h-[50vh]">

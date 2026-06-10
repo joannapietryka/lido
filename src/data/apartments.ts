@@ -56,7 +56,7 @@ export const APARTMENTS: Record<ApartmentSlug, ApartmentData> = {
   },
 }
 
-export const APARTMENT_SLUGS: ApartmentSlug[] = ['studio', '2-pokoje']
+export const APARTMENT_SLUGS: ApartmentSlug[] = ['2-pokoje', 'studio']
 
 export const GALLERY_PREVIEW_COUNT = 5
 
