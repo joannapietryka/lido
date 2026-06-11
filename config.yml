@@ -1,0 +1,76 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: public/uploads
+public_folder: /uploads
+
+locale: pl
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  - name: faq
+    label: FAQ
+    files:
+      - name: faq
+        label: Pytania i odpowiedzi
+        file: src/content/faq.json
+        fields:
+          - label: Pytania
+            name: items
+            widget: list
+            summary: "{{fields.questionPl}}"
+            fields:
+              - label: ID
+                name: id
+                widget: string
+                hint: "Unikalny identyfikator, np. leasePeriod — nie zmieniać po utworzeniu"
+              - label: Pytanie (PL)
+                name: questionPl
+                widget: text
+              - label: Odpowiedź (PL)
+                name: answerPl
+                widget: text
+              - label: Pytanie (EN)
+                name: questionEn
+                widget: text
+              - label: Odpowiedź (EN)
+                name: answerEn
+                widget: text
+
+  - name: availability
+    label: Dostępność mieszkań
+    files:
+      - name: availability
+        label: Tabela mieszkań
+        file: src/content/availability.json
+        fields:
+          - label: Studio
+            name: studio
+            widget: list
+            summary: "Mieszkanie {{fields.number}}"
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Numer mieszkania, name: number, widget: string }
+              - { label: Cena, name: price, widget: string }
+              - { label: Metraż, name: area, widget: string }
+              - { label: Piętro, name: floor, widget: number, value_type: int, min: 0 }
+              - { label: Klimatyzacja, name: hasAirConditioning, widget: boolean, default: false }
+              - { label: Rzut mieszkania, name: floorPlan, widget: image }
+          - label: 2 pokoje
+            name: "2-pokoje"
+            widget: list
+            summary: "Mieszkanie {{fields.number}}"
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Numer mieszkania, name: number, widget: string }
+              - { label: Cena, name: price, widget: string }
+              - { label: Metraż, name: area, widget: string }
+              - { label: Piętro, name: floor, widget: number, value_type: int, min: 0 }
+              - { label: Klimatyzacja, name: hasAirConditioning, widget: boolean, default: false }
+              - { label: Rzut mieszkania, name: floorPlan, widget: image }

@@ -13,11 +13,9 @@ export function SiteFooter() {
         <div data-reveal className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 mb-16">
           <div className="lg:w-1/3">
             <div className="flex items-center gap-3 mb-4">
-              <img
-                src={logoDark}
-                alt="Lido"
-                className="h-8 object-contain"
-              />
+              <Link to="/" className="inline-flex shrink-0" aria-label={t('navbar.homeAria')}>
+                <img src={logoDark} alt="Lido" className="h-8 object-contain" />
+              </Link>
             </div>
             <p className="text-gray-400 font-inter text-[14px] leading-relaxed">
               {t('footer.tagline')}

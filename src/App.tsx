@@ -1,5 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { PageMeta } from './components/PageMeta'
+import { HashNavHandler } from './components/HashNavHandler'
 import { ScrollToTop } from './components/ScrollToTop'
 import { HomePage } from './pages/HomePage'
 import { ApartmentDetailPage } from './pages/ApartmentDetailPage'
@@ -10,6 +11,7 @@ export default function App() {
     <BrowserRouter>
       <PageMeta />
       <ScrollToTop />
+      <HashNavHandler />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/mieszkania" element={<Navigate to="/mieszkania/2-pokoje" replace />} />

@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "id": "leasePeriod",
+      "questionPl": "Na jaki okres zawierana jest umowa?",
+      "answerPl": "Umowa najmu zawierana jest na okres 12 miesięcy z możliwością jej przedłużenia na kolejny okres.",
+      "questionEn": "How long is the lease agreement?",
+      "answerEn": "The lease is signed for 12 months with the option to extend for another term."
+    },
+    {
+      "id": "shortTerm",
+      "questionPl": "Czy istnieje możliwość najmu krótkoterminowego?",
+      "answerPl": "Nie, oferujemy wyłącznie wynajem długoterminowy. Minimalny okres najmu wynosi 6 miesięcy.",
+      "questionEn": "Is short-term rental available?",
+      "answerEn": "No, we offer long-term rental only. The minimum rental period is 6 months."
+    },
+    {
+      "id": "districtHeating",
+      "questionPl": "Czy ogrzewanie jest miejskie?",
+      "answerPl": "Tak, korzystamy z ogrzewania miejskiego. Koszty ogrzewania są wliczone w cenę najmu.",
+      "questionEn": "Is district heating used?",
+      "answerEn": "Yes, we use district heating. Heating costs are included in the rent."
+    },
+    {
+      "id": "pets",
+      "questionPl": "Czy można zamieszkać ze zwierzęciem?",
+      "answerPl": "Możliwość zamieszkania ze zwierzęciem rozpatrujemy indywidualnie.",
+      "questionEn": "Can I live with a pet?",
+      "answerEn": "We consider requests to live with a pet on a case-by-case basis."
+    },
+    {
+      "id": "bikeStorage",
+      "questionPl": "Czy korzystanie z rowerowni jest płatne?",
+      "answerPl": "Nie, rowerownia jest dostępna bez dodatkowych opłat dla wszystkich mieszkańców.",
+      "questionEn": "Is bike storage paid?",
+      "answerEn": "No, the bike room is available at no extra charge for all residents."
+    },
+    {
+      "id": "internet",
+      "questionPl": "Czy w mieszkaniu dostępny jest internet?",
+      "answerPl": "Tak, mieszkanie jest wyposażone w dostęp do internetu.",
+      "questionEn": "Is internet available in the apartment?",
+      "answerEn": "Yes, the apartment includes internet access."
+    }
+  ]
+}

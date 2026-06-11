@@ -1,16 +1,11 @@
 import { useEffect, useLayoutEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { scrollWindowToTop } from '../utils/scrollToHash'
 
-function scrollWindowToTop() {
-  window.scrollTo(0, 0)
-  document.documentElement.scrollTop = 0
-  document.body.scrollTop = 0
-}
-
-/** Resets scroll position when navigating between routes (not when targeting a hash on home). */
+/** Resets scroll position when navigating between routes (hash targets on home are handled separately). */
 export function ScrollToTop() {
-  const { pathname, hash } = useLocation()
-  const hasHashTarget = pathname === '/' && hash.length > 0
+  const { pathname, hash, key } = useLocation()
+  const isHomeHash = pathname === '/' && hash.length > 0
 
   useLayoutEffect(() => {
     if ('scrollRestoration' in history) {
@@ -19,16 +14,17 @@ export function ScrollToTop() {
   }, [])
 
   useLayoutEffect(() => {
-    if (hasHashTarget) return
+    if (isHomeHash) return
     scrollWindowToTop()
-  }, [pathname, hash, hasHashTarget])
+  }, [pathname, hash, key, isHomeHash])
 
   useEffect(() => {
-    if (hasHashTarget) return
+    if (isHomeHash) return
+
     scrollWindowToTop()
-    const frame = requestAnimationFrame(scrollWindowToTop)
-    return () => cancelAnimationFrame(frame)
-  }, [pathname, hash, hasHashTarget])
+    const timeouts = [50, 150, 300].map((ms) => window.setTimeout(scrollWindowToTop, ms))
+    return () => timeouts.forEach(clearTimeout)
+  }, [pathname, hash, key, isHomeHash])
 
   return null
 }

@@ -1,6 +1,7 @@
 import { MapPin } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { useTranslation } from 'react-i18next'
+import { ContactForm } from './ContactForm'
 
 const MAP_EMBED_URL =
   'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.4443497973652!2d19.900447812395623!3d50.021769071394736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165c8cf2608939%3A0xb8286c9cd0a4cfce!2sPrzemiarki%2015%2C%2030-384%20Krak%C3%B3w%2C%20Poland!5e0!3m2!1sen!2sfr!4v1781108134206!5m2!1sen!2sfr'
@@ -97,61 +98,7 @@ export function Contact() {
           </div>
 
           <div data-reveal className="order-1 lg:order-2 bg-[#F8F9FA] rounded-[40px] p-8 lg:p-10">
-            <form className="space-y-6 font-inter">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-[13px] text-gray-500 font-medium mb-2">{t('contact.firstName')}</label>
-                  <input
-                    type="text"
-                    placeholder={t('contact.placeholders.firstName')}
-                    className="w-full bg-white rounded-xl px-5 py-3.5 border border-gray-100 focus:outline-none focus:border-gray-300 focus:ring-1 focus:ring-gray-300 transition-all text-brand-dark placeholder-gray-400 shadow-sm"
-                  />
-                </div>
-                <div>
-                  <label className="block text-[13px] text-gray-500 font-medium mb-2">{t('contact.lastName')}</label>
-                  <input
-                    type="text"
-                    placeholder={t('contact.placeholders.lastName')}
-                    className="w-full bg-white rounded-xl px-5 py-3.5 border border-gray-100 focus:outline-none focus:border-gray-300 focus:ring-1 focus:ring-gray-300 transition-all text-brand-dark placeholder-gray-400 shadow-sm"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-[13px] text-gray-500 font-medium mb-2">{t('contact.email')}</label>
-                  <input
-                    type="email"
-                    placeholder={t('contact.placeholders.email')}
-                    className="w-full bg-white rounded-xl px-5 py-3.5 border border-gray-100 focus:outline-none focus:border-gray-300 focus:ring-1 focus:ring-gray-300 transition-all text-brand-dark placeholder-gray-400 shadow-sm"
-                  />
-                </div>
-                <div>
-                  <label className="block text-[13px] text-gray-500 font-medium mb-2">{t('contact.phone')}</label>
-                  <input
-                    type="tel"
-                    placeholder={t('contact.placeholders.phone')}
-                    className="w-full bg-white rounded-xl px-5 py-3.5 border border-gray-100 focus:outline-none focus:border-gray-300 focus:ring-1 focus:ring-gray-300 transition-all text-brand-dark placeholder-gray-400 shadow-sm"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-[13px] text-gray-500 font-medium mb-2">{t('contact.message')}</label>
-                <textarea
-                  rows={5}
-                  placeholder={t('contact.placeholders.message')}
-                  className="w-full bg-white rounded-xl px-5 py-3.5 border border-gray-100 focus:outline-none focus:border-gray-300 focus:ring-1 focus:ring-gray-300 transition-all text-brand-dark placeholder-gray-400 resize-none shadow-sm"
-                />
-              </div>
-
-              <button
-                type="button"
-                className="bg-brand-dark text-white rounded-full px-8 py-4 font-medium text-[15px] hover:bg-black transition-colors shadow-sm w-full sm:w-auto"
-              >
-                {t('contact.send')}
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </div>

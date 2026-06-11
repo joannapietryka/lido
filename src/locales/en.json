@@ -151,32 +151,6 @@
       "balcony": "Balcony",
       "bike": "Bike storage",
       "cat": "Pet"
-    },
-    "items": {
-      "leasePeriod": {
-        "question": "How long is the lease agreement?",
-        "answer": "The lease is signed for 12 months with the option to extend for another term."
-      },
-      "shortTerm": {
-        "question": "Is short-term rental available?",
-        "answer": "No, we offer long-term rental only. The minimum rental period is 6 months."
-      },
-      "districtHeating": {
-        "question": "Is district heating used?",
-        "answer": "Yes, we use district heating. Heating costs are included in the rent."
-      },
-      "pets": {
-        "question": "Can I live with a pet?",
-        "answer": "We consider requests to live with a pet on a case-by-case basis."
-      },
-      "bikeStorage": {
-        "question": "Is bike storage paid?",
-        "answer": "No, the bike room is available at no extra charge for all residents."
-      },
-      "internet": {
-        "question": "Is internet available in the apartment?",
-        "answer": "Yes, the apartment includes internet access."
-      }
     }
   },
   "neighborhood": {
@@ -244,12 +218,28 @@
     "phone": "Phone number",
     "message": "Message",
     "send": "Send",
+    "sending": "Sending…",
+    "successTitle": "Thank you for your message!",
+    "successMessage": "We received your inquiry and will get back to you soon.",
+    "sendAnother": "Send another message",
     "placeholders": {
       "firstName": "John",
       "lastName": "Doe",
       "email": "john@example.com",
       "phone": "+48 100 200 300",
       "message": "I'm interested in the 2 bedroom floor plans..."
+    },
+    "validation": {
+      "firstNameRequired": "Please enter your first name.",
+      "firstNameMin": "First name must be at least 2 characters.",
+      "lastNameRequired": "Please enter your last name.",
+      "lastNameMin": "Last name must be at least 2 characters.",
+      "emailRequired": "Please enter your email address.",
+      "emailInvalid": "Please enter a valid email address.",
+      "phoneInvalid": "Please enter a valid phone number.",
+      "messageRequired": "Please enter a message.",
+      "messageMin": "Message must be at least 10 characters.",
+      "submitError": "We couldn't send your message. Please try again or email fundacja.lido@outlook.com."
     }
   },
   "apartmentDetail": {

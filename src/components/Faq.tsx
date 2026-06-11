@@ -2,6 +2,7 @@ import { useLayoutEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { FAQ_ITEMS, getFaqText, type FaqItem } from '../data/faq'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { ensureGsap, gsap } from '../utils/gsap'
 import cupsImg from '../assets/cups.jpg'
@@ -9,17 +10,6 @@ import plantImg from '../assets/plant.jpg'
 import balconyImg from '../assets/balcony.jpg'
 import bikeImg from '../assets/bike.jpg'
 import catImg from '../assets/cat.jpg'
-
-const FAQ_KEYS = [
-  'leasePeriod',
-  'shortTerm',
-  'districtHeating',
-  'pets',
-  'bikeStorage',
-  'internet',
-] as const
-
-type FaqKey = (typeof FAQ_KEYS)[number]
 
 const FAQ_PHOTOS = [
   {
@@ -57,10 +47,11 @@ const FAQ_PHOTO_MOTION = [
   { fromY: 52, duration: 0.95, ease: 'power3.out', at: 0.38 },
 ] as const
 
-function FaqItem({ faqKey, isOpen, onToggle }: { faqKey: FaqKey; isOpen: boolean; onToggle: () => void }) {
-  const { t } = useTranslation()
-  const panelId = `faq-panel-${faqKey}`
-  const buttonId = `faq-button-${faqKey}`
+function FaqItem({ item, isOpen, onToggle }: { item: FaqItem; isOpen: boolean; onToggle: () => void }) {
+  const { i18n } = useTranslation()
+  const { question, answer } = getFaqText(item, i18n.language)
+  const panelId = `faq-panel-${item.id}`
+  const buttonId = `faq-button-${item.id}`
 
   return (
     <div className="bg-[#F8F9FA] rounded-[32px] overflow-hidden transition-colors hover:bg-[#F3F4F6]">
@@ -73,7 +64,7 @@ function FaqItem({ faqKey, isOpen, onToggle }: { faqKey: FaqKey; isOpen: boolean
         className="w-full flex items-start justify-between gap-4 text-left px-6 py-5 sm:px-8 sm:py-6"
       >
         <span className="text-[16px] sm:text-[17px] font-medium text-brand-dark leading-snug pr-2">
-          {t(`faq.items.${faqKey}.question`)}
+          {question}
         </span>
         <span
           className={[
@@ -96,7 +87,7 @@ function FaqItem({ faqKey, isOpen, onToggle }: { faqKey: FaqKey; isOpen: boolean
       >
         <div className="overflow-hidden">
           <p className="px-6 pb-5 sm:px-8 sm:pb-6 pt-0 font-inter text-[15px] leading-relaxed text-gray-600">
-            {t(`faq.items.${faqKey}.answer`)}
+            {answer}
           </p>
         </div>
       </div>
@@ -107,7 +98,7 @@ function FaqItem({ faqKey, isOpen, onToggle }: { faqKey: FaqKey; isOpen: boolean
 export function Faq() {
   const ref = useScrollReveal<HTMLElement>()
   const { t } = useTranslation()
-  const [openKey, setOpenKey] = useState<FaqKey | null>(null)
+  const [openKey, setOpenKey] = useState<string | null>(null)
 
   useLayoutEffect(() => {
     const el = ref.current
@@ -190,12 +181,12 @@ export function Faq() {
 
           <div className="lg:col-span-8 lg:col-start-5 flex flex-col gap-6">
             <div className="flex flex-col gap-3">
-              {FAQ_KEYS.map((key) => (
-                <div key={key} data-reveal>
+              {FAQ_ITEMS.map((item) => (
+                <div key={item.id} data-reveal>
                   <FaqItem
-                    faqKey={key}
-                    isOpen={openKey === key}
-                    onToggle={() => setOpenKey((current) => (current === key ? null : key))}
+                    item={item}
+                    isOpen={openKey === item.id}
+                    onToggle={() => setOpenKey((current) => (current === item.id ? null : item.id))}
                   />
                 </div>
               ))}

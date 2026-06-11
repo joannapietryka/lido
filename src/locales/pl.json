@@ -151,32 +151,6 @@
       "balcony": "Balkon",
       "bike": "Rowerownia",
       "cat": "Zwierzę domowe"
-    },
-    "items": {
-      "leasePeriod": {
-        "question": "Na jaki okres zawierana jest umowa?",
-        "answer": "Umowa najmu zawierana jest na okres 12 miesięcy z możliwością jej przedłużenia na kolejny okres."
-      },
-      "shortTerm": {
-        "question": "Czy istnieje możliwość najmu krótkoterminowego?",
-        "answer": "Nie, oferujemy wyłącznie wynajem długoterminowy. Minimalny okres najmu wynosi 6 miesięcy."
-      },
-      "districtHeating": {
-        "question": "Czy ogrzewanie jest miejskie?",
-        "answer": "Tak, korzystamy z ogrzewania miejskiego. Koszty ogrzewania są wliczone w cenę najmu."
-      },
-      "pets": {
-        "question": "Czy można zamieszkać ze zwierzęciem?",
-        "answer": "Możliwość zamieszkania ze zwierzęciem rozpatrujemy indywidualnie."
-      },
-      "bikeStorage": {
-        "question": "Czy korzystanie z rowerowni jest płatne?",
-        "answer": "Nie, rowerownia jest dostępna bez dodatkowych opłat dla wszystkich mieszkańców."
-      },
-      "internet": {
-        "question": "Czy w mieszkaniu dostępny jest internet?",
-        "answer": "Tak, mieszkanie jest wyposażone w dostęp do internetu."
-      }
     }
   },
   "neighborhood": {
@@ -217,11 +191,11 @@
       },
       "connectivity": {
         "title": "Sprawna komunikacja",
-        "description": "Z Ruczaju poruszanie się po mieście jest bezproblemowe. Dzielnicę obsługują linie tramwajowe 11, 17, 18, 52 i 62, zapewniające szybkie połączenie z centrum. Dla kierowców ważne są też drogi takie jak autostrada A4 i „Zakopianka” (droga krajowa nr 7)."
+        "description": "Z Ruczaju poruszanie się po mieście jest bezproblemowe. Dzielnicę obsługują linie tramwajowe 11, 17, 18, 52 i 62, zapewniające szybkie połączenie z centrum. Dla kierowców ważne są też drogi takie jak autostrada A4 i „Zakopianka” (droga krajowa nr\u00A07)."
       },
       "education": {
         "title": "Edukacja i centra pracy",
-        "description": "Ruczaj to ważny ośrodek akademicki i zawodowy. Znajduje się tu Kampus UJ (III Kampus Uniwersytetu Jagiellońskiego) oraz Kampus AWF — idealna lokalizacja dla studentów i pracowników naukowych. Lokalny Business Park jest częścią Krakowskiego Parku Technologicznego w SSE, gdzie działają m.in. Motorola i Onet."
+        "description": "Ruczaj to ważny ośrodek akademicki i zawodowy. Znajduje się tu Kampus UJ (III Kampus Uniwersytetu Jagiellońskiego) oraz Kampus UP (Uniwersytetu Papieskiego) — idealna lokalizacja dla studentów i pracowników naukowych. Lokalny Business Park jest częścią Krakowskiego Parku Technologicznego w SSE, gdzie działają m.in. Motorola i Onet."
       },
       "convenience": {
         "title": "Codzienna wygoda na wyciągnięcie ręki",
@@ -244,12 +218,28 @@
     "phone": "Numer Telefonu",
     "message": "Wiadomość",
     "send": "Wyślij",
+    "sending": "Wysyłanie…",
+    "successTitle": "Dziękujemy za wiadomość!",
+    "successMessage": "Otrzymaliśmy Twoje zgłoszenie i wkrótce się z Tobą skontaktujemy.",
+    "sendAnother": "Wyślij kolejną wiadomość",
     "placeholders": {
       "firstName": "Jan",
       "lastName": "Kowalski",
       "email": "jan@gmail.com",
       "phone": "+48 100 200 300",
       "message": "Interesują mnie mieszkania 2-pokojowe..."
+    },
+    "validation": {
+      "firstNameRequired": "Podaj imię.",
+      "firstNameMin": "Imię musi mieć co najmniej 2 znaki.",
+      "lastNameRequired": "Podaj nazwisko.",
+      "lastNameMin": "Nazwisko musi mieć co najmniej 2 znaki.",
+      "emailRequired": "Podaj adres e-mail.",
+      "emailInvalid": "Podaj prawidłowy adres e-mail.",
+      "phoneInvalid": "Podaj prawidłowy numer telefonu.",
+      "messageRequired": "Napisz wiadomość.",
+      "messageMin": "Wiadomość musi mieć co najmniej 10 znaków.",
+      "submitError": "Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na fundacja.lido@outlook.com."
     }
   },
   "apartmentDetail": {

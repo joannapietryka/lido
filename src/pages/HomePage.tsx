@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { refreshScrollTriggers } from '../utils/gsap'
-import { scrollToHashWhenReady } from '../utils/scrollToHash'
+import { scrollToHashWhenReady, scrollWindowToTop } from '../utils/scrollToHash'
 import { FloorPlans } from '../components/FloorPlans'
 import { Hero } from '../components/Hero'
 import { Navbar } from '../components/Navbar'
@@ -13,16 +13,19 @@ import { Contact } from '../components/Contact'
 import { SiteFooter } from '../components/SiteFooter'
 
 export function HomePage() {
-  const { hash } = useLocation()
+  const { hash, key } = useLocation()
 
   useEffect(() => {
     requestAnimationFrame(() => refreshScrollTriggers())
   }, [])
 
   useEffect(() => {
-    if (!hash) return
-    scrollToHashWhenReady(hash)
-  }, [hash])
+    if (!hash) {
+      scrollWindowToTop()
+      return
+    }
+    scrollToHashWhenReady(hash, { resetFirst: true })
+  }, [hash, key])
 
   return (
     <div id="top" className="w-full min-h-screen">
