@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { PageMeta } from './components/PageMeta'
 import { HashNavHandler } from './components/HashNavHandler'
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/ruczaj" element={<RuczajPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      <Analytics />
     </BrowserRouter>
   )
 }
