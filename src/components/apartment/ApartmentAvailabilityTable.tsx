@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { LayoutGrid, Snowflake } from 'lucide-react'
+import { DoorClosedLocked, LayoutGrid, Snowflake } from 'lucide-react'
 import type { ApartmentSlug } from '../../data/apartments'
 import { getAvailableUnits, type ApartmentAvailabilityUnit } from '../../data/apartmentAvailability'
 import { ApartmentFloorPlanModal } from './ApartmentFloorPlanModal'
@@ -22,12 +22,19 @@ export function ApartmentAvailabilityTable({ slug }: ApartmentAvailabilityTableP
         </h2>
 
         {units.length === 0 ? (
-          <p
+          <div
             data-reveal
-            className="rounded-[32px] border border-gray-100 bg-[#F8F9FA] px-6 py-10 text-center text-[15px] leading-relaxed text-gray-600 font-inter"
+            className="flex items-center justify-center gap-3 rounded-[32px] border border-gray-100 bg-[#F8F9FA] px-6 py-10 text-center font-inter"
           >
-            {t('apartmentDetail.availability.empty')}
-          </p>
+            <DoorClosedLocked
+              className="h-8 w-8 shrink-0 text-brand-dark"
+              strokeWidth={1.5}
+              aria-hidden
+            />
+            <p className="text-[15px] leading-relaxed text-gray-600">
+              {t('apartmentDetail.availability.empty')}
+            </p>
+          </div>
         ) : (
         <div data-reveal className="overflow-x-auto rounded-[32px] border border-gray-100 bg-white">
           <table className="w-full min-w-[720px] text-left font-inter">
