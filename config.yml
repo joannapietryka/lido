@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: joannapietryka/lido
   branch: main
+  base_url: https://lido-agency.vercel.app
+  auth_endpoint: api/auth
 
 local_backend: true
 
