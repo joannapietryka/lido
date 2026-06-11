@@ -254,6 +254,7 @@
     "amenitiesTitle": "Premium amenities",
     "availability": {
       "title": "Available apartments",
+      "empty": "All flats are taken for now. Stay tuned!",
       "hint": "Click the icon in the “Floor plan” column to view the apartment layout.",
       "yes": "Yes",
       "no": "No",

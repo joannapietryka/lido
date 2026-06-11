@@ -9,6 +9,7 @@ export type ApartmentAvailabilityUnit = {
   floor: number
   hasAirConditioning: boolean
   floorPlanSrc: string
+  available: boolean
 }
 
 type CmsAvailabilityUnit = {
@@ -19,6 +20,7 @@ type CmsAvailabilityUnit = {
   floor: number
   hasAirConditioning: boolean
   floorPlan: string
+  available?: boolean
 }
 
 function mapUnit(unit: CmsAvailabilityUnit): ApartmentAvailabilityUnit {
@@ -30,10 +32,17 @@ function mapUnit(unit: CmsAvailabilityUnit): ApartmentAvailabilityUnit {
     floor: unit.floor,
     hasAirConditioning: unit.hasAirConditioning,
     floorPlanSrc: unit.floorPlan,
+    available: unit.available !== false,
   }
 }
 
-export const APARTMENT_AVAILABILITY: Record<ApartmentSlug, ApartmentAvailabilityUnit[]> = {
+const allUnits: Record<ApartmentSlug, ApartmentAvailabilityUnit[]> = {
   studio: availabilityJson.studio.map(mapUnit),
   '2-pokoje': availabilityJson['2-pokoje'].map(mapUnit),
 }
+
+export function getAvailableUnits(slug: ApartmentSlug): ApartmentAvailabilityUnit[] {
+  return allUnits[slug].filter((unit) => unit.available)
+}
+
+export const APARTMENT_AVAILABILITY = allUnits

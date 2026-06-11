@@ -133,7 +133,7 @@
   },
   "whoWeAre": {
     "title": "Kim jesteśmy",
-    "description": "Lido to rodzinna fundacja specjalizująca się w wynajmie nieruchomości. Działamy bez pośredników, dlatego w naszej ofercie znajdziesz tylko prywatne mieszkania, którymi zarządzamy bezpośrednio.\nPłacisz wyłącznie uzgodniony czynsz i opłaty związane z mieszkaniem – bez ukrytych kosztów.",
+    "description": "Lido to fundacja rodzinna specjalizująca się w wynajmie nieruchomości. Działamy bez pośredników, dlatego w naszej ofercie znajdziesz tylko prywatne mieszkania, którymi zarządzamy bezpośrednio.\nPłacisz wyłącznie uzgodniony czynsz i opłaty związane z mieszkaniem – bez ukrytych kosztów.",
     "imageAlt": "Klucze do mieszkania",
     "perks": {
       "commission": "Bez prowizji",
@@ -254,6 +254,7 @@
     "amenitiesTitle": "Udogodnienia premium",
     "availability": {
       "title": "Dostępne mieszkania",
+      "empty": "Wszystkie mieszkania są na razie zajęte. Śledźcie nasze aktualizacje!",
       "hint": "Kliknij ikonę w kolumnie „Rzut”, aby zobaczyć plan mieszkania.",
       "yes": "Tak",
       "no": "Nie",

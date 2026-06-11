@@ -64,6 +64,7 @@ collections:
               - { label: Metraż, name: area, widget: string }
               - { label: Piętro, name: floor, widget: number, value_type: int, min: 0 }
               - { label: Klimatyzacja, name: hasAirConditioning, widget: boolean, default: false }
+              - { label: Dostępne, name: available, widget: boolean, default: true }
               - { label: Rzut mieszkania, name: floorPlan, widget: image }
           - label: 2 pokoje
             name: "2-pokoje"
@@ -76,4 +77,5 @@ collections:
               - { label: Metraż, name: area, widget: string }
               - { label: Piętro, name: floor, widget: number, value_type: int, min: 0 }
               - { label: Klimatyzacja, name: hasAirConditioning, widget: boolean, default: false }
+              - { label: Dostępne, name: available, widget: boolean, default: true }
               - { label: Rzut mieszkania, name: floorPlan, widget: image }

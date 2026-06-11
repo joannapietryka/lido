@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LayoutGrid, Snowflake } from 'lucide-react'
 import type { ApartmentSlug } from '../../data/apartments'
-import { APARTMENT_AVAILABILITY, type ApartmentAvailabilityUnit } from '../../data/apartmentAvailability'
+import { getAvailableUnits, type ApartmentAvailabilityUnit } from '../../data/apartmentAvailability'
 import { ApartmentFloorPlanModal } from './ApartmentFloorPlanModal'
 
 type ApartmentAvailabilityTableProps = {
@@ -12,7 +12,7 @@ type ApartmentAvailabilityTableProps = {
 export function ApartmentAvailabilityTable({ slug }: ApartmentAvailabilityTableProps) {
   const { t } = useTranslation()
   const [selectedUnit, setSelectedUnit] = useState<ApartmentAvailabilityUnit | null>(null)
-  const units = APARTMENT_AVAILABILITY[slug]
+  const units = getAvailableUnits(slug)
 
   return (
     <>
@@ -21,6 +21,14 @@ export function ApartmentAvailabilityTable({ slug }: ApartmentAvailabilityTableP
           {t('apartmentDetail.availability.title')}
         </h2>
 
+        {units.length === 0 ? (
+          <p
+            data-reveal
+            className="rounded-[32px] border border-gray-100 bg-[#F8F9FA] px-6 py-10 text-center text-[15px] leading-relaxed text-gray-600 font-inter"
+          >
+            {t('apartmentDetail.availability.empty')}
+          </p>
+        ) : (
         <div data-reveal className="overflow-x-auto rounded-[32px] border border-gray-100 bg-white">
           <table className="w-full min-w-[720px] text-left font-inter">
             <thead>
@@ -82,10 +90,13 @@ export function ApartmentAvailabilityTable({ slug }: ApartmentAvailabilityTableP
             </tbody>
           </table>
         </div>
+        )}
 
-        <p data-reveal className="mt-3 text-[13px] text-gray-400 font-inter">
-          {t('apartmentDetail.availability.hint')}
-        </p>
+        {units.length > 0 && (
+          <p data-reveal className="mt-3 text-[13px] text-gray-400 font-inter">
+            {t('apartmentDetail.availability.hint')}
+          </p>
+        )}
       </section>
 
       {selectedUnit && (
