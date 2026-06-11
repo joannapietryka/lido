@@ -37,33 +37,5 @@
       "floorPlan": "/uploads/studio-plan-b.png"
     }
   ],
-  "2-pokoje": [
-    {
-      "id": "2p-103",
-      "number": "103",
-      "price": "2 500 zł",
-      "area": "40 m²",
-      "floor": 1,
-      "hasAirConditioning": true,
-      "floorPlan": "/uploads/two-plan-a.png"
-    },
-    {
-      "id": "2p-203",
-      "number": "203",
-      "price": "2 600 zł",
-      "area": "40 m²",
-      "floor": 2,
-      "hasAirConditioning": true,
-      "floorPlan": "/uploads/two-plan-b.png"
-    },
-    {
-      "id": "2p-303",
-      "number": "303",
-      "price": "2 550 zł",
-      "area": "40 m²",
-      "floor": 3,
-      "hasAirConditioning": false,
-      "floorPlan": "/uploads/two-plan-a.png"
-    }
-  ]
+  "2-pokoje": []
 }
