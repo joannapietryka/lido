@@ -41,6 +41,13 @@
       "answerPl": "Tak, mieszkanie jest wyposażone w dostęp do internetu.",
       "questionEn": "Is internet available in the apartment?",
       "answerEn": "Yes, the apartment includes internet access."
+    },
+    {
+      "id": "pytanie",
+      "questionPl": "co tam ?",
+      "answerPl": "ok",
+      "questionEn": "what's up?",
+      "answerEn": "ok"
     }
   ]
 }
