@@ -2,7 +2,7 @@ backend:
   name: github
   repo: joannapietryka/lido
   branch: main
-  base_url: https://lido-agency.vercel.app
+  base_url: https://www.lido.net.pl/
   auth_endpoint: api/auth
 
 local_backend: true
