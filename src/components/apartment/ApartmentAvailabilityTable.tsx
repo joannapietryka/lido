@@ -1,18 +1,13 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DoorClosedLocked, LayoutGrid, Snowflake } from 'lucide-react'
-import type { ApartmentSlug } from '../../data/apartments'
 import { getAvailableUnits, type ApartmentAvailabilityUnit } from '../../data/apartmentAvailability'
 import { ApartmentFloorPlanModal } from './ApartmentFloorPlanModal'
 
-type ApartmentAvailabilityTableProps = {
-  slug: ApartmentSlug
-}
-
-export function ApartmentAvailabilityTable({ slug }: ApartmentAvailabilityTableProps) {
+export function ApartmentAvailabilityTable() {
   const { t } = useTranslation()
   const [selectedUnit, setSelectedUnit] = useState<ApartmentAvailabilityUnit | null>(null)
-  const units = getAvailableUnits(slug)
+  const units = getAvailableUnits()
 
   return (
     <>

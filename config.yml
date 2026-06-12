@@ -53,25 +53,13 @@ collections:
         label: Tabela mieszkań
         file: src/content/availability.json
         fields:
-          - label: Studio
-            name: studio
+          - label: Mieszkania
+            name: units
             widget: list
             summary: "Mieszkanie {{fields.number}}"
+            hint: "Jedna wspólna tabela — wyświetlana na stronie studio i 2-pokoje."
             fields:
-              - { label: ID, name: id, widget: string }
-              - { label: Numer mieszkania, name: number, widget: string }
-              - { label: Cena, name: price, widget: string }
-              - { label: Metraż, name: area, widget: string }
-              - { label: Piętro, name: floor, widget: number, value_type: int, min: 0 }
-              - { label: Klimatyzacja, name: hasAirConditioning, widget: boolean, default: false }
-              - { label: Dostępne, name: available, widget: boolean, default: true }
-              - { label: Rzut mieszkania, name: floorPlan, widget: image }
-          - label: 2 pokoje
-            name: "2-pokoje"
-            widget: list
-            summary: "Mieszkanie {{fields.number}}"
-            fields:
-              - { label: ID, name: id, widget: string }
+              - { label: ID, name: id, widget: string, hint: "Unikalny identyfikator — nie zmieniać po utworzeniu" }
               - { label: Numer mieszkania, name: number, widget: string }
               - { label: Cena, name: price, widget: string }
               - { label: Metraż, name: area, widget: string }

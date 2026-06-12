@@ -12,7 +12,7 @@
       },
       "2-pokoje": {
         "title": "Mieszkanie 2-pokojowe | Lido Ruczaj, Kraków",
-        "description": "Mieszkanie 40 m² z osobną kuchnią na Ruczaju — dwa pokoje, balkon, pełne wyposażenie. Lido, ul. Przemiarki 15."
+        "description": "Mieszkanie 35 m² z osobną kuchnią na Ruczaju — dwa pokoje, balkon, pełne wyposażenie. Lido, ul. Przemiarki 15."
       }
     },
     "ruczaj": {
@@ -159,7 +159,7 @@
     "items": {
       "transit": {
         "title": "Komunikacja",
-        "description": "3 min pieszo do przystanku tramwajowego"
+        "description": "5 min pieszo do przystanku tramwajowego"
       },
       "dining": {
         "title": "Kawiarnie i restauracje",
@@ -309,7 +309,7 @@
     "units": {
       "studio": {
         "title": "Mieszkanie 1-pokojowe na\u00A0Ruczaju",
-        "price": "od 1 800 zł/msc",
+        "price": "od 2 500 zł/msc",
         "bedrooms": "1 pokój",
         "bathrooms": "1 łazienka",
         "area": "20 m²",
@@ -320,7 +320,7 @@
         "price": "od 2 500 zł/msc",
         "bedrooms": "2 pokoje",
         "bathrooms": "1 łazienka",
-        "area": "40 m²",
+        "area": "35 m²",
         "description": "Przestronne mieszkanie dwupokojowe z osobną kuchnią — idealne dla par lub współlokatorów. Jasne wnętrza, balkon i pełne wyposażenie od A do Z.\n\nDwa niezależne pokoje dają komfort pracy i odpoczynku. Kuchnia z pełnym AGD, dużo miejsca do przechowywania i szybki dostęp do centrum Krakowa tramwajem."
       }
     },

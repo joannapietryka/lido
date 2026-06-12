@@ -66,7 +66,7 @@ export function ApartmentDetailMain() {
           </div>
         </div>
 
-        <ApartmentAvailabilityTable slug={activeSlug} />
+        <ApartmentAvailabilityTable />
       </div>
     </main>
   )

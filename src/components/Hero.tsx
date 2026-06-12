@@ -77,7 +77,7 @@ export function Hero() {
                 {t('hero.statsDescription')}
               </p>
               <Link
-                to="/mieszkania/studio"
+                to="/mieszkania/2-pokoje"
                 aria-label={t('floorPlans.viewDetails')}
                 className="absolute bottom-8 right-8 w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-dark shadow-sm transition-all hover:scale-105 hover:bg-brand-dark hover:text-white"
               >

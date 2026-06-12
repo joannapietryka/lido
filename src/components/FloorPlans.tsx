@@ -269,7 +269,7 @@ export function FloorPlans() {
     (): Record<TabId, TabConfig> => ({
       '1bed': {
         area: '20 m²',
-        price: '1 800 zł',
+        price: '2 500 zł',
         heroSrc: pokoj1aImg,
         energy: 'A+',
         concierge: '24/7',
@@ -281,8 +281,8 @@ export function FloorPlans() {
         featureKey: 'featureStudio',
       },
       '2bed': {
-        area: '40 m²',
-        price: '2 500 zł',
+        area: '35 m²',
+        price: '2 700 zł',
         heroSrc: pokoj2aImg,
         energy: 'A+',
         concierge: '24/7',

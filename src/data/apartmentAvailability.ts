@@ -1,5 +1,4 @@
 import availabilityJson from '../content/availability.json'
-import type { ApartmentSlug } from './apartments'
 
 export type ApartmentAvailabilityUnit = {
   id: string
@@ -36,13 +35,10 @@ function mapUnit(unit: CmsAvailabilityUnit): ApartmentAvailabilityUnit {
   }
 }
 
-const allUnits: Record<ApartmentSlug, ApartmentAvailabilityUnit[]> = {
-  studio: availabilityJson.studio.map(mapUnit),
-  '2-pokoje': availabilityJson['2-pokoje'].map(mapUnit),
-}
+const allUnits = availabilityJson.units.map(mapUnit)
 
-export function getAvailableUnits(slug: ApartmentSlug): ApartmentAvailabilityUnit[] {
-  return allUnits[slug].filter((unit) => unit.available)
+export function getAvailableUnits(): ApartmentAvailabilityUnit[] {
+  return allUnits.filter((unit) => unit.available)
 }
 
 export const APARTMENT_AVAILABILITY = allUnits

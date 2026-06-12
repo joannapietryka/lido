@@ -12,7 +12,7 @@
       },
       "2-pokoje": {
         "title": "2-room apartment | Lido Ruczaj, Kraków",
-        "description": "40 m² two-room apartment in Ruczaj with separate kitchen — two rooms, balcony, fully equipped. Lido, Przemiarki 15."
+        "description": "35 m² two-room apartment in Ruczaj with separate kitchen — two rooms, balcony, fully equipped. Lido, Przemiarki 15."
       }
     },
     "ruczaj": {
@@ -59,7 +59,7 @@
     "equipment": "Equipment",
     "equipmentValue": "A-Z",
     "energy": "Energy",
-    "concierge": "Concierge",
+    "concierge": "Monitoring",
     "oneRoom": "1 room",
     "twoRooms": "2 rooms",
     "oneBath": "1 bathroom",
@@ -159,7 +159,7 @@
     "items": {
       "transit": {
         "title": "Public transport",
-        "description": "3 min walk to the tram stop"
+        "description": "5 min walk to the tram stop"
       },
       "dining": {
         "title": "Cafes & restaurants",
@@ -309,7 +309,7 @@
     "units": {
       "studio": {
         "title": "1-room apartment in Ruczaj",
-        "price": "from PLN 1,800/mo",
+        "price": "from PLN 2,500/mo",
         "bedrooms": "1 room",
         "bathrooms": "1 bath",
         "area": "20 m²",
@@ -317,10 +317,10 @@
       },
       "2-pokoje": {
         "title": "2-room apartment in Ruczaj",
-        "price": "from PLN 2,500/mo",
+        "price": "from PLN 2,700/mo",
         "bedrooms": "2 rooms",
         "bathrooms": "1 bath",
-        "area": "40 m²",
+        "area": "35 m²",
         "description": "A spacious two-room apartment with a separate kitchen — ideal for couples or roommates. Bright interiors, a balcony, and full equipment from A to Z.\n\nTwo separate rooms offer comfort for work and rest. Kitchen with full appliances, plenty of storage, and quick access to central Kraków by tram."
       }
     },

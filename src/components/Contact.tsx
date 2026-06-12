@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { ContactForm } from './ContactForm'
 
 const MAP_EMBED_URL =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.4443497973652!2d19.900447812395623!3d50.021769071394736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165c8cf2608939%3A0xb8286c9cd0a4cfce!2sPrzemiarki%2015%2C%2030-384%20Krak%C3%B3w%2C%20Poland!5e0!3m2!1sen!2sfr!4v1781108134206!5m2!1sen!2sfr'
+  'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1281.727380240428!2d19.903694444444445!3d50.021583333333336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTDCsDAxJzE3LjciTiAxOcKwNTQnMTMuMyJF!5e0!3m2!1sen!2sfr!4v1781256258312!5m2!1sen!2sfr'
 
 const MAP_LINK_URL = 'https://maps.google.com/?q=Przemiarki+15,+Kraków'
 
