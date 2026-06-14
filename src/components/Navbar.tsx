@@ -17,20 +17,26 @@ export function Navbar() {
       if (e.key === 'Escape') setMobileOpen(false)
     }
 
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
     window.addEventListener('keydown', onKeyDown)
-    return () => window.removeEventListener('keydown', onKeyDown)
+    return () => {
+      document.body.style.overflow = prevOverflow
+      window.removeEventListener('keydown', onKeyDown)
+    }
   }, [mobileOpen])
 
   const closeMobile = () => setMobileOpen(false)
 
   return (
-    <div className="fixed top-6 left-0 right-0 z-[70] px-6 flex justify-center pointer-events-none">
-      <div className="w-full max-w-7xl pointer-events-none">
-        <nav className="pointer-events-auto bg-white border border-gray-100 shadow-sm lg:bg-white/80 lg:backdrop-blur-md lg:border-white/40 rounded-full px-4 sm:px-6 py-3 w-full flex justify-between items-center gap-3 transition-all duration-300 lg:hover:bg-white/95 relative z-[80]">
+    <div className="fixed top-6 left-0 right-0 z-[70] px-6 flex justify-center pointer-events-none overflow-x-clip">
+      <div className="w-full max-w-7xl min-w-0 pointer-events-none">
+        <nav className="pointer-events-auto bg-white border border-gray-100 shadow-sm lg:bg-white/80 lg:backdrop-blur-md lg:border-white/40 rounded-full px-4 sm:px-6 py-3 w-full max-w-full min-w-0 flex justify-between items-center gap-3 lg:hover:bg-white/95 relative z-[80]">
           <div className="flex items-center gap-12 min-w-0">
             <Link
               to="/"
-              className="flex items-center shrink-0 group"
+              className="flex items-center min-w-0 group"
               aria-label={t('navbar.homeAria')}
               onClick={closeMobile}
             >
@@ -41,7 +47,7 @@ export function Navbar() {
                 height={188}
                 loading="eager"
                 decoding="async"
-                className="h-7 sm:h-8 w-auto object-contain"
+                className="block h-7 sm:h-8 w-auto max-w-[4.75rem] sm:max-w-[5.5rem] object-contain"
               />
             </Link>
 
@@ -64,7 +70,7 @@ export function Navbar() {
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4 shrink-0">
             <LanguageSwitch />
             <Link
               to="/#kontakt"
@@ -75,7 +81,7 @@ export function Navbar() {
 
             <button
               type="button"
-              className="lg:hidden w-11 h-11 rounded-full bg-white/90 border border-white/60 shadow-sm flex items-center justify-center text-brand-dark hover:bg-white transition-transform active:scale-95"
+              className="lg:hidden shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gray-50 border border-gray-200 shadow-sm flex items-center justify-center text-brand-dark hover:bg-white transition-transform active:scale-95"
               aria-label={mobileOpen ? t('navbar.closeMenu') : t('navbar.openMenu')}
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
@@ -94,71 +100,70 @@ export function Navbar() {
           </div>
         </nav>
 
-        <div
-          id="mobile-menu"
-          className={[
-            'pointer-events-auto lg:hidden mt-4 rounded-[32px] border border-gray-100 bg-white shadow-md overflow-hidden transition-all duration-300 relative z-[75]',
-            mobileOpen ? 'opacity-100 translate-y-0' : 'pointer-events-none opacity-0 -translate-y-2 h-0',
-          ].join(' ')}
-        >
-          <div className="p-6 sm:p-8">
-            <div className="flex flex-col gap-1 text-[24px] sm:text-[26px] font-medium">
-              <Link
-                to="/mieszkania"
-                onClick={closeMobile}
-                className="px-5 py-4 sm:py-5 rounded-2xl text-gray-800 hover:bg-gray-50 transition-colors"
-              >
-                {t('navbar.apartments')}
-              </Link>
-              <Link
-                to="/#standard"
-                onClick={closeMobile}
-                className="px-5 py-4 sm:py-5 rounded-2xl text-gray-800 hover:bg-gray-50 transition-colors"
-              >
-                {t('navbar.standard')}
-              </Link>
-              <Link
-                to="/#o-nas"
-                onClick={closeMobile}
-                className="px-5 py-4 sm:py-5 rounded-2xl text-gray-800 hover:bg-gray-50 transition-colors"
-              >
-                {t('navbar.whoWeAre')}
-              </Link>
-              <Link
-                to="/#faq"
-                onClick={closeMobile}
-                className="px-5 py-4 sm:py-5 rounded-2xl text-gray-800 hover:bg-gray-50 transition-colors"
-              >
-                {t('navbar.faq')}
-              </Link>
-              <Link
-                to="/ruczaj"
-                onClick={closeMobile}
-                className="px-5 py-4 sm:py-5 rounded-2xl text-gray-800 hover:bg-gray-50 transition-colors"
-              >
-                {t('navbar.location')}
-              </Link>
-            </div>
-
-            <div className="mt-6 sm:mt-8">
-              <Link
-                to="/#kontakt"
-                onClick={closeMobile}
-                className="inline-flex w-full justify-center bg-brand-dark text-white px-8 py-4 sm:py-[18px] rounded-full text-[17px] sm:text-[18px] font-medium hover:bg-gray-800 transition-transform active:scale-95"
-              >
-                {t('navbar.contact')}
-              </Link>
-            </div>
-          </div>
-        </div>
-
         {mobileOpen && (
-          <button
-            type="button"
-            aria-label={t('navbar.closeMenu')}
-            className="lg:hidden fixed inset-0 bg-black/20 pointer-events-auto z-[60]"
-            onClick={closeMobile}
-          />
+          <>
+            <button
+              type="button"
+              aria-label={t('navbar.closeMenu')}
+              className="lg:hidden fixed inset-0 bg-black/20 pointer-events-auto z-[60]"
+              onClick={closeMobile}
+            />
+
+            <div
+              id="mobile-menu"
+              className="pointer-events-auto lg:hidden mt-4 w-full max-w-full min-w-0 box-border rounded-[32px] border border-gray-100 bg-white shadow-md max-h-[calc(100dvh-6.5rem)] overflow-x-hidden overflow-y-auto overscroll-contain relative z-[75]"
+            >
+              <div className="p-6 sm:p-8 min-w-0">
+                <div className="flex flex-col gap-1 text-[24px] sm:text-[26px] font-medium min-w-0">
+                  <Link
+                    to="/mieszkania"
+                    onClick={closeMobile}
+                    className="px-5 py-4 sm:py-5 rounded-2xl text-gray-800 hover:bg-gray-50 transition-colors"
+                  >
+                    {t('navbar.apartments')}
+                  </Link>
+                  <Link
+                    to="/#standard"
+                    onClick={closeMobile}
+                    className="px-5 py-4 sm:py-5 rounded-2xl text-gray-800 hover:bg-gray-50 transition-colors"
+                  >
+                    {t('navbar.standard')}
+                  </Link>
+                  <Link
+                    to="/#o-nas"
+                    onClick={closeMobile}
+                    className="px-5 py-4 sm:py-5 rounded-2xl text-gray-800 hover:bg-gray-50 transition-colors"
+                  >
+                    {t('navbar.whoWeAre')}
+                  </Link>
+                  <Link
+                    to="/#faq"
+                    onClick={closeMobile}
+                    className="px-5 py-4 sm:py-5 rounded-2xl text-gray-800 hover:bg-gray-50 transition-colors"
+                  >
+                    {t('navbar.faq')}
+                  </Link>
+                  <Link
+                    to="/ruczaj"
+                    onClick={closeMobile}
+                    className="px-5 py-4 sm:py-5 rounded-2xl text-gray-800 hover:bg-gray-50 transition-colors"
+                  >
+                    {t('navbar.location')}
+                  </Link>
+                </div>
+
+                <div className="mt-6 sm:mt-8">
+                  <Link
+                    to="/#kontakt"
+                    onClick={closeMobile}
+                    className="inline-flex w-full max-w-full justify-center bg-brand-dark text-white px-8 py-4 sm:py-[18px] rounded-full text-[17px] sm:text-[18px] font-medium hover:bg-gray-800 transition-transform active:scale-95"
+                  >
+                    {t('navbar.contact')}
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </>
         )}
       </div>
     </div>

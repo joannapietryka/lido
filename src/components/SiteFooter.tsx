@@ -13,7 +13,7 @@ export function SiteFooter() {
         <div data-reveal className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 mb-16">
           <div className="lg:w-1/3">
             <div className="flex items-center gap-3 mb-4">
-              <Link to="/" className="inline-flex shrink-0" aria-label={t('navbar.homeAria')}>
+              <Link to="/" className="inline-flex min-w-0" aria-label={t('navbar.homeAria')}>
                 <img
                   src={logoDark}
                   alt="Lido"
@@ -21,7 +21,7 @@ export function SiteFooter() {
                   height={188}
                   loading="lazy"
                   decoding="async"
-                  className="h-8 object-contain"
+                  className="block h-8 w-auto max-w-[5.5rem] object-contain"
                 />
               </Link>
             </div>

@@ -4,6 +4,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: clip;
 }
 
 /* Hidden until GSAP scroll reveal runs — skip above-the-fold immediate reveals */

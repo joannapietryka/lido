@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import heroVideo from '../assets/video/download.mp4'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import buildingImg from '../assets/building.webp'
+import heroBuildingMobile from '../assets/hero-building-mobile.webp'
 import salonImg from '../assets/salon.webp'
 import { useTranslation } from 'react-i18next'
 
@@ -64,18 +65,21 @@ export function Hero() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-auto lg:h-[550px]">
         <div data-reveal className="col-span-1 lg:col-span-5 rounded-[2.5rem] relative overflow-hidden group h-[400px] lg:h-full">
-          <img
-            src={HERO_BUILDING_SRC}
-            srcSet={HERO_BUILDING_SRCSET}
-            sizes={HERO_BUILDING_SIZES}
-            alt={t('hero.address')}
-            width={800}
-            height={1207}
-            fetchPriority="high"
-            loading="eager"
-            decoding="async"
-            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-          />
+          <picture>
+            <source media="(max-width: 1023px)" srcSet={heroBuildingMobile} type="image/webp" />
+            <img
+              src={HERO_BUILDING_SRC}
+              srcSet={HERO_BUILDING_SRCSET}
+              sizes={HERO_BUILDING_SIZES}
+              alt={t('hero.address')}
+              width={800}
+              height={1207}
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
 
           <div className="absolute top-8 left-8 bg-white px-4 py-2.5 rounded-full flex items-center gap-2 shadow-sm z-10">
