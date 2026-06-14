@@ -1,16 +1,17 @@
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { refreshScrollTriggers } from '../utils/gsap'
 import { scrollToHashWhenReady, scrollWindowToTop } from '../utils/scrollToHash'
-import { FloorPlans } from '../components/FloorPlans'
 import { Hero } from '../components/Hero'
 import { Navbar } from '../components/Navbar'
-import { Neighborhood } from '../components/Neighborhood'
-import { OurStandard } from '../components/OurStandard'
-import { WhoWeAre } from '../components/WhoWeAre'
-import { Faq } from '../components/Faq'
-import { Contact } from '../components/Contact'
-import { SiteFooter } from '../components/SiteFooter'
+
+const FloorPlans = lazy(() => import('../components/FloorPlans').then((m) => ({ default: m.FloorPlans })))
+const OurStandard = lazy(() => import('../components/OurStandard').then((m) => ({ default: m.OurStandard })))
+const WhoWeAre = lazy(() => import('../components/WhoWeAre').then((m) => ({ default: m.WhoWeAre })))
+const Faq = lazy(() => import('../components/Faq').then((m) => ({ default: m.Faq })))
+const Neighborhood = lazy(() => import('../components/Neighborhood').then((m) => ({ default: m.Neighborhood })))
+const Contact = lazy(() => import('../components/Contact').then((m) => ({ default: m.Contact })))
+const SiteFooter = lazy(() => import('../components/SiteFooter').then((m) => ({ default: m.SiteFooter })))
 
 export function HomePage() {
   const { hash, key } = useLocation()
@@ -33,13 +34,15 @@ export function HomePage() {
       <main className="pt-40 pb-20 px-6 max-w-[1440px] mx-auto w-full">
         <Hero />
       </main>
-      <FloorPlans />
-      <OurStandard />
-      <WhoWeAre />
-      <Faq />
-      <Neighborhood />
-      <Contact />
-      <SiteFooter />
+      <Suspense fallback={null}>
+        <FloorPlans />
+        <OurStandard />
+        <WhoWeAre />
+        <Faq />
+        <Neighborhood />
+        <Contact />
+        <SiteFooter />
+      </Suspense>
     </div>
   )
 }

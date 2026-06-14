@@ -34,7 +34,15 @@ export function Navbar() {
               aria-label={t('navbar.homeAria')}
               onClick={closeMobile}
             >
-              <img src={logoLight} alt="Lido logo" className="h-7 sm:h-8 w-auto object-contain" />
+              <img
+                src={logoLight}
+                alt="Lido logo"
+                width={444}
+                height={188}
+                loading="eager"
+                decoding="async"
+                className="h-7 sm:h-8 w-auto object-contain"
+              />
             </Link>
 
             <div className="hidden lg:flex gap-8 text-[15px] font-medium">

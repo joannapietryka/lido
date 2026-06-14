@@ -14,7 +14,15 @@ export function SiteFooter() {
           <div className="lg:w-1/3">
             <div className="flex items-center gap-3 mb-4">
               <Link to="/" className="inline-flex shrink-0" aria-label={t('navbar.homeAria')}>
-                <img src={logoDark} alt="Lido" className="h-8 object-contain" />
+                <img
+                  src={logoDark}
+                  alt="Lido"
+                  width={451}
+                  height={188}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-8 object-contain"
+                />
               </Link>
             </div>
             <p className="text-gray-400 font-inter text-[14px] leading-relaxed">

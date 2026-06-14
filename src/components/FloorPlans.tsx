@@ -2,12 +2,12 @@ import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { useTranslation } from 'react-i18next'
-import pokoj1aImg from '../assets/pokoj-1a.png'
-import pokoj1bImg from '../assets/pokoj-1b.png'
-import pokoj1cImg from '../assets/pokoj-1c.jpeg'
-import pokoj2aImg from '../assets/pokoj-2a.jpeg'
-import pokoj2bImg from '../assets/pokoj-2b.png'
-import pokoj2cImg from '../assets/pokoj-2c.png'
+import pokoj1aImg from '../assets/pokoj-1a.webp'
+import pokoj1bImg from '../assets/pokoj-1b.webp'
+import pokoj1cImg from '../assets/pokoj-1c.webp'
+import pokoj2aImg from '../assets/pokoj-2a.webp'
+import pokoj2bImg from '../assets/pokoj-2b.webp'
+import pokoj2cImg from '../assets/pokoj-2c.webp'
 
 type TabId = '1bed' | '2bed'
 
@@ -98,6 +98,10 @@ function SideImages({ leftSrc, rightSrc }: { leftSrc: string; rightSrc: string }
         >
           <img
             src={src}
+            width={800}
+            height={600}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             alt=""
           />
@@ -141,7 +145,15 @@ function PlanHeroCard({
         'lg:rounded-[40px]',
       ].join(' ')}
     >
-      <img src={src} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="" />
+      <img
+        src={src}
+        width={1600}
+        height={1279}
+        loading="lazy"
+        decoding="async"
+        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        alt=""
+      />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
       <StarPill label={t('floorPlans.availableNow')} />
       <div className="absolute bottom-5 left-5 right-5 lg:bottom-8 lg:left-8 lg:right-8">
@@ -334,12 +346,12 @@ export function FloorPlans() {
           </div>
         </div>
 
-        <div id="2bed" className={['tab-content', tab === '2bed' ? 'active' : ''].join(' ')}>
-          <TabPanel config={tabs['2bed']} />
+        <div id="2bed" className={tab === '2bed' ? undefined : 'hidden'}>
+          {tab === '2bed' && <TabPanel config={tabs['2bed']} />}
         </div>
 
-        <div id="1bed" className={['tab-content', tab === '1bed' ? 'active' : ''].join(' ')}>
-          <TabPanel config={tabs['1bed']} heroOnRightDesktop />
+        <div id="1bed" className={tab === '1bed' ? undefined : 'hidden'}>
+          {tab === '1bed' && <TabPanel config={tabs['1bed']} heroOnRightDesktop />}
         </div>
 
         <div data-reveal className="mt-8 lg:mt-12">

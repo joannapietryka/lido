@@ -120,7 +120,7 @@ export function ContactForm() {
         }),
       })
 
-      const data = (await response.json()) as { success?: string }
+      const data = (await response.json()) as { success?: string; message?: string }
 
       if (!response.ok || data.success !== 'true') {
         throw new Error('submit_failed')

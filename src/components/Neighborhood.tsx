@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useScrollReveal } from '../hooks/useScrollReveal'
-import zakrzowekImg from '../assets/zakrzowek.png'
+import zakrzowekImg from '../assets/zakrzowek.webp'
 import { useTranslation } from 'react-i18next'
 import { Leaf, TramFront } from 'lucide-react'
 
@@ -113,6 +113,10 @@ export function Neighborhood() {
           <img
             src={zakrzowekImg}
             alt="Zakrzówek"
+            width={962}
+            height={817}
+            loading="lazy"
+            decoding="async"
             className="block w-full h-auto lg:h-full lg:object-cover lg:object-center will-change-transform lg:scale-[1.06]"
           />
 

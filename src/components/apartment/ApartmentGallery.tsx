@@ -13,17 +13,21 @@ function GalleryTile({
   alt,
   onClick,
   overlay,
+  loading = 'lazy',
 }: {
   photo: GalleryPhoto
   alt: string
   onClick: () => void
   overlay?: React.ReactNode
+  loading?: 'lazy' | 'eager'
 }) {
   return (
     <button type="button" onClick={onClick} className={tileClass}>
       <img
         src={photo.src}
         alt={alt}
+        loading={loading}
+        decoding="async"
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
       {overlay}
@@ -67,6 +71,7 @@ export function ApartmentGallery({ apartment }: { apartment: ApartmentData }) {
               photo={main}
               alt={t(`apartmentDetail.${main.altKey}`)}
               onClick={() => openLightbox(0)}
+              loading="eager"
             />
           </div>
           <div className="grid grid-cols-4 gap-2">
@@ -98,6 +103,7 @@ export function ApartmentGallery({ apartment }: { apartment: ApartmentData }) {
               photo={main}
               alt={t(`apartmentDetail.${main.altKey}`)}
               onClick={() => openLightbox(0)}
+              loading="eager"
             />
           </div>
           <div data-reveal className="h-full">

@@ -5,11 +5,11 @@ import { useTranslation } from 'react-i18next'
 import { FAQ_ITEMS, getFaqText, type FaqItem } from '../data/faq'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { ensureGsap, gsap } from '../utils/gsap'
-import cupsImg from '../assets/cups.jpg'
-import plantImg from '../assets/plant.jpg'
-import balconyImg from '../assets/balcony.jpg'
-import bikeImg from '../assets/bike.jpg'
-import catImg from '../assets/cat.jpg'
+import cupsImg from '../assets/cups.webp'
+import plantImg from '../assets/plant.webp'
+import balconyImg from '../assets/balcony.webp'
+import bikeImg from '../assets/bike.webp'
+import catImg from '../assets/cat.webp'
 
 const FAQ_PHOTOS = [
   {
@@ -173,6 +173,10 @@ export function Faq() {
                 <img
                   src={photo.src}
                   alt={t(`faq.photos.${photo.altKey}`)}
+                  width={400}
+                  height={300}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>

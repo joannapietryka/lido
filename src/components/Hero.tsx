@@ -1,12 +1,51 @@
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import heroVideo from '../assets/video/download.mp4'
 import { useScrollReveal } from '../hooks/useScrollReveal'
-import buildingImg from '../assets/building.png'
-import salonImg from '../assets/salon.png'
+import buildingImg from '../assets/building.webp'
+import salonImg from '../assets/salon.webp'
 import { useTranslation } from 'react-i18next'
 
+const HERO_BUILDING_SRC = '/hero-building.webp'
+const HERO_BUILDING_SRCSET = `${HERO_BUILDING_SRC} 800w, ${buildingImg} 1200w`
+const HERO_BUILDING_SIZES = '(max-width: 1024px) 100vw, 580px'
+
+function HeroVideo() {
+  const ref = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = ref.current
+    if (!video) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return
+        video.src = heroVideo
+        void video.play()
+        observer.disconnect()
+      },
+      { rootMargin: '200px' },
+    )
+
+    observer.observe(video)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <video
+      ref={ref}
+      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="none"
+    />
+  )
+}
+
 export function Hero() {
-  const ref = useScrollReveal<HTMLDivElement>()
+  const ref = useScrollReveal<HTMLDivElement>({ trigger: 'immediate' })
   const { t } = useTranslation()
 
   return (
@@ -26,8 +65,15 @@ export function Hero() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-auto lg:h-[550px]">
         <div data-reveal className="col-span-1 lg:col-span-5 rounded-[2.5rem] relative overflow-hidden group h-[400px] lg:h-full">
           <img
-            src={buildingImg}
+            src={HERO_BUILDING_SRC}
+            srcSet={HERO_BUILDING_SRCSET}
+            sizes={HERO_BUILDING_SIZES}
             alt={t('hero.address')}
+            width={800}
+            height={1207}
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
@@ -51,14 +97,7 @@ export function Hero() {
 
         <div className="col-span-1 lg:col-span-7 flex flex-col gap-6 h-full">
           <div data-reveal className="relative rounded-[2.5rem] overflow-hidden group h-[240px] lg:h-[250px]">
-            <video
-              src={heroVideo}
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
+            <HeroVideo />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 h-auto sm:h-[300px] lg:h-[270px]">
@@ -66,6 +105,10 @@ export function Hero() {
               <img
                 src={salonImg}
                 alt="Interior Detail"
+                width={800}
+                height={519}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />
             </div>
@@ -101,4 +144,3 @@ export function Hero() {
     </div>
   )
 }
-

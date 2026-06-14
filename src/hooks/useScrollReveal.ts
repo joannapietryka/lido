@@ -45,6 +45,10 @@ export function useScrollReveal<T extends HTMLElement>(options: UseScrollRevealO
     ensureGsap()
 
     const revealNodes = el.querySelectorAll('[data-reveal]')
+    const revealWhen = trigger === 'immediate' ? 'immediate' : 'scroll'
+    for (const node of revealNodes) {
+      node.setAttribute('data-reveal-when', revealWhen)
+    }
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -88,6 +92,10 @@ export function useScrollReveal<T extends HTMLElement>(options: UseScrollRevealO
       for (const selector of options.targets ?? []) {
         const nodes = el.querySelectorAll(selector)
         if (!nodes.length) continue
+
+        for (const node of nodes) {
+          node.setAttribute('data-reveal-when', revealWhen)
+        }
 
         gsap.set(nodes, REVEAL_FROM)
 

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { useScrollReveal } from '../hooks/useScrollReveal'
-import keysImg from '../assets/keys.png'
+import keysImg from '../assets/keys.webp'
 
 const PERK_KEYS = ['commission', 'agentFees', 'directBooking'] as const
 
@@ -55,6 +55,10 @@ export function WhoWeAre() {
           <img
             src={keysImg}
             alt={t('whoWeAre.imageAlt')}
+            width={932}
+            height={679}
+            loading="lazy"
+            decoding="async"
             className="block w-full h-auto lg:h-full lg:object-cover lg:object-center will-change-transform lg:scale-[1.04]"
           />
         </div>

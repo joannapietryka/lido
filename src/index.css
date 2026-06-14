@@ -6,8 +6,8 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Hidden until GSAP scroll reveal runs (same as Hero sections) */
-[data-reveal]:not(.is-revealed) {
+/* Hidden until GSAP scroll reveal runs — skip above-the-fold immediate reveals */
+[data-reveal-when='scroll']:not(.is-revealed) {
   visibility: hidden;
 }
 

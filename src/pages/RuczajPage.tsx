@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import mapaEnImg from '../assets/mapa-en.png'
-import mapaPlImg from '../assets/mapa-pl.png'
+import mapaEnImg from '../assets/mapa-en.webp'
+import mapaPlImg from '../assets/mapa-pl.webp'
 import { Navbar } from '../components/Navbar'
 import { SiteFooter } from '../components/SiteFooter'
 import { RuczajPerksSection } from '../components/ruczaj/RuczajPerksSection'
@@ -49,6 +49,10 @@ export function RuczajPage() {
               data-reveal
               src={mapSrc}
               alt={t('ruczajPage.mapAlt')}
+              width={1200}
+              height={674}
+              loading="lazy"
+              decoding="async"
               className="block w-full h-auto max-w-none"
             />
           </div>

@@ -37,9 +37,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      />
+    </noscript>
+    <link rel="preload" as="image" href="/hero-building.webp" type="image/webp" fetchpriority="high" />
     <title>Lido — mieszkania na Ruczaju | Przemiarki 15, Kraków</title>
   </head>
   <body class="bg-brand-gray text-brand-dark antialiased font-sans w-full min-h-screen relative selection:bg-brand-dark selection:text-white">
