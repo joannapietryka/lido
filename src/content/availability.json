@@ -1,3 +1,14 @@
 {
-  "units": []
+  "units": [
+    {
+      "hasAirConditioning": false,
+      "available": true,
+      "number": "406",
+      "price": "2700",
+      "area": "43",
+      "floor": 0,
+      "id": "406",
+      "floorPlan": "/uploads/two-plan-a.png"
+    }
+  ]
 }
