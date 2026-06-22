@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { useTranslation } from 'react-i18next'
+import { ApartmentAvailabilityTable } from './apartment/ApartmentAvailabilityTable'
 import pokoj1aImg from '../assets/pokoj-1a.webp'
 import pokoj1bImg from '../assets/pokoj-1b.webp'
 import pokoj1cImg from '../assets/pokoj-1c.webp'
@@ -353,6 +354,8 @@ export function FloorPlans() {
         <div id="1bed" className={tab === '1bed' ? undefined : 'hidden'}>
           {tab === '1bed' && <TabPanel config={tabs['1bed']} heroOnRightDesktop />}
         </div>
+
+        <ApartmentAvailabilityTable />
 
         <div data-reveal className="mt-8 lg:mt-12">
           <Link

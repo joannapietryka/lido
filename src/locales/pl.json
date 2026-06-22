@@ -38,7 +38,7 @@
   "hero": {
     "titleLine1": "Twój nowy adres",
     "titleEmphasis": "na mapie Krakowa",
-    "subtitle": "Mieszkania stworzone z myślą o Twoim rytmie – blisko uczelni, pracy i\u00A0miasta",
+    "subtitle": "Mieszkania od właściciela, bez prowizji i żadnych opłat agencyjnych.",
     "badgeNew": "Nowe mieszkania",
     "areaTitle": "Ruczaj Kraków",
     "address": "Przemiarki 15",
@@ -255,10 +255,14 @@
     "availability": {
       "title": "Dostępne mieszkania",
       "empty": "Wszystkie mieszkania są na razie zajęte. Śledźcie nasze aktualizacje!",
-      "hint": "Kliknij ikonę w kolumnie „Rzut”, aby zobaczyć plan mieszkania.",
+      "hint": "Kliknij ikonę galerii lub rzutu, aby zobaczyć zdjęcia i plan mieszkania.",
       "yes": "Tak",
       "no": "Nie",
       "floorValue": "Piętro {{floor}}",
+      "viewPhotos": "Zobacz zdjęcia mieszkania {{number}}",
+      "photosTitle": "Mieszkanie {{number}} – zdjęcia",
+      "photosLabel": "Galeria zdjęć mieszkania {{number}}",
+      "photoAlt": "Mieszkanie {{number}} – zdjęcie {{index}}",
       "viewFloorPlan": "Zobacz rzut mieszkania {{number}}",
       "floorPlanTitle": "Rzut mieszkania {{number}}",
       "floorPlanAlt": "Rzut mieszkania numer {{number}}",
@@ -269,6 +273,8 @@
         "area": "Metraż",
         "floor": "Kondygnacja",
         "airConditioning": "Klimatyzacja",
+        "availableFrom": "Dostępne od",
+        "photos": "Zdjęcia",
         "floorPlan": "Rzut"
       }
     },

@@ -65,9 +65,9 @@ export function ApartmentDetailMain() {
             ))}
           </div>
         </div>
-
-        <ApartmentAvailabilityTable />
       </div>
+
+      <ApartmentAvailabilityTable />
     </main>
   )
 }

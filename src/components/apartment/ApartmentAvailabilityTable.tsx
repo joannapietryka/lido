@@ -1,13 +1,43 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { DoorClosedLocked, LayoutGrid, Snowflake } from 'lucide-react'
+import { Camera, DoorClosedLocked, LayoutGrid, Snowflake } from 'lucide-react'
 import { getAvailableUnits, type ApartmentAvailabilityUnit } from '../../data/apartmentAvailability'
 import { ApartmentFloorPlanModal } from './ApartmentFloorPlanModal'
+import { ApartmentUnitPhotosModal } from './ApartmentUnitPhotosModal'
+
+type GalleryState = {
+  unit: ApartmentAvailabilityUnit
+  index: number
+}
 
 export function ApartmentAvailabilityTable() {
   const { t } = useTranslation()
   const [selectedUnit, setSelectedUnit] = useState<ApartmentAvailabilityUnit | null>(null)
+  const [gallery, setGallery] = useState<GalleryState | null>(null)
   const units = getAvailableUnits()
+
+  const openGallery = (unit: ApartmentAvailabilityUnit) => {
+    if (unit.photos.length === 0) return
+    setGallery({ unit, index: 0 })
+  }
+
+  const closeGallery = () => setGallery(null)
+
+  const showPrevPhoto = () => {
+    setGallery((current) => {
+      if (!current) return current
+      const total = current.unit.photos.length
+      return { ...current, index: (current.index - 1 + total) % total }
+    })
+  }
+
+  const showNextPhoto = () => {
+    setGallery((current) => {
+      if (!current) return current
+      const total = current.unit.photos.length
+      return { ...current, index: (current.index + 1) % total }
+    })
+  }
 
   return (
     <>
@@ -32,7 +62,7 @@ export function ApartmentAvailabilityTable() {
           </div>
         ) : (
         <div data-reveal className="overflow-x-auto rounded-[32px] border border-gray-100 bg-white">
-          <table className="w-full min-w-[720px] text-left font-inter">
+          <table className="w-full min-w-[880px] text-left font-inter">
             <thead>
               <tr className="border-b border-gray-200 bg-[#F8F9FA]">
                 {(
@@ -42,7 +72,9 @@ export function ApartmentAvailabilityTable() {
                     'area',
                     'floor',
                     'airConditioning',
+                    'photos',
                     'floorPlan',
+                    'availableFrom',
                   ] as const
                 ).map((key) => (
                   <th
@@ -78,6 +110,20 @@ export function ApartmentAvailabilityTable() {
                     </span>
                   </td>
                   <td className="px-5 py-4">
+                    {unit.photos.length > 0 ? (
+                      <button
+                        type="button"
+                        onClick={() => openGallery(unit)}
+                        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white text-brand-dark shadow-sm ring-1 ring-gray-100 transition-all hover:bg-brand-dark hover:text-white hover:ring-transparent"
+                        aria-label={t('apartmentDetail.availability.viewPhotos', { number: unit.number })}
+                      >
+                        <Camera className="w-4 h-4" strokeWidth={1.75} aria-hidden />
+                      </button>
+                    ) : (
+                      <span className="text-[13px] text-gray-400">—</span>
+                    )}
+                  </td>
+                  <td className="px-5 py-4">
                     <button
                       type="button"
                       onClick={() => setSelectedUnit(unit)}
@@ -86,6 +132,9 @@ export function ApartmentAvailabilityTable() {
                     >
                       <LayoutGrid className="w-4 h-4" strokeWidth={1.75} aria-hidden />
                     </button>
+                  </td>
+                  <td className="px-5 py-4 text-[15px] text-gray-600 whitespace-nowrap">
+                    {unit.availableFrom || '—'}
                   </td>
                 </tr>
               ))}
@@ -103,6 +152,17 @@ export function ApartmentAvailabilityTable() {
 
       {selectedUnit && (
         <ApartmentFloorPlanModal unit={selectedUnit} onClose={() => setSelectedUnit(null)} />
+      )}
+
+      {gallery && (
+        <ApartmentUnitPhotosModal
+          unitNumber={gallery.unit.number}
+          photos={gallery.unit.photos}
+          index={gallery.index}
+          onClose={closeGallery}
+          onPrev={showPrevPhoto}
+          onNext={showNextPhoto}
+        />
       )}
     </>
   )

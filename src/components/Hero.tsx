@@ -57,7 +57,7 @@ export function Hero() {
           <span className="font-medium">{t('hero.titleEmphasis')}</span>
         </h1>
         <div data-reveal className="lg:w-1/3 pb-4">
-          <p className="text-gray-600 font-inter text-[17px] leading-relaxed border-l-2 border-brand-dark pl-6">
+          <p className="text-gray-600 font-inter text-[17px] leading-relaxed border-l-2 border-brand-dark pl-6 whitespace-pre-line">
             {t('hero.subtitle')}
           </p>
         </div>

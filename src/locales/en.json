@@ -38,7 +38,7 @@
   "hero": {
     "titleLine1": "Your new address",
     "titleEmphasis": "on the map of\u00A0Kraków",
-    "subtitle": "Apartments designed for your rhythm — close to university, work, and the city.",
+    "subtitle": "Apartments from the owner, no\u00A0commission\nand no\u00A0agency fees.",
     "badgeNew": "New apartments",
     "areaTitle": "Ruczaj, Kraków",
     "address": "Przemiarki 15",
@@ -255,10 +255,14 @@
     "availability": {
       "title": "Available apartments",
       "empty": "All flats are taken for now. Stay tuned!",
-      "hint": "Click the icon in the “Floor plan” column to view the apartment layout.",
+      "hint": "Click the gallery or floor plan icons to view apartment photos and layout.",
       "yes": "Yes",
       "no": "No",
       "floorValue": "Floor {{floor}}",
+      "viewPhotos": "View photos for apartment {{number}}",
+      "photosTitle": "Apartment {{number}} – photos",
+      "photosLabel": "Photo gallery for apartment {{number}}",
+      "photoAlt": "Apartment {{number}} – photo {{index}}",
       "viewFloorPlan": "View floor plan for apartment {{number}}",
       "floorPlanTitle": "Floor plan – apartment {{number}}",
       "floorPlanAlt": "Floor plan for apartment {{number}}",
@@ -269,6 +273,8 @@
         "area": "Area",
         "floor": "Floor",
         "airConditioning": "Air conditioning",
+        "availableFrom": "Available from",
+        "photos": "Photos",
         "floorPlan": "Floor plan"
       }
     },
