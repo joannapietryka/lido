@@ -55,4 +55,8 @@ export function getAvailableUnits(): ApartmentAvailabilityUnit[] {
   return allUnits.filter((unit) => unit.available)
 }
 
+export function hasAvailableUnits(): boolean {
+  return getAvailableUnits().length > 0
+}
+
 export const APARTMENT_AVAILABILITY = allUnits

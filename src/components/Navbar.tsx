@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import logoLight from '../assets/lido-logo.png'
+import { hasAvailableUnits } from '../data/apartmentAvailability'
 import { LanguageSwitch } from './LanguageSwitch'
 
 const navLinkClass = 'text-gray-500 hover:text-brand-dark transition-colors'
@@ -28,6 +29,7 @@ export function Navbar() {
   }, [mobileOpen])
 
   const closeMobile = () => setMobileOpen(false)
+  const showAvailableFlats = hasAvailableUnits()
 
   return (
     <div className="fixed top-6 left-0 right-0 z-[70] px-6 flex justify-center pointer-events-none overflow-x-clip">
@@ -72,6 +74,14 @@ export function Navbar() {
 
           <div className="flex items-center gap-2 sm:gap-4 shrink-0">
             <LanguageSwitch />
+            {showAvailableFlats && (
+              <Link
+                to="/#wolne-mieszkania"
+                className="hidden lg:inline-flex border border-brand-dark text-brand-dark px-5 xl:px-7 py-2.5 rounded-full text-[15px] font-medium hover:bg-brand-dark hover:text-white transition-colors active:scale-95"
+              >
+                {t('navbar.availableFlats')}
+              </Link>
+            )}
             <Link
               to="/#kontakt"
               className="hidden lg:inline-flex bg-brand-dark text-white px-7 py-2.5 rounded-full text-[15px] font-medium hover:bg-gray-800 transition-transform active:scale-95"
@@ -152,7 +162,16 @@ export function Navbar() {
                   </Link>
                 </div>
 
-                <div className="mt-6 sm:mt-8">
+                <div className="mt-6 sm:mt-8 flex flex-col gap-3">
+                  {showAvailableFlats && (
+                    <Link
+                      to="/#wolne-mieszkania"
+                      onClick={closeMobile}
+                      className="inline-flex w-full max-w-full justify-center border border-brand-dark text-brand-dark px-8 py-3.5 rounded-full text-[17px] font-medium hover:bg-brand-dark hover:text-white transition-colors active:scale-95"
+                    >
+                      {t('navbar.availableFlats')}
+                    </Link>
+                  )}
                   <Link
                     to="/#kontakt"
                     onClick={closeMobile}

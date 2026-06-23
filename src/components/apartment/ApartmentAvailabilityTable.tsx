@@ -41,7 +41,7 @@ export function ApartmentAvailabilityTable() {
 
   return (
     <>
-      <section className="mt-12 md:mt-16">
+      <section id="wolne-mieszkania" className="mt-12 md:mt-16 scroll-mt-32">
         <h2 data-reveal className="text-xl md:text-2xl font-medium mb-6 md:mb-8 text-brand-dark">
           {t('apartmentDetail.availability.title')}
         </h2>
