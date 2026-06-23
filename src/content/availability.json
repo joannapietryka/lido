@@ -2,17 +2,17 @@
   "units": [
     {
       "photos": [
-        "/uploads/studio-plan-b.png",
-        "/uploads/20251107_100956.jpg"
+        "/uploads/20251001_142240.jpg"
       ],
       "price": "2700",
       "available": true,
-      "number": "406",
-      "floor": 0,
-      "area": "43",
-      "floorPlan": "/uploads/two-plan-a.png",
-      "hasAirConditioning": false,
-      "id": "406"
+      "number": "429",
+      "floor": 3,
+      "area": "33,95",
+      "availableFrom": "13.07.2026",
+      "floorPlan": "/uploads/studio-plan-b.png",
+      "hasAirConditioning": true,
+      "id": "429"
     }
   ]
 }
