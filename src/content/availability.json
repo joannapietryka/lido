@@ -13,6 +13,20 @@
       "floorPlan": "/uploads/429m.png",
       "hasAirConditioning": true,
       "id": "429"
+    },
+    {
+      "photos": [
+        "/uploads/kuchnia.jpg"
+      ],
+      "price": "2700",
+      "available": true,
+      "number": "406",
+      "floor": 0,
+      "area": "34,79",
+      "availableFrom": "13.07.2026",
+      "floorPlan": "/uploads/406m.png",
+      "hasAirConditioning": false,
+      "id": "406"
     }
   ]
 }
