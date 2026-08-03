@@ -275,7 +275,7 @@ function TabPanel({ config, heroOnRightDesktop = false }: { config: TabConfig; h
 
 export function FloorPlans() {
   const [tab, setTab] = useState<TabId>('2bed')
-  const ref = useScrollReveal<HTMLElement>()
+  const ref = useScrollReveal<HTMLElement>({ resetKey: tab })
   const { t } = useTranslation()
 
   const tabs = useMemo(

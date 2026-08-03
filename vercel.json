@@ -2,6 +2,9 @@
   "rewrites": [
     { "source": "/admin", "destination": "/admin/index.html" },
     { "source": "/admin/", "destination": "/admin/index.html" },
-    { "source": "/((?!api/|robots\\.txt|sitemap\\.xml).*)", "destination": "/index.html" }
+    {
+      "source": "/((?!api/|uploads/|assets/|robots\\.txt|sitemap\\.xml|.*\\..*).*)",
+      "destination": "/index.html"
+    }
   ]
 }
